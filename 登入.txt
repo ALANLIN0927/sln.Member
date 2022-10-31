@@ -1,0 +1,47 @@
+SqlConnection con = new SqlConnection();
+            con.ConnectionString = @"Data Source=.;Initial Catalog=iSpan_Project;Integrated Security=True";
+            con.Open();
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            string sql = "SELECT * FROM  NormalMember   WHERE Phone=@K_Phone AND Password=@K_PASSWORD";
+            cmd.CommandText = sql;
+            cmd.Parameters.Add(new SqlParameter("K_Phone", txtPhone.Text));
+            cmd.Parameters.Add(new SqlParameter("K_PASSWORD", txtpassword.Text));
+            SqlDataReader reader = cmd.ExecuteReader();
+
+
+            if (reader.Read())
+            {
+
+                UserData.Member = new NewFolder1.CMember();
+                UserData.Member.fid = (int)reader["fid"];
+                UserData.Member.MemberName = reader["MemberName"].ToString();
+                UserData.Member.Phone = reader["Phone"].ToString();
+                UserData.Member.Password = reader["Password"].ToString();
+                UserData.Member.Gender = reader["Gender"].ToString();
+                UserData.Member.Address_City = reader["Address_City"].ToString();
+                UserData.Member.Address_Area = reader["Address_Area"].ToString();
+                UserData.Member.Birthday = DateTime.Parse(reader["Birthday"].ToString()) ;
+                UserData.Member.Email = reader["Email"].ToString();
+                //UserData.Member.Point = (int)reader["Point"];
+                //UserData.Member.RegisterTime = DateTime.Parse(reader["RegisterTime"].ToString());
+                //UserData.Member.MemberPhotoFile = reader["MemberName"].ToString();
+
+
+
+
+
+
+                //關資料庫
+                reader.Close();
+                con.Close();
+
+                //關畫面
+                isClosed = false;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("帳號與密碼不符");
+            }
