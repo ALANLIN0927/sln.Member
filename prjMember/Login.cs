@@ -37,11 +37,16 @@ namespace prjMember
 
         //}
 
-        //bool correctpassword(string password)
-        //{
-        //    bool result = Regex.IsMatch(password, @"^(?=.*\d))(?=.*A-Z].{8,16}$");
-        //    return result;
-        //}
+        /// <summary>
+        /// correctpassword
+        /// </summary>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        private bool correctpassword(string password)
+        {
+            bool result = Regex.IsMatch(password, @"^(?=.*\d))(?=.*A-Z].{8,16}$");
+            return result;
+        }
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
