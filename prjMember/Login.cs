@@ -17,11 +17,17 @@ namespace prjMember
     public partial class Login : Form
     {
         bool isClosed = true;
+
         public Login()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// 一般註冊按鈕事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             MemberRegister reg = new MemberRegister();
@@ -38,9 +44,9 @@ namespace prjMember
         //}
 
         /// <summary>
-        /// correctpassword
+        /// correctpassworde
         /// </summary>
-        /// <param name="password"></param>
+        /// <param name="password">密碼</param>
         /// <returns></returns>
         private bool correctpassword(string password)
         {
@@ -49,7 +55,7 @@ namespace prjMember
         }
 
         private void LoginBtn_Click(object sender, EventArgs e)
-        {
+        {            
             SqlConnection con = new SqlConnection();
             con.ConnectionString = @"Data Source=.;Initial Catalog=Member;Integrated Security=True";
             con.Open();
