@@ -28,8 +28,8 @@ namespace prjMember
             }
             else
             {
+                //登入成功處理
                 txtName.Text = UserData.Member.MemberName;
-
                 txtPhone.Text = UserData.Member.Phone;
                 txtGender.Text = UserData.Member.Gender;
                 txtCity.Text = UserData.Member.Address_City;
@@ -37,6 +37,7 @@ namespace prjMember
                 txtBirth.Text = UserData.Member.Birthday.ToString();
                 txtEmail.Text = UserData.Member.Email;
             }
+            
 
 
 
