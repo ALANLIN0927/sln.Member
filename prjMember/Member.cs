@@ -40,8 +40,11 @@ namespace prjMember
                 txtrgtime.Text=UserData.Member.RegisterTime.ToString();   //
 
                 //隨便打打
+                //隨便打打
+                //隨便打打
+                //隨便打打
             }
-            
+
 
 
 
