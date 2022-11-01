@@ -35,7 +35,6 @@
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,19 +108,11 @@
             this.toolStrip1.TabIndex = 8;
             this.toolStrip1.Text = "購物車";
             // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(15, 58);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1104, 602);
-            this.panel1.TabIndex = 10;
-            // 
             // Homescreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 785);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
             this.IsMdiContainer = true;
             this.Name = "Homescreen";
@@ -143,7 +134,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.Panel panel1;
     }
 }
 

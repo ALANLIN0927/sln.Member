@@ -36,6 +36,10 @@ namespace prjMember
                 txtArea.Text = UserData.Member.Address_Area;
                 txtBirth.Text = UserData.Member.Birthday.ToString();
                 txtEmail.Text = UserData.Member.Email;
+                txtPoint.Text = UserData.Member.Point.ToString();
+                txtrgtime.Text=UserData.Member.RegisterTime.ToString();   //
+
+                //隨便打打
             }
             
 

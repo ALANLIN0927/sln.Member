@@ -1,4 +1,5 @@
-﻿using System;
+﻿using prjMember.AllClass;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -48,38 +49,70 @@ namespace prjMember
         /// </summary>
         /// <param name="password">密碼</param>
         /// <returns></returns>
-        private bool correctpassword(string password)
-        {
-            bool result = Regex.IsMatch(password, @"^(?=.*\d))(?=.*A-Z].{8,16}$");
-            return result;
-        }
+        //private bool correctpassword(string password)
+        //{
+        //    bool result = Regex.IsMatch(password, @"^(?=.*\d))(?=.*A-Z].{8,16}$");
+        //    return result;
+        //}
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {            
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=.;Initial Catalog=Member;Integrated Security=True";
+            con.ConnectionString = @"Data Source=.;Initial Catalog=iSpan_Project;Integrated Security=True";
             con.Open();
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            string sql = "SELECT * FROM  MemberTable   WHERE Phone=@K_Phone AND Password=@K_PASSWORD";
+            string sql = "SELECT * FROM  NormalMember   WHERE Phone=@K_Phone AND Password=@K_PASSWORD";
             cmd.CommandText = sql;
             cmd.Parameters.Add(new SqlParameter("K_Phone", txtPhone.Text));
             cmd.Parameters.Add(new SqlParameter("K_PASSWORD", txtpassword.Text));
-            bool isAuthenticated = false;
+            //bool isAuthenticated = false;
             SqlDataReader reader = cmd.ExecuteReader();
-            isAuthenticated = reader.Read();
-            reader.Close();
-            con.Close();
+            //isAuthenticated = reader.Read();
+           
 
-            if (isAuthenticated)
+            //if (isAuthenticated)
+            if(reader.Read())
             {
+
+                UserData.Member = new NewFolder1.CMember();
+                UserData.Member.fid = (int)reader["fid"];
+                UserData.Member.MemberName = reader["MemberName"].ToString();
+                UserData.Member.Phone = reader["Phone"].ToString();
+                UserData.Member.Password = reader["Password"].ToString();
+                UserData.Member.Gender = reader["Gender"].ToString();
+                UserData.Member.Address_City = reader["Address_City"].ToString();
+                UserData.Member.Address_Area = reader["Address_Area"].ToString();
+                UserData.Member.Birthday = DateTime.Parse(reader["Birthday"].ToString());
+                UserData.Member.Email = reader["Email"].ToString();
+                UserData.Member.Point = (int)reader["Point"];
+                UserData.Member.RegisterTime = DateTime.Parse(reader["RegisterTime"].ToString());
+                //UserData.Member.MemberPhotoFile = reader["MemberName"].ToString();
+
+                reader.Close();
+                con.Close();
+
                 isClosed = false;
-
                 this.Close();
-                return;
+                //return;
 
+
+
+
+
+
+
+
+                return;
             }
+
+
+
+
+
+
+
             MessageBox.Show("帳號與密碼不符");
         }
 

@@ -57,8 +57,6 @@
             this.label20 = new System.Windows.Forms.Label();
             this.comboboxsexy = new System.Windows.Forms.ComboBox();
             this.txtBirthday = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -223,7 +221,7 @@
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtEmail.Location = new System.Drawing.Point(172, 447);
+            this.txtEmail.Location = new System.Drawing.Point(172, 460);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(212, 30);
@@ -233,7 +231,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label11.Location = new System.Drawing.Point(86, 447);
+            this.label11.Location = new System.Drawing.Point(88, 460);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(78, 21);
             this.label11.TabIndex = 38;
@@ -349,30 +347,11 @@
             this.txtBirthday.Size = new System.Drawing.Size(200, 22);
             this.txtBirthday.TabIndex = 52;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label5.Location = new System.Drawing.Point(86, 482);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 21);
-            this.label5.TabIndex = 54;
-            this.label5.Text = "註冊時間:";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(172, 483);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 55;
-            // 
             // MemberRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 673);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.comboboxsexy);
             this.Controls.Add(this.txtBirthday);
             this.Controls.Add(this.label20);
@@ -439,7 +418,5 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ComboBox comboboxsexy;
         private System.Windows.Forms.DateTimePicker txtBirthday;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

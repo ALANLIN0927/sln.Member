@@ -28,9 +28,9 @@ namespace prjMember
 
             txtCity.Text = UserData.Member.Address_City;
             txtArea.Text = UserData.Member.Address_Area;
-            txtBirth.Text = UserData.Member.Birthday.ToString();
+            birthpicker.Value = UserData.Member.Birthday;              //轉
             txtEmail.Text = UserData.Member.Email;
-
+           
         }
 
 
@@ -60,6 +60,7 @@ namespace prjMember
             sql += "Address_City=@K_CITY,";
             sql += "Address_Area=@K_AREA,";
             sql += "Birthday=@K_Birthday,";
+           /* sql += "RegisterTime=@K_RegisterTime,";         */              //測試的
             sql += "Email=@K_Email";
             sql += " WHERE fid = @fid";               
            
@@ -69,10 +70,11 @@ namespace prjMember
             cmd.Parameters.Add(new SqlParameter("K_GENDER", txtGender.Text));
             cmd.Parameters.Add(new SqlParameter("K_CITY", txtCity.Text));
             cmd.Parameters.Add(new SqlParameter("K_AREA", txtArea.Text));
-            cmd.Parameters.Add(new SqlParameter("K_Birthday", txtBirth.Text));
+            cmd.Parameters.Add(new SqlParameter("K_Birthday", birthpicker.Value));   //轉型
             cmd.Parameters.Add(new SqlParameter("K_Email", txtEmail.Text));
             cmd.Parameters.Add(new SqlParameter("fid", UserData.Member.fid));
-
+            //cmd.Parameters.Add(new SqlParameter("K_RegisterTime",UserData.Member.RegisterTime));
+            
 
             cmd.Connection = con;
             cmd.CommandText = sql;
@@ -87,7 +89,7 @@ namespace prjMember
                 Gender = txtGender.Text,
                 Address_City = txtCity.Text,
                 Address_Area = txtArea.Text,
-                Birthday = DateTime.Parse(txtBirth.Text),
+                Birthday = birthpicker.Value,              //轉型
                 Email = txtEmail.Text,
 
 

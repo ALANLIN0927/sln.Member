@@ -21,8 +21,8 @@ namespace prjMember.NewFolder1
         public string Email { get; set; }
         public int Point { get; set; }
 
-        public DateTime RegisterTime { get; set; }
-
+        public  DateTime RegisterTime { get; set; }   //加的
+                         
         public string MemberPhotoFile { get; set; }
     }
     

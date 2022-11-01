@@ -30,7 +30,8 @@ namespace prjMember
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            int memberID = 1;                                                  //先亂設的
+            int memberID =0; int point = 0;
+            //先亂設的
             string sql = "INSERT INTO NormalMember (";
             sql += "MemberID,";
             sql += "MemberName,";
@@ -40,7 +41,9 @@ namespace prjMember
             sql += "Address_City,";
             sql += "Address_Area,";
             sql += "Birthday,";
-            sql += "Email";
+            sql += "Email,";
+            sql += "Point,";
+            sql += "RegisterTime";
 
             sql += ") VALUES (";
             sql += "@K_MemberID,";
@@ -51,7 +54,9 @@ namespace prjMember
             sql += "@K_Address_City,";
             sql += "@K_Address_Area,";
             sql += "@K_Birthday,";
-            sql += "@K_Email)";
+            sql += "@K_Email,";
+            sql += "@K_Point,";
+            sql += "@K_RegisterTime)";
             cmd.CommandText = sql;
             cmd.Parameters.Add(new SqlParameter("K_MemberID", memberID));
             cmd.Parameters.Add(new SqlParameter("K_MemberName", txtName.Text));
@@ -62,6 +67,8 @@ namespace prjMember
             cmd.Parameters.Add(new SqlParameter("K_Address_Area", txtArea.Text));
             cmd.Parameters.Add(new SqlParameter("K_Birthday", txtBirthday.Value));
             cmd.Parameters.Add(new SqlParameter("K_Email", txtEmail.Text));
+            cmd.Parameters.Add(new SqlParameter("K_Point", point.ToString()));
+            cmd.Parameters.Add(new SqlParameter("K_RegisterTime", DateTime.Now.ToString()));
             //CMember member = new CMember();                             //創集合創到一半 不知道錯在哪
             //member.MemberID = memberID;
             //member.MemberName = txtName.Text;

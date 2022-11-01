@@ -50,6 +50,7 @@
             this.txtEmail = new System.Windows.Forms.Label();
             this.txtPoint = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtrgtime = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label7
@@ -323,12 +324,24 @@
             this.label2.TabIndex = 119;
             this.label2.Text = "註冊時間:";
             // 
+            // txtrgtime
+            // 
+            this.txtrgtime.AutoSize = true;
+            this.txtrgtime.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtrgtime.ForeColor = System.Drawing.Color.Black;
+            this.txtrgtime.Location = new System.Drawing.Point(238, 376);
+            this.txtrgtime.Name = "txtrgtime";
+            this.txtrgtime.Size = new System.Drawing.Size(109, 24);
+            this.txtrgtime.TabIndex = 120;
+            this.txtrgtime.Text = "txtrgistime";
+            // 
             // Member
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(499, 476);
+            this.Controls.Add(this.txtrgtime);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPoint);
             this.Controls.Add(this.txtEmail);
@@ -384,5 +397,6 @@
         private System.Windows.Forms.Label txtEmail;
         private System.Windows.Forms.Label txtPoint;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label txtrgtime;
     }
 }

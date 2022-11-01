@@ -73,7 +73,7 @@
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(189, 27);
             this.txtPhone.TabIndex = 1;
-            this.txtPhone.Text = "123456789";
+            this.txtPhone.Text = "0900000000";
             // 
             // txtpassword
             // 
@@ -83,7 +83,7 @@
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.Size = new System.Drawing.Size(189, 27);
             this.txtpassword.TabIndex = 3;
-            this.txtpassword.Text = "123456789";
+            this.txtpassword.Text = "123";
             // 
             // label2
             // 

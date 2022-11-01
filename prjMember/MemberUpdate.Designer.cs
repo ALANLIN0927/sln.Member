@@ -30,7 +30,6 @@
         {
             this.label16 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.txtBirth = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtArea = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -49,6 +48,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.birthpicker = new System.Windows.Forms.DateTimePicker();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label16
@@ -70,15 +73,6 @@
             this.button2.Text = "修改完成";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // txtBirth
-            // 
-            this.txtBirth.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtBirth.Location = new System.Drawing.Point(150, 233);
-            this.txtBirth.Multiline = true;
-            this.txtBirth.Name = "txtBirth";
-            this.txtBirth.Size = new System.Drawing.Size(231, 30);
-            this.txtBirth.TabIndex = 127;
             // 
             // txtEmail
             // 
@@ -262,16 +256,36 @@
             this.label2.TabIndex = 133;
             this.label2.Text = "密碼";
             // 
+            // birthpicker
+            // 
+            this.birthpicker.Location = new System.Drawing.Point(152, 237);
+            this.birthpicker.Name = "birthpicker";
+            this.birthpicker.Size = new System.Drawing.Size(200, 22);
+            this.birthpicker.TabIndex = 134;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(399, 63);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 135;
+            this.pictureBox1.TabStop = false;
+            // 
             // MemberUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(511, 460);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.birthpicker);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.txtBirth);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtArea);
             this.Controls.Add(this.label6);
@@ -291,6 +305,7 @@
             this.Name = "MemberUpdate";
             this.Text = "MemberUpdate";
             this.Load += new System.EventHandler(this.MemberUpdate_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,7 +315,6 @@
 
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox txtBirth;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtArea;
         private System.Windows.Forms.Label label6;
@@ -319,5 +333,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker birthpicker;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
