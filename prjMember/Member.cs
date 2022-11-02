@@ -39,8 +39,9 @@ namespace prjMember
                 txtEmail.Text = UserData.Member.Email;
                 txtPoint.Text = UserData.Member.Point.ToString();
                 txtrgtime.Text=UserData.Member.RegisterTime.ToString();
-                //pictureBox1.BackgroundImage = UserData.Member.MemberPhotoFile.         //有錯
-                
+              /*  pictureBox1.BackgroundImage = UserData.Member.MemberPhotoFile. */        //有錯
+
+
             }
 
 

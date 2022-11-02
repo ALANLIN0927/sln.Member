@@ -22,6 +22,42 @@ namespace prjMember
             InitializeComponent();
         }
 
+        string file = "";
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                if (pictureBox1.BackgroundImage != null)                           //目前先這樣
+                {
+                    pictureBox1.BackgroundImage.Dispose();
+                    pictureBox1.BackgroundImage = null;
+                }
+                string file = openFileDialog1.FileName;
+                pictureBox1.BackgroundImage = new Bitmap(file);
+                //pictureBox1.BackgroundImage = Image.FromFile(file);
+                //pictureBox1.Image.Dispose();
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         private void Registerbtn_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection();
@@ -43,7 +79,8 @@ namespace prjMember
             sql += "Birthday,";
             sql += "Email,";
             sql += "Point,";
-            sql += "RegisterTime";
+            sql += "RegisterTime,";
+            sql += "MemberPhotoFile";
 
             sql += ") VALUES (";
             sql += "@K_MemberID,";
@@ -56,7 +93,8 @@ namespace prjMember
             sql += "@K_Birthday,";
             sql += "@K_Email,";
             sql += "@K_Point,";
-            sql += "@K_RegisterTime)";
+            sql += "@K_RegisterTime,";
+            sql += "@K_MemberPhotoFile)";
             cmd.CommandText = sql;
             cmd.Parameters.Add(new SqlParameter("K_MemberID", memberID));
             cmd.Parameters.Add(new SqlParameter("K_MemberName", txtName.Text));
@@ -69,7 +107,7 @@ namespace prjMember
             cmd.Parameters.Add(new SqlParameter("K_Email", txtEmail.Text));
             cmd.Parameters.Add(new SqlParameter("K_Point", point.ToString()));
             cmd.Parameters.Add(new SqlParameter("K_RegisterTime", DateTime.Now));   //修改過不用tostring
-
+            cmd.Parameters.Add(new SqlParameter("K_MemberPhotoFile", file));
 
             cmd.ExecuteNonQuery();
 
@@ -81,35 +119,7 @@ namespace prjMember
 
 
         }
-
-
-
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
-
-
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                if (pictureBox1.BackgroundImage != null)                           //目前先這樣
-                {
-                    pictureBox1.BackgroundImage.Dispose();
-                    pictureBox1.BackgroundImage = null;
-                }
-                string file = openFileDialog1.FileName;
-
-                pictureBox1.BackgroundImage = Image.FromFile(file);
-                //pictureBox1.Image.Dispose();
-
-
-
-
-
-
-
-            }
-        }
-    }
+}
 }
 
 
