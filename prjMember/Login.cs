@@ -88,7 +88,7 @@ namespace prjMember
                 UserData.Member.Email = reader["Email"].ToString();
                 UserData.Member.Point = (int)reader["Point"];
                 UserData.Member.RegisterTime = DateTime.Parse(reader["RegisterTime"].ToString());
-                //UserData.Member.MemberPhotoFile = reader["MemberName"].ToString();
+                UserData.Member.MemberPhotoFile = reader["MemberPhotoFile"].ToString();
 
                 reader.Close();
                 con.Close();
@@ -127,8 +127,6 @@ namespace prjMember
             Application.Exit();
 
         }
-        public string phoneget() {
-            return txtPhone.Text;
-        }
+        
     }
 }

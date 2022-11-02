@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MemberUpdate));
             this.label16 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -49,7 +50,6 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.birthpicker = new System.Windows.Forms.DateTimePicker();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -66,7 +66,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button2.Location = new System.Drawing.Point(219, 370);
+            this.button2.Location = new System.Drawing.Point(217, 370);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(93, 55);
             this.button2.TabIndex = 130;
@@ -96,17 +96,17 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label6.Location = new System.Drawing.Point(147, 9);
+            this.label6.Location = new System.Drawing.Point(178, 9);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(243, 26);
+            this.label6.Size = new System.Drawing.Size(222, 26);
             this.label6.TabIndex = 124;
-            this.label6.Text = "這是您的個人的基本資料";
+            this.label6.Text = "請確認並完成修改資料";
             // 
             // lableName
             // 
             this.lableName.AutoSize = true;
             this.lableName.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lableName.Location = new System.Drawing.Point(98, 9);
+            this.lableName.Location = new System.Drawing.Point(139, 9);
             this.lableName.Name = "lableName";
             this.lableName.Size = new System.Drawing.Size(33, 26);
             this.lableName.TabIndex = 123;
@@ -192,8 +192,9 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(96, 55);
             this.button1.TabIndex = 115;
-            this.button1.Text = "返回點餐";
+            this.button1.Text = "返回首頁";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label7
             // 
@@ -250,7 +251,7 @@
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(90, 323);
+            this.label2.Location = new System.Drawing.Point(99, 323);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 16);
             this.label2.TabIndex = 133;
@@ -263,15 +264,13 @@
             this.birthpicker.Size = new System.Drawing.Size(200, 22);
             this.birthpicker.TabIndex = 134;
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(399, 63);
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(399, 47);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(100, 94);
             this.pictureBox1.TabIndex = 135;
             this.pictureBox1.TabStop = false;
             // 
@@ -334,7 +333,6 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker birthpicker;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -15,7 +15,7 @@ namespace prjMember
 {
     public partial class MemberUpdate : Form
     {
-        DateTime r;
+        DateTime r;                 //子路教的
         public MemberUpdate()
         {
             InitializeComponent();
@@ -61,10 +61,10 @@ namespace prjMember
             sql += "Address_City=@K_CITY,";
             sql += "Address_Area=@K_AREA,";
             sql += "Birthday=@K_Birthday,";
-           /* sql += "RegisterTime=@K_RegisterTime,";         */              //測試的
             sql += "Email=@K_Email";
-            sql += " WHERE fid = @fid";               
-           
+            sql += " WHERE fid = @fid";
+
+
             cmd.Parameters.Add(new SqlParameter("K_NAME", txtName.Text));
             cmd.Parameters.Add(new SqlParameter("K_PHONE", txtPhone.Text));
             cmd.Parameters.Add(new SqlParameter("K_PASSWORD", txtPassword.Text));
@@ -74,7 +74,7 @@ namespace prjMember
             cmd.Parameters.Add(new SqlParameter("K_Birthday", birthpicker.Value));   //轉型
             cmd.Parameters.Add(new SqlParameter("K_Email", txtEmail.Text));
             cmd.Parameters.Add(new SqlParameter("fid", UserData.Member.fid));
-            //cmd.Parameters.Add(new SqlParameter("K_RegisterTime",UserData.Member.RegisterTime));
+            
             
 
             cmd.Connection = con;
@@ -102,5 +102,14 @@ namespace prjMember
 
             
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            //Member personalmatrial=new Member();
+            //personalmatrial.ShowDialog();              //為啥用show會消失
+        }
+
+        
     }
 }

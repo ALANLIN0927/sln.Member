@@ -29,6 +29,7 @@ namespace prjMember
             else
             {
                 //登入成功處理
+                titleName.Text = UserData.Member.MemberName;
                 txtName.Text = UserData.Member.MemberName;
                 txtPhone.Text = UserData.Member.Phone;
                 txtGender.Text = UserData.Member.Gender;
@@ -37,12 +38,9 @@ namespace prjMember
                 txtBirth.Text = UserData.Member.Birthday.ToString();
                 txtEmail.Text = UserData.Member.Email;
                 txtPoint.Text = UserData.Member.Point.ToString();
-                txtrgtime.Text=UserData.Member.RegisterTime.ToString();   //
-
-                //隨便打打
-                //隨便打打
-                //隨便打打
-                //隨便打打
+                txtrgtime.Text=UserData.Member.RegisterTime.ToString();
+                //pictureBox1.BackgroundImage = UserData.Member.MemberPhotoFile.         //有錯
+                
             }
 
 
@@ -82,8 +80,15 @@ namespace prjMember
 
         private void button2_Click(object sender, EventArgs e)
         {
+            this.Close();
             MemberUpdate update = new MemberUpdate();
             update.ShowDialog();
+           
+        }
+
+        private void gomainform_Click(object sender, EventArgs e)
+        {
+            this.Close();                   //為什麼彈兩次
         }
     }
 }

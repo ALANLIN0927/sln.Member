@@ -36,7 +36,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.lableName = new System.Windows.Forms.Label();
+            this.titleName = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -51,6 +51,8 @@
             this.txtPoint = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtrgtime = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -90,8 +92,9 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 55);
             this.button1.TabIndex = 57;
-            this.button1.Text = "返回點餐";
+            this.button1.Text = "返回首頁";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.gomainform_Click);
             // 
             // label11
             // 
@@ -158,18 +161,18 @@
             this.label4.TabIndex = 67;
             this.label4.Text = "性別:";
             // 
-            // lableName
+            // titleName
             // 
-            this.lableName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.titleName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lableName.AutoSize = true;
-            this.lableName.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lableName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.lableName.Location = new System.Drawing.Point(95, 9);
-            this.lableName.Name = "lableName";
-            this.lableName.Size = new System.Drawing.Size(33, 26);
-            this.lableName.TabIndex = 70;
-            this.lableName.Text = "某";
+            this.titleName.AutoSize = true;
+            this.titleName.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.titleName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.titleName.Location = new System.Drawing.Point(95, 9);
+            this.titleName.Name = "titleName";
+            this.titleName.Size = new System.Drawing.Size(33, 26);
+            this.titleName.TabIndex = 70;
+            this.titleName.Text = "某";
             // 
             // label6
             // 
@@ -335,12 +338,21 @@
             this.txtrgtime.TabIndex = 120;
             this.txtrgtime.Text = "txtrgistime";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(369, 48);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(101, 84);
+            this.pictureBox1.TabIndex = 121;
+            this.pictureBox1.TabStop = false;
+            // 
             // Member
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(499, 476);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtrgtime);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPoint);
@@ -355,7 +367,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.lableName);
+            this.Controls.Add(this.titleName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -368,6 +380,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Member";
             this.Load += new System.EventHandler(this.Member_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -383,7 +396,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lableName;
+        private System.Windows.Forms.Label titleName;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button2;
@@ -398,5 +411,6 @@
         private System.Windows.Forms.Label txtPoint;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label txtrgtime;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
