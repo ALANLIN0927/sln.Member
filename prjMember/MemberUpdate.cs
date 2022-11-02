@@ -15,6 +15,7 @@ namespace prjMember
 {
     public partial class MemberUpdate : Form
     {
+        DateTime r;
         public MemberUpdate()
         {
             InitializeComponent();
@@ -30,7 +31,7 @@ namespace prjMember
             txtArea.Text = UserData.Member.Address_Area;
             birthpicker.Value = UserData.Member.Birthday;              //轉
             txtEmail.Text = UserData.Member.Email;
-           
+            r = UserData.Member.RegisterTime;
         }
 
 
@@ -92,7 +93,7 @@ namespace prjMember
                 Birthday = birthpicker.Value,              //轉型
                 Email = txtEmail.Text,
 
-
+                RegisterTime = r
 
 
             };
