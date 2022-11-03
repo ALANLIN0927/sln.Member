@@ -115,7 +115,7 @@ namespace prjMember
 
         private void txtpassword_KeyPress(object sender, KeyPressEventArgs e)
         {
-            bool correct = Regex.IsMatch(txtpassword.Text, @"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}$");
+            bool correct = Regex.IsMatch(txtpassword.Text, @"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,16}$");
             if(correct)
             {
                 labpassword.Text = "密碼格式正確";

@@ -47,7 +47,7 @@ namespace prjMember
 
         private void txtPassword_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-            bool correct = Regex.IsMatch(txtPassword.Text, @"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}$");
+            bool correct = Regex.IsMatch(txtPassword.Text, @"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,16}$");
             if (correct)
             {
                 labpassword.Text = "密碼格式正確";
@@ -80,30 +80,31 @@ namespace prjMember
 
         private void Registerbtn_Click(object sender, EventArgs e)
         {
-            //if (!(txtPassword.Text == txtPassword2.Text))
-            //{
-            //    MessageBox.Show("請確認兩欄密碼相同");                                  //驗證密碼
-            //    return;
+            if (!(txtPassword.Text == txtPassword2.Text))
+            {
+                MessageBox.Show("請確認兩欄密碼相同");                                  //驗證密碼
+                return;
 
 
-            //}
-            //if (string.IsNullOrEmpty(txtName.Text.Trim())){
+            }
+            if (string.IsNullOrEmpty(txtName.Text.Trim()))
+            {
 
-            //    MessageBox.Show("請填寫名子");
-            //    return;
+                MessageBox.Show("請填寫名子");
+                return;
 
 
-            //}
-            //if (string.IsNullOrEmpty(txtPhone.Text.Trim()))
-            //{
-            //    MessageBox.Show("請輸入電話");
-            //    return;
-            //}
-            //if (string.IsNullOrEmpty(txtPassword.Text.Trim()))
-            //{
-            //    MessageBox.Show("請輸入密碼");
-            //    return ;
-            //}
+            }
+            if (string.IsNullOrEmpty(txtPhone.Text.Trim()))
+            {
+                MessageBox.Show("請輸入電話");
+                return;
+            }
+            if (string.IsNullOrEmpty(txtPassword.Text.Trim()))
+            {
+                MessageBox.Show("請輸入密碼");
+                return;
+            }
 
             Random crandom = new Random(Guid.NewGuid().GetHashCode());   //產生亂數
             int Rannum = crandom.Next(1, 1000);

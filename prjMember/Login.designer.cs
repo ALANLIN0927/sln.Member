@@ -83,6 +83,7 @@
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.Size = new System.Drawing.Size(189, 27);
             this.txtpassword.TabIndex = 3;
+            this.txtpassword.Text = "aA123";
             this.txtpassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtpassword_KeyPress);
             // 
             // label2
@@ -261,7 +262,7 @@
             this.labphone.AutoSize = true;
             this.labphone.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.labphone.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labphone.Location = new System.Drawing.Point(355, 189);
+            this.labphone.Location = new System.Drawing.Point(353, 189);
             this.labphone.Name = "labphone";
             this.labphone.Size = new System.Drawing.Size(103, 21);
             this.labphone.TabIndex = 19;

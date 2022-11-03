@@ -49,12 +49,23 @@ namespace prjMember
 
 
 
+
+        Random crandom = new Random(Guid.NewGuid().GetHashCode());   //產生亂數
+
         private void button2_Click(object sender, EventArgs e)
         {
-            Random crandom = new Random(Guid.NewGuid().GetHashCode());   //產生亂數
+           
             int Rannum = crandom.Next(1, 1000);
+            string picture=""; /*"../../img/NormalMember_Img/" + txtPhone.Text + Rannum + "_.bmp"*/ //現在改的;
+            if (file == null) { picture = UserData.Member.MemberPhotoFile; }   //string file不給數就是空值?
 
+            else
+            {
+                Image img = Image.FromFile(file);
+                picture = "../../img/NormalMember_Img/" + txtPhone.Text + Rannum + "_.bmp";
+                img.Save(picture);
 
+            }
 
             SqlConnection con = new SqlConnection();
             con.ConnectionString = @"Data Source=.;Initial Catalog=iSpan_Project;Integrated Security=True";
@@ -84,9 +95,9 @@ namespace prjMember
             cmd.Parameters.Add(new SqlParameter("K_Birthday", birthpicker.Value));   //轉型
             cmd.Parameters.Add(new SqlParameter("K_Email", txtEmail.Text));
             cmd.Parameters.Add(new SqlParameter("fid", UserData.Member.fid));
-            cmd.Parameters.Add(new SqlParameter("K_MemberPhotoFile", "../../img/NormalMember_Img/" + txtPhone.Text + Rannum+"_.bmp"));  //加圖片;
-            
-            
+            cmd.Parameters.Add(new SqlParameter("K_MemberPhotoFile",picture ));  //現在加的;
+            /*cmd.Parameters.Add(new SqlParameter("K_MemberPhotoFile", "../../img/NormalMember_Img/" + txtPhone.Text + Rannum + "_.bmp"))*/;//加圖片;
+
 
             cmd.Connection = con;
             cmd.CommandText = sql;
@@ -106,13 +117,17 @@ namespace prjMember
                 Email = txtEmail.Text,
 
                 RegisterTime = r,
-                MemberPhotoFile = "../../img/NormalMember_Img/" + txtPhone.Text + Rannum + "_.bmp"     //改圖片加回去會員
-
+                /* MemberPhotoFile = "../../img/NormalMember_Img/" + txtPhone.Text + Rannum + "_.bmp"*/     //改圖片加回去會員
+                MemberPhotoFile = picture
             };
 
-            Image img = Image.FromFile(file);
-            //Bitmap imgoutput = new Bitmap(img, 60, 60);
-            img.Save("../../img/NormalMember_Img/" + txtPhone.Text + Rannum + "_.bmp");
+
+            
+
+
+
+
+
 
 
         }
@@ -126,6 +141,7 @@ namespace prjMember
         string file;
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            /*int Rannum = crandom.Next(1, 1000);   */      //現在加的
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 if (pictureBox1.BackgroundImage != null)                           //目前先這樣
@@ -138,7 +154,8 @@ namespace prjMember
                 //pictureBox1.BackgroundImage = Image.FromFile(file);
                 //pictureBox1.Image.Dispose();
 
-                
+                //Image img = Image.FromFile(file);            //現在改的
+                //img.Save("../../img/NormalMember_Img/" + txtPhone.Text + Rannum + "_.bmp");
             }
         }
     }

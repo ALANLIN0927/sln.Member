@@ -131,6 +131,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(212, 30);
             this.txtName.TabIndex = 23;
+            this.txtName.Text = "測試";
             // 
             // label4
             // 
@@ -150,6 +151,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(212, 30);
             this.txtPassword.TabIndex = 27;
+            this.txtPassword.Text = "aA123";
             this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress_1);
             // 
             // txtPhone
@@ -257,6 +259,7 @@
             this.txtPassword2.Name = "txtPassword2";
             this.txtPassword2.Size = new System.Drawing.Size(212, 30);
             this.txtPassword2.TabIndex = 43;
+            this.txtPassword2.Text = "aA123";
             // 
             // label13
             // 
