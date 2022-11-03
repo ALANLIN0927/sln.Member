@@ -47,7 +47,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.txtPassword2 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -60,6 +60,12 @@
             this.txtBirthday = new System.Windows.Forms.DateTimePicker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.labpassword = new System.Windows.Forms.Label();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.labphone = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,7 +117,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label3.Location = new System.Drawing.Point(96, 150);
+            this.label3.Location = new System.Drawing.Point(73, 150);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 21);
             this.label3.TabIndex = 22;
@@ -120,7 +126,7 @@
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtName.Location = new System.Drawing.Point(157, 141);
+            this.txtName.Location = new System.Drawing.Point(134, 141);
             this.txtName.Multiline = true;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(212, 30);
@@ -130,7 +136,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label4.Location = new System.Drawing.Point(96, 328);
+            this.label4.Location = new System.Drawing.Point(73, 328);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 21);
             this.label4.TabIndex = 24;
@@ -139,26 +145,28 @@
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtPassword.Location = new System.Drawing.Point(157, 222);
+            this.txtPassword.Location = new System.Drawing.Point(134, 222);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(212, 30);
             this.txtPassword.TabIndex = 27;
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress_1);
             // 
             // txtPhone
             // 
             this.txtPhone.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtPhone.Location = new System.Drawing.Point(157, 177);
+            this.txtPhone.Location = new System.Drawing.Point(134, 177);
             this.txtPhone.Multiline = true;
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(212, 30);
             this.txtPhone.TabIndex = 29;
+            this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone_KeyPress);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label6.Location = new System.Drawing.Point(96, 231);
+            this.label6.Location = new System.Drawing.Point(73, 231);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(46, 21);
             this.label6.TabIndex = 28;
@@ -167,7 +175,7 @@
             // txtCity
             // 
             this.txtCity.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtCity.Location = new System.Drawing.Point(157, 355);
+            this.txtCity.Location = new System.Drawing.Point(134, 355);
             this.txtCity.Multiline = true;
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(212, 30);
@@ -177,16 +185,16 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label7.Location = new System.Drawing.Point(96, 186);
+            this.label7.Location = new System.Drawing.Point(41, 186);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 21);
+            this.label7.Size = new System.Drawing.Size(78, 21);
             this.label7.TabIndex = 30;
-            this.label7.Text = "電話:";
+            this.label7.Text = "手機電話:";
             // 
             // txtArea
             // 
             this.txtArea.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtArea.Location = new System.Drawing.Point(157, 393);
+            this.txtArea.Location = new System.Drawing.Point(134, 393);
             this.txtArea.Multiline = true;
             this.txtArea.Name = "txtArea";
             this.txtArea.Size = new System.Drawing.Size(212, 30);
@@ -196,7 +204,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label8.Location = new System.Drawing.Point(71, 364);
+            this.label8.Location = new System.Drawing.Point(48, 364);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(78, 21);
             this.label8.TabIndex = 32;
@@ -206,7 +214,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label9.Location = new System.Drawing.Point(71, 393);
+            this.label9.Location = new System.Drawing.Point(48, 393);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(76, 21);
             this.label9.TabIndex = 34;
@@ -216,7 +224,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label10.Location = new System.Drawing.Point(71, 438);
+            this.label10.Location = new System.Drawing.Point(48, 438);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(78, 21);
             this.label10.TabIndex = 36;
@@ -225,7 +233,7 @@
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtEmail.Location = new System.Drawing.Point(157, 479);
+            this.txtEmail.Location = new System.Drawing.Point(134, 479);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(212, 30);
@@ -235,26 +243,26 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label11.Location = new System.Drawing.Point(73, 479);
+            this.label11.Location = new System.Drawing.Point(50, 479);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(78, 21);
             this.label11.TabIndex = 38;
             this.label11.Text = "電子郵件:";
             // 
-            // textBox11
+            // txtPassword2
             // 
-            this.textBox11.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.textBox11.Location = new System.Drawing.Point(157, 275);
-            this.textBox11.Multiline = true;
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(212, 30);
-            this.textBox11.TabIndex = 43;
+            this.txtPassword2.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtPassword2.Location = new System.Drawing.Point(134, 275);
+            this.txtPassword2.Multiline = true;
+            this.txtPassword2.Name = "txtPassword2";
+            this.txtPassword2.Size = new System.Drawing.Size(212, 30);
+            this.txtPassword2.TabIndex = 43;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label13.Location = new System.Drawing.Point(32, 275);
+            this.label13.Location = new System.Drawing.Point(9, 275);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(110, 21);
             this.label13.TabIndex = 42;
@@ -265,7 +273,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label14.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label14.Location = new System.Drawing.Point(154, 255);
+            this.label14.Location = new System.Drawing.Point(131, 255);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(220, 17);
             this.label14.TabIndex = 44;
@@ -276,7 +284,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label15.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label15.Location = new System.Drawing.Point(154, 308);
+            this.label15.Location = new System.Drawing.Point(131, 308);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(220, 17);
             this.label15.TabIndex = 45;
@@ -339,14 +347,14 @@
             this.comboboxsexy.Items.AddRange(new object[] {
             "男",
             "女"});
-            this.comboboxsexy.Location = new System.Drawing.Point(157, 329);
+            this.comboboxsexy.Location = new System.Drawing.Point(134, 329);
             this.comboboxsexy.Name = "comboboxsexy";
             this.comboboxsexy.Size = new System.Drawing.Size(121, 20);
             this.comboboxsexy.TabIndex = 53;
             // 
             // txtBirthday
             // 
-            this.txtBirthday.Location = new System.Drawing.Point(157, 438);
+            this.txtBirthday.Location = new System.Drawing.Point(134, 438);
             this.txtBirthday.Name = "txtBirthday";
             this.txtBirthday.Size = new System.Drawing.Size(200, 22);
             this.txtBirthday.TabIndex = 52;
@@ -355,7 +363,7 @@
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(413, 65);
+            this.pictureBox1.Location = new System.Drawing.Point(398, 57);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 87);
             this.pictureBox1.TabIndex = 54;
@@ -366,11 +374,74 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // labpassword
+            // 
+            this.labpassword.AutoSize = true;
+            this.labpassword.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labpassword.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labpassword.Location = new System.Drawing.Point(402, 222);
+            this.labpassword.Name = "labpassword";
+            this.labpassword.Size = new System.Drawing.Size(107, 21);
+            this.labpassword.TabIndex = 55;
+            this.labpassword.Text = "labpassword";
+            // 
+            // labphone
+            // 
+            this.labphone.AutoSize = true;
+            this.labphone.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labphone.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labphone.Location = new System.Drawing.Point(402, 177);
+            this.labphone.Name = "labphone";
+            this.labphone.Size = new System.Drawing.Size(96, 24);
+            this.labphone.TabIndex = 56;
+            this.labphone.Text = "labphone";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.SystemColors.Control;
+            this.label5.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(352, 227);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(31, 16);
+            this.label5.TabIndex = 57;
+            this.label5.Text = "必填";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.SystemColors.Control;
+            this.label12.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label12.ForeColor = System.Drawing.Color.Red;
+            this.label12.Location = new System.Drawing.Point(353, 186);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(31, 16);
+            this.label12.TabIndex = 58;
+            this.label12.Text = "必填";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.SystemColors.Control;
+            this.label21.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label21.ForeColor = System.Drawing.Color.Red;
+            this.label21.Location = new System.Drawing.Point(352, 145);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(31, 16);
+            this.label21.TabIndex = 59;
+            this.label21.Text = "必填";
+            // 
             // MemberRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 673);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.labphone);
+            this.Controls.Add(this.labpassword);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.comboboxsexy);
             this.Controls.Add(this.txtBirthday);
@@ -381,7 +452,7 @@
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.textBox11);
+            this.Controls.Add(this.txtPassword2);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label11);
@@ -403,6 +474,7 @@
             this.Controls.Add(this.label1);
             this.Name = "MemberRegister";
             this.Text = "register";
+            this.Click += new System.EventHandler(this.pictureBox1_Click_1);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -428,7 +500,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox txtPassword2;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
@@ -441,5 +513,11 @@
         private System.Windows.Forms.DateTimePicker txtBirthday;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label labpassword;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Label labphone;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label21;
     }
 }

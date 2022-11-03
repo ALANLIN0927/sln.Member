@@ -21,8 +21,10 @@ namespace prjMember
 
         private void register_Click(object sender, EventArgs e)
         {
+            labregister.Text = "登出";
             Login login = new Login();
-            login.Show();
+            login.ShowDialog();
+            
         }
 
         private void labregister_MouseMove(object sender, MouseEventArgs e)

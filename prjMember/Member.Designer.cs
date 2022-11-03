@@ -62,7 +62,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label7.Location = new System.Drawing.Point(128, 89);
+            this.label7.Location = new System.Drawing.Point(105, 89);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 24);
             this.label7.TabIndex = 50;
@@ -75,7 +75,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label3.Location = new System.Drawing.Point(128, 48);
+            this.label3.Location = new System.Drawing.Point(105, 48);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 24);
             this.label3.TabIndex = 45;
@@ -103,7 +103,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label11.Location = new System.Drawing.Point(128, 294);
+            this.label11.Location = new System.Drawing.Point(105, 294);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(91, 24);
             this.label11.TabIndex = 64;
@@ -116,7 +116,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label10.Location = new System.Drawing.Point(128, 253);
+            this.label10.Location = new System.Drawing.Point(105, 253);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(91, 24);
             this.label10.TabIndex = 63;
@@ -129,7 +129,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label9.Location = new System.Drawing.Point(128, 212);
+            this.label9.Location = new System.Drawing.Point(105, 212);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(88, 24);
             this.label9.TabIndex = 62;
@@ -142,7 +142,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(128, 171);
+            this.label1.Location = new System.Drawing.Point(105, 171);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 24);
             this.label1.TabIndex = 60;
@@ -155,7 +155,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label4.Location = new System.Drawing.Point(128, 130);
+            this.label4.Location = new System.Drawing.Point(105, 130);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 24);
             this.label4.TabIndex = 67;
@@ -168,7 +168,7 @@
             this.titleName.AutoSize = true;
             this.titleName.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.titleName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.titleName.Location = new System.Drawing.Point(95, 9);
+            this.titleName.Location = new System.Drawing.Point(72, 9);
             this.titleName.Name = "titleName";
             this.titleName.Size = new System.Drawing.Size(33, 26);
             this.titleName.TabIndex = 70;
@@ -181,7 +181,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label6.Location = new System.Drawing.Point(141, 9);
+            this.label6.Location = new System.Drawing.Point(118, 9);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(243, 26);
             this.label6.TabIndex = 72;
@@ -194,7 +194,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label12.Location = new System.Drawing.Point(128, 335);
+            this.label12.Location = new System.Drawing.Point(105, 335);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(91, 24);
             this.label12.TabIndex = 76;
@@ -207,7 +207,7 @@
             this.button2.BackColor = System.Drawing.Color.Navy;
             this.button2.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button2.Location = new System.Drawing.Point(210, 409);
+            this.button2.Location = new System.Drawing.Point(209, 409);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(118, 55);
             this.button2.TabIndex = 109;
@@ -231,7 +231,7 @@
             this.txtName.AutoSize = true;
             this.txtName.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtName.ForeColor = System.Drawing.Color.Black;
-            this.txtName.Location = new System.Drawing.Point(238, 48);
+            this.txtName.Location = new System.Drawing.Point(215, 48);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(90, 24);
             this.txtName.TabIndex = 111;
@@ -242,7 +242,7 @@
             this.txtPhone.AutoSize = true;
             this.txtPhone.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtPhone.ForeColor = System.Drawing.Color.Black;
-            this.txtPhone.Location = new System.Drawing.Point(238, 89);
+            this.txtPhone.Location = new System.Drawing.Point(215, 89);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(93, 24);
             this.txtPhone.TabIndex = 112;
@@ -253,7 +253,7 @@
             this.txtGender.AutoSize = true;
             this.txtGender.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtGender.ForeColor = System.Drawing.Color.Black;
-            this.txtGender.Location = new System.Drawing.Point(238, 130);
+            this.txtGender.Location = new System.Drawing.Point(215, 130);
             this.txtGender.Name = "txtGender";
             this.txtGender.Size = new System.Drawing.Size(102, 24);
             this.txtGender.TabIndex = 113;
@@ -264,7 +264,7 @@
             this.txtCity.AutoSize = true;
             this.txtCity.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtCity.ForeColor = System.Drawing.Color.Black;
-            this.txtCity.Location = new System.Drawing.Point(238, 171);
+            this.txtCity.Location = new System.Drawing.Point(215, 171);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(69, 24);
             this.txtCity.TabIndex = 114;
@@ -275,7 +275,7 @@
             this.txtArea.AutoSize = true;
             this.txtArea.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtArea.ForeColor = System.Drawing.Color.Black;
-            this.txtArea.Location = new System.Drawing.Point(238, 212);
+            this.txtArea.Location = new System.Drawing.Point(215, 212);
             this.txtArea.Name = "txtArea";
             this.txtArea.Size = new System.Drawing.Size(78, 24);
             this.txtArea.TabIndex = 115;
@@ -286,7 +286,7 @@
             this.txtBirth.AutoSize = true;
             this.txtBirth.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtBirth.ForeColor = System.Drawing.Color.Black;
-            this.txtBirth.Location = new System.Drawing.Point(238, 253);
+            this.txtBirth.Location = new System.Drawing.Point(215, 253);
             this.txtBirth.Name = "txtBirth";
             this.txtBirth.Size = new System.Drawing.Size(78, 24);
             this.txtBirth.TabIndex = 116;
@@ -297,7 +297,7 @@
             this.txtEmail.AutoSize = true;
             this.txtEmail.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
-            this.txtEmail.Location = new System.Drawing.Point(238, 294);
+            this.txtEmail.Location = new System.Drawing.Point(215, 294);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(84, 24);
             this.txtEmail.TabIndex = 117;
@@ -308,7 +308,7 @@
             this.txtPoint.AutoSize = true;
             this.txtPoint.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtPoint.ForeColor = System.Drawing.Color.Black;
-            this.txtPoint.Location = new System.Drawing.Point(238, 335);
+            this.txtPoint.Location = new System.Drawing.Point(215, 335);
             this.txtPoint.Name = "txtPoint";
             this.txtPoint.Size = new System.Drawing.Size(82, 24);
             this.txtPoint.TabIndex = 118;
@@ -321,7 +321,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label2.Location = new System.Drawing.Point(128, 376);
+            this.label2.Location = new System.Drawing.Point(105, 376);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 24);
             this.label2.TabIndex = 119;
@@ -332,7 +332,7 @@
             this.txtrgtime.AutoSize = true;
             this.txtrgtime.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtrgtime.ForeColor = System.Drawing.Color.Black;
-            this.txtrgtime.Location = new System.Drawing.Point(238, 376);
+            this.txtrgtime.Location = new System.Drawing.Point(215, 376);
             this.txtrgtime.Name = "txtrgtime";
             this.txtrgtime.Size = new System.Drawing.Size(109, 24);
             this.txtrgtime.TabIndex = 120;
@@ -340,6 +340,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(369, 48);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(101, 84);
