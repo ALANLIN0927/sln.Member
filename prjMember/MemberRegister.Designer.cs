@@ -76,7 +76,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label2.Location = new System.Drawing.Point(111, 44);
+            this.label2.Location = new System.Drawing.Point(83, 47);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(309, 21);
             this.label2.TabIndex = 19;
@@ -87,7 +87,7 @@
             this.button1.BackColor = System.Drawing.Color.Red;
             this.button1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(184, 68);
+            this.button1.Location = new System.Drawing.Point(169, 87);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(158, 48);
             this.button1.TabIndex = 20;
@@ -111,7 +111,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label3.Location = new System.Drawing.Point(111, 131);
+            this.label3.Location = new System.Drawing.Point(96, 150);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 21);
             this.label3.TabIndex = 22;
@@ -120,7 +120,7 @@
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtName.Location = new System.Drawing.Point(172, 122);
+            this.txtName.Location = new System.Drawing.Point(157, 141);
             this.txtName.Multiline = true;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(212, 30);
@@ -130,7 +130,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label4.Location = new System.Drawing.Point(111, 309);
+            this.label4.Location = new System.Drawing.Point(96, 328);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 21);
             this.label4.TabIndex = 24;
@@ -139,7 +139,7 @@
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtPassword.Location = new System.Drawing.Point(172, 203);
+            this.txtPassword.Location = new System.Drawing.Point(157, 222);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(212, 30);
@@ -148,7 +148,7 @@
             // txtPhone
             // 
             this.txtPhone.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtPhone.Location = new System.Drawing.Point(172, 158);
+            this.txtPhone.Location = new System.Drawing.Point(157, 177);
             this.txtPhone.Multiline = true;
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(212, 30);
@@ -158,7 +158,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label6.Location = new System.Drawing.Point(111, 212);
+            this.label6.Location = new System.Drawing.Point(96, 231);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(46, 21);
             this.label6.TabIndex = 28;
@@ -167,7 +167,7 @@
             // txtCity
             // 
             this.txtCity.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtCity.Location = new System.Drawing.Point(172, 336);
+            this.txtCity.Location = new System.Drawing.Point(157, 355);
             this.txtCity.Multiline = true;
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(212, 30);
@@ -177,7 +177,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label7.Location = new System.Drawing.Point(111, 167);
+            this.label7.Location = new System.Drawing.Point(96, 186);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(46, 21);
             this.label7.TabIndex = 30;
@@ -186,7 +186,7 @@
             // txtArea
             // 
             this.txtArea.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtArea.Location = new System.Drawing.Point(172, 374);
+            this.txtArea.Location = new System.Drawing.Point(157, 393);
             this.txtArea.Multiline = true;
             this.txtArea.Name = "txtArea";
             this.txtArea.Size = new System.Drawing.Size(212, 30);
@@ -196,7 +196,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label8.Location = new System.Drawing.Point(86, 345);
+            this.label8.Location = new System.Drawing.Point(71, 364);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(78, 21);
             this.label8.TabIndex = 32;
@@ -206,7 +206,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label9.Location = new System.Drawing.Point(86, 374);
+            this.label9.Location = new System.Drawing.Point(71, 393);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(76, 21);
             this.label9.TabIndex = 34;
@@ -216,7 +216,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label10.Location = new System.Drawing.Point(86, 419);
+            this.label10.Location = new System.Drawing.Point(71, 438);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(78, 21);
             this.label10.TabIndex = 36;
@@ -225,7 +225,7 @@
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtEmail.Location = new System.Drawing.Point(172, 460);
+            this.txtEmail.Location = new System.Drawing.Point(157, 479);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(212, 30);
@@ -235,7 +235,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label11.Location = new System.Drawing.Point(88, 460);
+            this.label11.Location = new System.Drawing.Point(73, 479);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(78, 21);
             this.label11.TabIndex = 38;
@@ -244,7 +244,7 @@
             // textBox11
             // 
             this.textBox11.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.textBox11.Location = new System.Drawing.Point(172, 256);
+            this.textBox11.Location = new System.Drawing.Point(157, 275);
             this.textBox11.Multiline = true;
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(212, 30);
@@ -254,7 +254,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label13.Location = new System.Drawing.Point(47, 256);
+            this.label13.Location = new System.Drawing.Point(32, 275);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(110, 21);
             this.label13.TabIndex = 42;
@@ -265,7 +265,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label14.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label14.Location = new System.Drawing.Point(169, 236);
+            this.label14.Location = new System.Drawing.Point(154, 255);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(220, 17);
             this.label14.TabIndex = 44;
@@ -276,7 +276,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label15.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label15.Location = new System.Drawing.Point(169, 289);
+            this.label15.Location = new System.Drawing.Point(154, 308);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(220, 17);
             this.label15.TabIndex = 45;
@@ -339,14 +339,14 @@
             this.comboboxsexy.Items.AddRange(new object[] {
             "男",
             "女"});
-            this.comboboxsexy.Location = new System.Drawing.Point(172, 310);
+            this.comboboxsexy.Location = new System.Drawing.Point(157, 329);
             this.comboboxsexy.Name = "comboboxsexy";
             this.comboboxsexy.Size = new System.Drawing.Size(121, 20);
             this.comboboxsexy.TabIndex = 53;
             // 
             // txtBirthday
             // 
-            this.txtBirthday.Location = new System.Drawing.Point(172, 419);
+            this.txtBirthday.Location = new System.Drawing.Point(157, 438);
             this.txtBirthday.Name = "txtBirthday";
             this.txtBirthday.Size = new System.Drawing.Size(200, 22);
             this.txtBirthday.TabIndex = 52;
@@ -355,7 +355,7 @@
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(403, 101);
+            this.pictureBox1.Location = new System.Drawing.Point(413, 65);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 87);
             this.pictureBox1.TabIndex = 54;

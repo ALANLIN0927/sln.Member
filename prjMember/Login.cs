@@ -37,23 +37,8 @@ namespace prjMember
 
 
 
-        //private void txtpassword_TextChanged(object sender, EventArgs e)
-        //{
-        //    bool correct = correctpassword(txtpassword.Text);
-        //    passwordcorrect.Text = correct ? "格式正確" : "格式錯誤";
-
-        //}
-
-        /// <summary>
-        /// correctpassworde
-        /// </summary>
-        /// <param name="password">密碼</param>
-        /// <returns></returns>
-        //private bool correctpassword(string password)
-        //{
-        //    bool result = Regex.IsMatch(password, @"^(?=.*\d))(?=.*A-Z].{8,16}$");
-        //    return result;
-        //}
+       
+       
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {            
@@ -127,6 +112,36 @@ namespace prjMember
             Application.Exit();
 
         }
-        
+
+        private void txtpassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool correct = Regex.IsMatch(txtpassword.Text, @"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}$");
+            if(correct)
+            {
+                labpassword.Text = "密碼格式正確";
+                labpassword.BackColor = Color.CornflowerBlue;
+           
+            }
+            else
+            {
+                labpassword.Text = "密碼格式錯誤";
+                labpassword.BackColor = Color.DarkRed;
+            }
+        }
+
+        private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool correct = Regex.IsMatch(txtPhone.Text, @"^09[0-9]{7}$");
+            if (correct)
+            {
+                labphone.Text = "電話格式正確";
+                labphone.BackColor = Color.CornflowerBlue;
+            }
+            else
+            {
+                labphone.Text = "電話格式錯誤";
+                labphone.BackColor = Color.DarkRed;
+            }
+        }
     }
 }

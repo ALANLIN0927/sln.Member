@@ -89,7 +89,7 @@ namespace prjMember
 
         private void gomainform_Click(object sender, EventArgs e)
         {
-            this.Close();                   //為什麼彈兩次
+            this.Close();                  
         }
     }
 }

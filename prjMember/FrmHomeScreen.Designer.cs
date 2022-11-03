@@ -147,7 +147,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("微軟正黑體", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label4.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label4.Location = new System.Drawing.Point(513, 14);
+            this.label4.Location = new System.Drawing.Point(544, 14);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 47);
             this.label4.TabIndex = 4;

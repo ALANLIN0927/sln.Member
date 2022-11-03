@@ -25,7 +25,7 @@ namespace prjMember
         string file = "";
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
-
+            
 
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
