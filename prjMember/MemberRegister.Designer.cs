@@ -105,7 +105,7 @@
             this.Registerbtn.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.Registerbtn.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Registerbtn.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.Registerbtn.Location = new System.Drawing.Point(210, 614);
+            this.Registerbtn.Location = new System.Drawing.Point(179, 608);
             this.Registerbtn.Name = "Registerbtn";
             this.Registerbtn.Size = new System.Drawing.Size(117, 53);
             this.Registerbtn.TabIndex = 21;
@@ -152,6 +152,7 @@
             this.txtPassword.Size = new System.Drawing.Size(212, 30);
             this.txtPassword.TabIndex = 27;
             this.txtPassword.Text = "aA123";
+            this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress_1);
             // 
             // txtPhone
@@ -235,7 +236,7 @@
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtEmail.Location = new System.Drawing.Point(134, 479);
+            this.txtEmail.Location = new System.Drawing.Point(134, 470);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(212, 30);
@@ -245,7 +246,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label11.Location = new System.Drawing.Point(50, 479);
+            this.label11.Location = new System.Drawing.Point(46, 470);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(78, 21);
             this.label11.TabIndex = 38;
@@ -260,6 +261,7 @@
             this.txtPassword2.Size = new System.Drawing.Size(212, 30);
             this.txtPassword2.TabIndex = 43;
             this.txtPassword2.Text = "aA123";
+            this.txtPassword2.UseSystemPasswordChar = true;
             // 
             // label13
             // 
@@ -280,7 +282,7 @@
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(220, 17);
             this.label14.TabIndex = 44;
-            this.label14.Text = "6-64位英數混合，英文需區分大小寫";
+            this.label14.Text = "4-20位英數混合，英文需區分大小寫";
             // 
             // label15
             // 
@@ -291,7 +293,7 @@
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(220, 17);
             this.label15.TabIndex = 45;
-            this.label15.Text = "6-64位英數混合，英文需區分大小寫";
+            this.label15.Text = "4-20位英數混合，英文需區分大小寫";
             // 
             // label16
             // 
@@ -368,7 +370,7 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(398, 57);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 87);
+            this.pictureBox1.Size = new System.Drawing.Size(111, 104);
             this.pictureBox1.TabIndex = 54;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);

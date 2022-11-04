@@ -1,4 +1,5 @@
-﻿using prjMember.NewFolder1;
+﻿using prjMember.AllClass;
+using prjMember.NewFolder1;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,7 +48,7 @@ namespace prjMember
 
         private void txtPassword_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-            bool correct = Regex.IsMatch(txtPassword.Text, @"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,16}$");
+            bool correct = Regex.IsMatch(txtPassword.Text, @"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{2,16}$");
             if (correct)
             {
                 labpassword.Text = "密碼格式正確";
@@ -105,14 +106,24 @@ namespace prjMember
                 MessageBox.Show("請輸入密碼");
                 return;
             }
+            if (labpassword.Text == "密碼格式錯誤")
+            {
+                MessageBox.Show("請輸入正確密碼格式");
+                return;
+            }
+            if (labphone.Text == "電話格式錯誤")
+            {
+                MessageBox.Show("請輸入正確電話格式");
+                return;
+            }
+            
 
             Random crandom = new Random(Guid.NewGuid().GetHashCode());   //產生亂數
             int Rannum = crandom.Next(1, 1000);
             Image img = Image.FromFile(file);                       //
             img.Save("../../img/NormalMember_Img/" + txtPhone.Text + Rannum + "_.bmp");
 
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=.;Initial Catalog=iSpan_Project;Integrated Security=True";
+            SqlConnection con = new SqlConnection(UserData.linkstream);
             con.Open();
 
             SqlCommand cmd = new SqlCommand();
@@ -160,12 +171,25 @@ namespace prjMember
             cmd.Parameters.Add(new SqlParameter("K_Point", point.ToString()));
             cmd.Parameters.Add(new SqlParameter("K_RegisterTime", DateTime.Now));   //修改過不用tostring
             cmd.Parameters.Add(new SqlParameter("K_MemberPhotoFile", "../../img/NormalMember_Img/" + txtPhone.Text + Rannum + "_.bmp"));
+            //SqlDataReader reader = cmd.ExecuteReader();
+            //if (reader.Read())
+            //{
+            //         if(txtPhone.Text == reader["fPhone"].ToString())
+            //    {
+            //        MessageBox.Show("電話重複");
+            //        return;
+            //    }
+            //}
+
+            //reader.Close();
+
 
             cmd.ExecuteNonQuery();
 
             con.Close();
+           
             MessageBox.Show("註冊成功");
-
+            this.Close();
             
 
         }

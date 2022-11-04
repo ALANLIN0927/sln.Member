@@ -31,8 +31,10 @@ namespace prjMember
         /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
+            
             MemberRegister reg = new MemberRegister();
             reg.ShowDialog();
+            this.Close();
         }
 
 
@@ -42,8 +44,7 @@ namespace prjMember
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {            
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=.;Initial Catalog=iSpan_Project;Integrated Security=True";
+            SqlConnection con = new SqlConnection(UserData.linkstream);
             con.Open();
 
             SqlCommand cmd = new SqlCommand();
@@ -115,7 +116,7 @@ namespace prjMember
 
         private void txtpassword_KeyPress(object sender, KeyPressEventArgs e)
         {
-            bool correct = Regex.IsMatch(txtpassword.Text, @"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,16}$");
+            bool correct = Regex.IsMatch(txtpassword.Text, @"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{2,16}$");
             if(correct)
             {
                 labpassword.Text = "密碼格式正確";

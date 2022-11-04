@@ -341,9 +341,9 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(369, 48);
+            this.pictureBox1.Location = new System.Drawing.Point(359, 48);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(101, 84);
+            this.pictureBox1.Size = new System.Drawing.Size(118, 106);
             this.pictureBox1.TabIndex = 121;
             this.pictureBox1.TabStop = false;
             // 

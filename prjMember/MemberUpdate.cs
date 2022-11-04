@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,20 +16,22 @@ namespace prjMember
 {
     public partial class MemberUpdate : Form
     {
-        
+
         DateTime r; //子路教的
-       
-        
-        
+
+
+
         public MemberUpdate()
         {
             InitializeComponent();
         }
 
         private void MemberUpdate_Load(object sender, EventArgs e)
-        {   
-            txtName.Text=UserData.Member.MemberName;               //載入點 秀畫面在資料表上
-            lableName.Text=UserData.Member.MemberName;
+        {
+            txtName.Text = UserData.Member.MemberName;               //載入點 秀畫面在資料表上
+            lableName.Text = UserData.Member.MemberName;
+            txtPassword.Text = UserData.Member.Password;
+            txtPassword2.Text = UserData.Member.Password;
             txtPhone.Text = UserData.Member.Phone;
             txtGender.Text = UserData.Member.Gender;
 
@@ -54,9 +57,9 @@ namespace prjMember
 
         private void button2_Click(object sender, EventArgs e)
         {
-           
+
             int Rannum = crandom.Next(1, 1000);
-            string picture=""; /*"../../img/NormalMember_Img/" + txtPhone.Text + Rannum + "_.bmp"*/ //現在改的;
+            string picture = ""; /*"../../img/NormalMember_Img/" + txtPhone.Text + Rannum + "_.bmp"*/ //現在改的;
             if (file == null) { picture = UserData.Member.MemberPhotoFile; }   //string file不給數就是空值?
 
             else
@@ -66,9 +69,45 @@ namespace prjMember
                 img.Save(picture);
 
             }
+            if (txtPassword.Text != txtPassword2.Text)
+            {
+                MessageBox.Show("請確認兩欄密碼");
+                return;
 
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=.;Initial Catalog=iSpan_Project;Integrated Security=True";
+
+            }
+            if (string.IsNullOrEmpty(txtName.Text.Trim()))
+            {
+
+                MessageBox.Show("請填寫名子");
+                return;
+
+
+            }
+            if (string.IsNullOrEmpty(txtPhone.Text.Trim()))
+            {
+                MessageBox.Show("請輸入電話");
+                return;
+            }
+            if (string.IsNullOrEmpty(txtPassword.Text.Trim()))
+            {
+                MessageBox.Show("請輸入密碼");
+                return;
+            }
+            if (labpassword.Text == "密碼格式錯誤")
+            {
+                MessageBox.Show("請輸入正確密碼格式");
+                return;
+            }
+            if (labPhone.Text == "電話格式錯誤")
+            {
+                MessageBox.Show("請輸入正確電話格式");
+                return;
+            }
+
+
+
+            SqlConnection con = new SqlConnection(UserData.linkstream);
             con.Open();
             SqlCommand cmd = new SqlCommand();
 
@@ -95,8 +134,9 @@ namespace prjMember
             cmd.Parameters.Add(new SqlParameter("K_Birthday", birthpicker.Value));   //轉型
             cmd.Parameters.Add(new SqlParameter("K_Email", txtEmail.Text));
             cmd.Parameters.Add(new SqlParameter("fid", UserData.Member.fid));
-            cmd.Parameters.Add(new SqlParameter("K_MemberPhotoFile",picture ));  //現在加的;
-            /*cmd.Parameters.Add(new SqlParameter("K_MemberPhotoFile", "../../img/NormalMember_Img/" + txtPhone.Text + Rannum + "_.bmp"))*/;//加圖片;
+            cmd.Parameters.Add(new SqlParameter("K_MemberPhotoFile", picture));  //現在加的;
+            /*cmd.Parameters.Add(new SqlParameter("K_MemberPhotoFile", "../../img/NormalMember_Img/" + txtPhone.Text + Rannum + "_.bmp"))*/
+            ;//加圖片;
 
 
             cmd.Connection = con;
@@ -122,7 +162,7 @@ namespace prjMember
             };
 
 
-            
+            MessageBox.Show("修改完成");
 
 
 
@@ -156,6 +196,40 @@ namespace prjMember
 
                 //Image img = Image.FromFile(file);            //現在改的
                 //img.Save("../../img/NormalMember_Img/" + txtPhone.Text + Rannum + "_.bmp");
+            }
+        }
+
+        private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool correct = Regex.IsMatch(txtPhone.Text, @"^09[0-9]{7}$");
+            if (correct)
+            {
+                labPhone.Text = "電話格式正確";
+                labPhone.BackColor = Color.CornflowerBlue;
+            }
+            else
+            {
+                labPhone.Text = "電話格式錯誤";
+                labPhone.BackColor = Color.Red;
+
+            }
+        }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool correct = Regex.IsMatch(txtPassword.Text, @"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{2,16}$");
+            if (correct)
+            {
+                labpassword.Text = "密碼格式正確";
+                labpassword.BackColor = Color.CornflowerBlue;
+
+            }
+            else
+            {
+                labpassword.Text = "密碼格式錯誤";
+                labpassword.BackColor = Color.Red;
+
+
             }
         }
     }
