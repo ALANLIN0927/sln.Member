@@ -54,7 +54,7 @@ namespace prjMember
 
 
         Random crandom = new Random(Guid.NewGuid().GetHashCode());   //產生亂數
-
+        string file;
         private void button2_Click(object sender, EventArgs e)
         {
 
@@ -166,7 +166,7 @@ namespace prjMember
 
 
 
-
+            this.Close(); con.Close();
 
 
 
@@ -178,7 +178,7 @@ namespace prjMember
             //Member personalmatrial=new Member();
             //personalmatrial.ShowDialog();              //為啥用show會消失
         }
-        string file;
+       
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             /*int Rannum = crandom.Next(1, 1000);   */      //現在加的

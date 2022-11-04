@@ -116,82 +116,105 @@ namespace prjMember
                 MessageBox.Show("請輸入正確電話格式");
                 return;
             }
-            
-
-            Random crandom = new Random(Guid.NewGuid().GetHashCode());   //產生亂數
-            int Rannum = crandom.Next(1, 1000);
-            Image img = Image.FromFile(file);                       //
-            img.Save("../../img/NormalMember_Img/" + txtPhone.Text + Rannum + "_.bmp");
-
+            string phone = "";
+            string a = txtPhone.Text;
             SqlConnection con = new SqlConnection(UserData.linkstream);
             con.Open();
-
+            string sql = "SELECT COUNT(*)AS phonecount FROM NormalMember Where Phone='" + a+"'";
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            int memberID = 0; int point = 0;
-            //先亂設的
-            string sql = "INSERT INTO NormalMember (";
-            sql += "MemberID,";
-            sql += "MemberName,";
-            sql += "Phone,";
-            sql += "Password,";
-            sql += "Gender,";
-            sql += "Address_City,";
-            sql += "Address_Area,";
-            sql += "Birthday,";
-            sql += "Email,";
-            sql += "Point,";
-            sql += "RegisterTime,";
-            sql += "MemberPhotoFile";
-
-            sql += ") VALUES (";
-            sql += "@K_MemberID,";
-            sql += "@K_MemberName,";
-            sql += "@K_Phone,";
-            sql += "@K_Password,";
-            sql += "@K_Gender,";
-            sql += "@K_Address_City,";
-            sql += "@K_Address_Area,";
-            sql += "@K_Birthday,";
-            sql += "@K_Email,";
-            sql += "@K_Point,";
-            sql += "@K_RegisterTime,";
-            sql += "@K_MemberPhotoFile)";
             cmd.CommandText = sql;
-            cmd.Parameters.Add(new SqlParameter("K_MemberID", memberID));
-            cmd.Parameters.Add(new SqlParameter("K_MemberName", txtName.Text));
-            cmd.Parameters.Add(new SqlParameter("K_Phone", txtPhone.Text));
-            cmd.Parameters.Add(new SqlParameter("K_Password", txtPassword.Text));
-
-            cmd.Parameters.Add(new SqlParameter("K_Gender", comboboxsexy.Text));
-            cmd.Parameters.Add(new SqlParameter("K_Address_City", txtCity.Text));
-            cmd.Parameters.Add(new SqlParameter("K_Address_Area", txtArea.Text));
-            cmd.Parameters.Add(new SqlParameter("K_Birthday", txtBirthday.Value));
-            cmd.Parameters.Add(new SqlParameter("K_Email", txtEmail.Text));
-            cmd.Parameters.Add(new SqlParameter("K_Point", point.ToString()));
-            cmd.Parameters.Add(new SqlParameter("K_RegisterTime", DateTime.Now));   //修改過不用tostring
-            cmd.Parameters.Add(new SqlParameter("K_MemberPhotoFile", "../../img/NormalMember_Img/" + txtPhone.Text + Rannum + "_.bmp"));
-            //SqlDataReader reader = cmd.ExecuteReader();
-            //if (reader.Read())
-            //{
-            //         if(txtPhone.Text == reader["fPhone"].ToString())
-            //    {
-            //        MessageBox.Show("電話重複");
-            //        return;
-            //    }
-            //}
-
-            //reader.Close();
-
-
-            cmd.ExecuteNonQuery();
-
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                 phone = dr["phonecount"].ToString();
+            }
             con.Close();
-           
-            MessageBox.Show("註冊成功");
-            this.Close();
-            
 
+            if (phone == "1")
+            {
+
+                MessageBox.Show("電話已註冊過,請輸入別的電話號碼");
+                return;
+            }
+            else
+            {
+                
+
+                Random crandom = new Random(Guid.NewGuid().GetHashCode());   //產生亂數
+                int Rannum = crandom.Next(1, 1000);
+                Image img = Image.FromFile(file);                       //
+                img.Save("../../img/NormalMember_Img/" + txtPhone.Text + Rannum + "_.bmp");
+
+                SqlConnection conn1 = new SqlConnection(UserData.linkstream);
+                conn1.Open();
+
+                SqlCommand cmd1 = new SqlCommand();
+                cmd1.Connection = conn1;
+                int memberID = 0; int point = 0;
+                //先亂設的
+                string sql1 = "INSERT INTO NormalMember (";
+                sql1 += "MemberID,";
+                sql1 += "MemberName,";
+                sql1 += "Phone,";
+                sql1 += "Password,";
+                sql1 += "Gender,";
+                sql1 += "Address_City,";
+                sql1 += "Address_Area,";
+                sql1 += "Birthday,";
+                sql1 += "Email,";
+                sql1 += "Point,";
+                sql1 += "RegisterTime,";
+                sql1 += "MemberPhotoFile";
+
+                sql1 += ") VALUES (";
+                sql1 += "@K_MemberID,";
+                sql1 += "@K_MemberName,";
+                sql1 += "@K_Phone,";
+                sql1 += "@K_Password,";
+                sql1 += "@K_Gender,";
+                sql1 += "@K_Address_City,";
+                sql1 += "@K_Address_Area,";
+                sql1 += "@K_Birthday,";
+                sql1 += "@K_Email,";
+                sql1 += "@K_Point,";
+                sql1 += "@K_RegisterTime,";
+                sql1 += "@K_MemberPhotoFile)";
+                cmd1.CommandText = sql1;
+                cmd1.Parameters.Add(new SqlParameter("K_MemberID", memberID));
+                cmd1.Parameters.Add(new SqlParameter("K_MemberName", txtName.Text));
+                cmd1.Parameters.Add(new SqlParameter("K_Phone", txtPhone.Text));
+                cmd1.Parameters.Add(new SqlParameter("K_Password", txtPassword.Text));
+
+                cmd1.Parameters.Add(new SqlParameter("K_Gender", comboboxsexy.Text));
+                cmd1.Parameters.Add(new SqlParameter("K_Address_City", txtCity.Text));
+                cmd1.Parameters.Add(new SqlParameter("K_Address_Area", txtArea.Text));
+                cmd1.Parameters.Add(new SqlParameter("K_Birthday", txtBirthday.Value));
+                cmd1.Parameters.Add(new SqlParameter("K_Email", txtEmail.Text));
+                cmd1.Parameters.Add(new SqlParameter("K_Point", point.ToString()));
+                cmd1.Parameters.Add(new SqlParameter("K_RegisterTime", DateTime.Now));   //修改過不用tostring
+                cmd1.Parameters.Add(new SqlParameter("K_MemberPhotoFile", "../../img/NormalMember_Img/" + txtPhone.Text + Rannum + "_.bmp"));
+                //SqlDataReader reader = cmd.ExecuteReader();
+                //if (reader.Read())
+                //{
+                //         if(txtPhone.Text == reader["fPhone"].ToString())
+                //    {
+                //        MessageBox.Show("電話重複");
+                //        return;
+                //    }
+                //}
+
+                //reader.Close();
+
+
+                cmd1.ExecuteNonQuery();
+
+                conn1.Close();
+
+                MessageBox.Show("註冊成功");
+                this.Close();
+
+            }
         }
     }
 }
