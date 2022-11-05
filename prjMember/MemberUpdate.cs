@@ -32,7 +32,7 @@ namespace prjMember
             lableName.Text = UserData.Member.MemberName;
             txtPassword.Text = UserData.Member.Password;
             txtPassword2.Text = UserData.Member.Password;
-            txtPhone.Text = UserData.Member.Phone;
+            //txtPhone.Text = UserData.Member.Phone;
             txtGender.Text = UserData.Member.Gender;
 
             txtCity.Text = UserData.Member.Address_City;
@@ -65,7 +65,7 @@ namespace prjMember
             else
             {
                 Image img = Image.FromFile(file);
-                picture = "../../img/NormalMember_Img/" + txtPhone.Text + Rannum + "_.bmp";
+                picture = "../../img/NormalMember_Img/" + UserData.Member.Phone + Rannum + "_.bmp";
                 img.Save(picture);
 
             }
@@ -84,11 +84,11 @@ namespace prjMember
 
 
             }
-            if (string.IsNullOrEmpty(txtPhone.Text.Trim()))
-            {
-                MessageBox.Show("請輸入電話");
-                return;
-            }
+            //if (string.IsNullOrEmpty(txtPhone.Text.Trim()))
+            //{
+            //    MessageBox.Show("請輸入電話");
+            //    return;
+            //}
             if (string.IsNullOrEmpty(txtPassword.Text.Trim()))
             {
                 MessageBox.Show("請輸入密碼");
@@ -99,11 +99,11 @@ namespace prjMember
                 MessageBox.Show("請輸入正確密碼格式");
                 return;
             }
-            if (labPhone.Text == "電話格式錯誤")
-            {
-                MessageBox.Show("請輸入正確電話格式");
-                return;
-            }
+            //if (labPhone.Text == "電話格式錯誤")
+            //{
+            //    MessageBox.Show("請輸入正確電話格式");
+            //    return;
+            //}
 
 
 
@@ -114,7 +114,7 @@ namespace prjMember
 
             string sql = "UPDATE NormalMember SET ";
             sql += "MemberName=@K_NAME,";
-            sql += "Phone=@K_PHONE,";
+            //sql += "Phone=@K_PHONE,";
             sql += "Password=@K_PASSWORD,";
             sql += "Gender=@K_GENDER,";
             sql += "Address_City=@K_CITY,";
@@ -126,7 +126,7 @@ namespace prjMember
 
 
             cmd.Parameters.Add(new SqlParameter("K_NAME", txtName.Text));
-            cmd.Parameters.Add(new SqlParameter("K_PHONE", txtPhone.Text));
+            //cmd.Parameters.Add(new SqlParameter("K_PHONE", txtPhone.Text));
             cmd.Parameters.Add(new SqlParameter("K_PASSWORD", txtPassword.Text));
             cmd.Parameters.Add(new SqlParameter("K_GENDER", txtGender.Text));
             cmd.Parameters.Add(new SqlParameter("K_CITY", txtCity.Text));
@@ -148,7 +148,7 @@ namespace prjMember
             UserData.Member = new NewFolder1.CMember                           //改資料傳回去
             {
                 MemberName = txtName.Text,
-                Phone = txtPhone.Text,
+                Phone = UserData.Member.Phone,
                 Password = txtPassword.Text,
                 Gender = txtGender.Text,
                 Address_City = txtCity.Text,
@@ -201,18 +201,18 @@ namespace prjMember
 
         private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
         {
-            bool correct = Regex.IsMatch(txtPhone.Text, @"^09[0-9]{7}$");
-            if (correct)
-            {
-                labPhone.Text = "電話格式正確";
-                labPhone.BackColor = Color.CornflowerBlue;
-            }
-            else
-            {
-                labPhone.Text = "電話格式錯誤";
-                labPhone.BackColor = Color.Red;
+            //bool correct = Regex.IsMatch(txtPhone.Text, @"^09[0-9]{7}$");
+            //if (correct)
+            //{
+            //    labPhone.Text = "電話格式正確";
+            //    labPhone.BackColor = Color.CornflowerBlue;
+            //}
+            //else
+            //{
+            //    labPhone.Text = "電話格式錯誤";
+            //    labPhone.BackColor = Color.Red;
 
-            }
+            //}
         }
 
         private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)

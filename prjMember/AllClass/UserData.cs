@@ -12,6 +12,9 @@ namespace prjMember.AllClass
         public static CMember Member { get; set; }
         public static CBusinessMember MemberBusiness { get; set; }
 
-        public static string linkstream = "Data Source=msit145nidin.database.windows.net;Initial Catalog=iSpan_Project;Persist Security Info=True;User ID=MSIT145nidin;Password=Nidinmsit145";
+        public static string linkstream = "Data Source=.;Initial Catalog=iSpan_Project;Integrated Security=True";
+
+
+        //public static string linkstream = "Data Source=msit145nidin.database.windows.net;Initial Catalog=iSpan_Project;Persist Security Info=True;User ID=MSIT145nidin;Password=Nidinmsit145";
     }
 }

@@ -24,11 +24,7 @@ namespace prjMember
             InitializeComponent();
         }
 
-        /// <summary>
-        /// 一般註冊按鈕事件
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        
         private void button2_Click(object sender, EventArgs e)
         {
             
@@ -39,11 +35,11 @@ namespace prjMember
 
 
 
-       
-       
+
+
 
         private void LoginBtn_Click(object sender, EventArgs e)
-        {            
+        {
             SqlConnection con = new SqlConnection(UserData.linkstream);
             con.Open();
 
@@ -56,10 +52,10 @@ namespace prjMember
             //bool isAuthenticated = false;
             SqlDataReader reader = cmd.ExecuteReader();
             //isAuthenticated = reader.Read();
-           
+
 
             //if (isAuthenticated)
-            if(reader.Read())
+            if (reader.Read())
             {
 
                 UserData.Member = new NewFolder1.CMember();
@@ -81,29 +77,28 @@ namespace prjMember
 
                 isClosed = false;
                 this.Close();
-                //return;
-
-
-
-
-
-
-
-
                 return;
             }
-
-
-
-
-
-
-
             MessageBox.Show("帳號與密碼不符");
         }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
         private void Login_FormClosing(object sender, FormClosingEventArgs e)
-        {
+        {  if(UserData.Member==null)           //後來加的 沒會員不能關
             e.Cancel = isClosed;
         }
 

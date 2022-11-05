@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;           //為了picture加的
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -23,11 +24,11 @@ namespace prjMember
         {
             InitializeComponent();
         }
-       
-        string file="";
+
+        string file ;
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
-            
+
 
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
@@ -40,11 +41,12 @@ namespace prjMember
                 file = openFileDialog1.FileName;
                 pictureBox1.BackgroundImage = new Bitmap(file);
 
-                                // imgmemberPhoto存 c槽檔案
+                //imgmemberPhoto存 c槽檔案
             }
         }
 
-       
+
+
 
         private void txtPassword_KeyPress_1(object sender, KeyPressEventArgs e)
         {
@@ -139,12 +141,17 @@ namespace prjMember
             }
             else
             {
-                
-
                 Random crandom = new Random(Guid.NewGuid().GetHashCode());   //產生亂數
                 int Rannum = crandom.Next(1, 1000);
-                Image img = Image.FromFile(file);                       //
-                img.Save("../../img/NormalMember_Img/" + txtPhone.Text + Rannum + "_.bmp");
+                string picture = "";
+                if (file == null) { picture = "../../img/NormalMember_Img/default_member.jpg"; }
+                else
+                {
+                    Image img = Image.FromFile(file);
+                    picture = "../../img/NormalMember_Img/" + txtPhone.Text + Rannum + "_.bmp";
+
+                    img.Save(picture);
+                }
 
                 SqlConnection conn1 = new SqlConnection(UserData.linkstream);
                 conn1.Open();
@@ -193,18 +200,7 @@ namespace prjMember
                 cmd1.Parameters.Add(new SqlParameter("K_Email", txtEmail.Text));
                 cmd1.Parameters.Add(new SqlParameter("K_Point", point.ToString()));
                 cmd1.Parameters.Add(new SqlParameter("K_RegisterTime", DateTime.Now));   //修改過不用tostring
-                cmd1.Parameters.Add(new SqlParameter("K_MemberPhotoFile", "../../img/NormalMember_Img/" + txtPhone.Text + Rannum + "_.bmp"));
-                //SqlDataReader reader = cmd.ExecuteReader();
-                //if (reader.Read())
-                //{
-                //         if(txtPhone.Text == reader["fPhone"].ToString())
-                //    {
-                //        MessageBox.Show("電話重複");
-                //        return;
-                //    }
-                //}
-
-                //reader.Close();
+                cmd1.Parameters.Add(new SqlParameter("K_MemberPhotoFile", picture));
 
 
                 cmd1.ExecuteNonQuery();

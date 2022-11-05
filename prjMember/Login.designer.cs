@@ -73,6 +73,7 @@
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(189, 27);
             this.txtPhone.TabIndex = 1;
+            this.txtPhone.Text = "0936212576";
             this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone_KeyPress);
             // 
             // txtpassword
@@ -83,7 +84,7 @@
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.Size = new System.Drawing.Size(189, 27);
             this.txtpassword.TabIndex = 3;
-            this.txtpassword.Text = "aA123";
+            this.txtpassword.Text = "aA12";
             this.txtpassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtpassword_KeyPress);
             // 
             // label2
@@ -142,7 +143,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(204, 12);
             this.label4.TabIndex = 7;
-            this.label4.Text = "6-64位英數混和,英文需區分大小寫";
+            this.label4.Text = "4-20位英數混和,英文需區分大小寫";
             // 
             // button3
             // 
@@ -194,7 +195,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(342, 27);
             this.label5.TabIndex = 12;
-            this.label5.Text = "    歡迎使用MyWay!  線上訂餐系統 \r\n         ";
+            this.label5.Text = "    歡迎使用Nidin!  線上訂餐系統 \r\n         ";
             // 
             // label6
             // 

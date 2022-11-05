@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MemberUpdate));
             this.label16 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -42,8 +43,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtCity = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -53,7 +52,6 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.txtPassword2 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.labPhone = new System.Windows.Forms.Label();
             this.labpassword = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -61,7 +59,7 @@
             // label16
             // 
             this.label16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label16.Location = new System.Drawing.Point(10, 387);
+            this.label16.Location = new System.Drawing.Point(9, 346);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(550, 2);
             this.label16.TabIndex = 131;
@@ -70,7 +68,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button2.Location = new System.Drawing.Point(173, 401);
+            this.button2.Location = new System.Drawing.Point(287, 351);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(93, 55);
             this.button2.TabIndex = 130;
@@ -81,7 +79,7 @@
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtEmail.Location = new System.Drawing.Point(131, 269);
+            this.txtEmail.Location = new System.Drawing.Point(131, 233);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(231, 30);
@@ -90,7 +88,7 @@
             // txtArea
             // 
             this.txtArea.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtArea.Location = new System.Drawing.Point(131, 193);
+            this.txtArea.Location = new System.Drawing.Point(131, 157);
             this.txtArea.Multiline = true;
             this.txtArea.Name = "txtArea";
             this.txtArea.Size = new System.Drawing.Size(231, 30);
@@ -119,7 +117,7 @@
             // txtGender
             // 
             this.txtGender.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtGender.Location = new System.Drawing.Point(131, 119);
+            this.txtGender.Location = new System.Drawing.Point(131, 83);
             this.txtGender.Multiline = true;
             this.txtGender.Name = "txtGender";
             this.txtGender.Size = new System.Drawing.Size(231, 30);
@@ -130,7 +128,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(77, 125);
+            this.label4.Location = new System.Drawing.Point(77, 89);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 21);
             this.label4.TabIndex = 121;
@@ -141,7 +139,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(43, 276);
+            this.label11.Location = new System.Drawing.Point(43, 240);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(78, 21);
             this.label11.TabIndex = 120;
@@ -152,7 +150,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(45, 238);
+            this.label10.Location = new System.Drawing.Point(45, 202);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(78, 21);
             this.label10.TabIndex = 119;
@@ -163,7 +161,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(45, 199);
+            this.label9.Location = new System.Drawing.Point(45, 163);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(76, 21);
             this.label9.TabIndex = 118;
@@ -174,7 +172,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(45, 161);
+            this.label1.Location = new System.Drawing.Point(45, 125);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 21);
             this.label1.TabIndex = 117;
@@ -183,7 +181,7 @@
             // txtCity
             // 
             this.txtCity.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtCity.Location = new System.Drawing.Point(131, 155);
+            this.txtCity.Location = new System.Drawing.Point(131, 119);
             this.txtCity.Multiline = true;
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(231, 30);
@@ -192,34 +190,13 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button1.Location = new System.Drawing.Point(291, 401);
+            this.button1.Location = new System.Drawing.Point(386, 351);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(96, 55);
             this.button1.TabIndex = 115;
             this.button1.Text = "返回首頁";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(77, 92);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 21);
-            this.label7.TabIndex = 114;
-            this.label7.Text = "電話:";
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtPhone.Location = new System.Drawing.Point(131, 83);
-            this.txtPhone.Multiline = true;
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(231, 30);
-            this.txtPhone.TabIndex = 113;
-            this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone_KeyPress);
             // 
             // txtName
             // 
@@ -244,7 +221,7 @@
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtPassword.Location = new System.Drawing.Point(131, 305);
+            this.txtPassword.Location = new System.Drawing.Point(131, 269);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(231, 30);
@@ -258,7 +235,7 @@
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(74, 314);
+            this.label2.Location = new System.Drawing.Point(74, 278);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 16);
             this.label2.TabIndex = 133;
@@ -266,17 +243,18 @@
             // 
             // birthpicker
             // 
-            this.birthpicker.Location = new System.Drawing.Point(131, 237);
+            this.birthpicker.Location = new System.Drawing.Point(131, 201);
             this.birthpicker.Name = "birthpicker";
             this.birthpicker.Size = new System.Drawing.Size(200, 22);
             this.birthpicker.TabIndex = 134;
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(464, 36);
+            this.pictureBox1.Location = new System.Drawing.Point(386, 39);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(123, 128);
+            this.pictureBox1.Size = new System.Drawing.Size(111, 110);
             this.pictureBox1.TabIndex = 135;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -288,7 +266,7 @@
             // txtPassword2
             // 
             this.txtPassword2.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtPassword2.Location = new System.Drawing.Point(131, 341);
+            this.txtPassword2.Location = new System.Drawing.Point(131, 305);
             this.txtPassword2.Multiline = true;
             this.txtPassword2.Name = "txtPassword2";
             this.txtPassword2.Size = new System.Drawing.Size(231, 30);
@@ -301,25 +279,16 @@
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(41, 350);
+            this.label5.Location = new System.Drawing.Point(41, 314);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 16);
             this.label5.TabIndex = 137;
             this.label5.Text = "確認密碼:";
             // 
-            // labPhone
-            // 
-            this.labPhone.AutoSize = true;
-            this.labPhone.Location = new System.Drawing.Point(368, 92);
-            this.labPhone.Name = "labPhone";
-            this.labPhone.Size = new System.Drawing.Size(34, 12);
-            this.labPhone.TabIndex = 138;
-            this.labPhone.Text = "phone";
-            // 
             // labpassword
             // 
             this.labpassword.AutoSize = true;
-            this.labpassword.Location = new System.Drawing.Point(368, 314);
+            this.labpassword.Location = new System.Drawing.Point(368, 278);
             this.labpassword.Name = "labpassword";
             this.labpassword.Size = new System.Drawing.Size(48, 12);
             this.labpassword.TabIndex = 139;
@@ -329,9 +298,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(647, 567);
+            this.ClientSize = new System.Drawing.Size(509, 429);
             this.Controls.Add(this.labpassword);
-            this.Controls.Add(this.labPhone);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtPassword2);
             this.Controls.Add(this.pictureBox1);
@@ -352,8 +320,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtCity);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label3);
             this.Name = "MemberUpdate";
@@ -381,8 +347,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtCity;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtPassword;
@@ -392,7 +356,6 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.TextBox txtPassword2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label labPhone;
         private System.Windows.Forms.Label labpassword;
     }
 }

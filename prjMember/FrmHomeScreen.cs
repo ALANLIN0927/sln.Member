@@ -1,4 +1,5 @@
 ﻿using prjMember.AllClass;
+using prjMember.NewFolder1;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +10,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace prjMember
 {
@@ -17,16 +19,31 @@ namespace prjMember
         public FrmHomeScreen()
         {
             InitializeComponent();
+           
         }
-
+        
         private void register_Click(object sender, EventArgs e)
         {
+
+            if (labregister.Text == "登出")
+            {
+                var result = MessageBox.Show("確定登出?", "感謝您的光臨",
+                                    MessageBoxButtons.YesNo,
+                                    MessageBoxIcon.Exclamation);
+
+                if (result == DialogResult.Yes)
+                {
+                    UserData.Member = null;
+                    labregister.Text = "登入";
+                    return;                                     //為了一個登入登出變換想好久
+                }
+                else { return; };
+
+            }
             labregister.Text = "登出";
             Login login = new Login();
             login.ShowDialog();
-            
         }
-
         private void labregister_MouseMove(object sender, MouseEventArgs e)
         {
             //labregister.ForeColor = Color.IndianRed;
@@ -55,15 +72,15 @@ namespace prjMember
             labNotice.ForeColor = Color.CornflowerBlue;
         }
 
-        
+
 
         private void comchoice_SelectedIndexChanged(object sender, EventArgs e)
         {
-          
-            if(comchoice.Text == "會員資料")                           //下拉選單
+
+            if (comchoice.Text == "會員資料")                           //下拉選單
             {
                 comchoice.Text = null;
-                
+
                 if (UserData.Member == null)                      //判斷有沒有登入會員資料
                 {
                     MessageBox.Show("請先登入會員");
@@ -93,5 +110,23 @@ namespace prjMember
         {
             comchoice.Text = null;                                //下拉式選單觸發時字會不見
         }
-    } }
+
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
