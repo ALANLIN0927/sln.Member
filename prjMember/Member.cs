@@ -29,6 +29,7 @@ namespace prjMember
             else
             {
                 //登入成功處理
+                titleName.Text = UserData.Member.MemberName;
                 txtName.Text = UserData.Member.MemberName;
                 txtPhone.Text = UserData.Member.Phone;
                 txtGender.Text = UserData.Member.Gender;
@@ -36,8 +37,15 @@ namespace prjMember
                 txtArea.Text = UserData.Member.Address_Area;
                 txtBirth.Text = UserData.Member.Birthday.ToString();
                 txtEmail.Text = UserData.Member.Email;
+                txtPoint.Text = UserData.Member.Point.ToString();
+                txtrgtime.Text=UserData.Member.RegisterTime.ToString();
+                Image memberPhoto = Image.FromFile(UserData.Member.MemberPhotoFile);            //實作個照片檔 讓他可以讀
+                //Bitmap imgoutput = new Bitmap(memberPhoto, 60, 60);//
+                                                  
+                pictureBox1.BackgroundImage = memberPhoto;
+
             }
-            
+
 
 
 
@@ -75,8 +83,15 @@ namespace prjMember
 
         private void button2_Click(object sender, EventArgs e)
         {
+            this.Close();
             MemberUpdate update = new MemberUpdate();
             update.ShowDialog();
+           
+        }
+
+        private void gomainform_Click(object sender, EventArgs e)
+        {
+            this.Close();                  
         }
     }
 }

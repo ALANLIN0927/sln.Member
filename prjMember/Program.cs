@@ -16,7 +16,7 @@ namespace prjMember
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Homescreen());
+            Application.Run(new FrmHomeScreen());
         }
     }
 }

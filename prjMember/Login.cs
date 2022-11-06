@@ -1,4 +1,5 @@
-﻿using System;
+﻿using prjMember.AllClass;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,68 +24,81 @@ namespace prjMember
             InitializeComponent();
         }
 
-        /// <summary>
-        /// 一般註冊按鈕事件
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        
         private void button2_Click(object sender, EventArgs e)
         {
+            
             MemberRegister reg = new MemberRegister();
             reg.ShowDialog();
+            this.Close();
         }
 
 
 
-        //private void txtpassword_TextChanged(object sender, EventArgs e)
-        //{
-        //    bool correct = correctpassword(txtpassword.Text);
-        //    passwordcorrect.Text = correct ? "格式正確" : "格式錯誤";
 
-        //}
 
-        /// <summary>
-        /// correctpassworde
-        /// </summary>
-        /// <param name="password">密碼</param>
-        /// <returns></returns>
-        private bool correctpassword(string password)
-        {
-            bool result = Regex.IsMatch(password, @"^(?=.*\d))(?=.*A-Z].{8,16}$");
-            return result;
-        }
 
         private void LoginBtn_Click(object sender, EventArgs e)
-        {            
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=.;Initial Catalog=Member;Integrated Security=True";
+        {
+            SqlConnection con = new SqlConnection(UserData.linkstream);
             con.Open();
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            string sql = "SELECT * FROM  MemberTable   WHERE Phone=@K_Phone AND Password=@K_PASSWORD";
+            string sql = "SELECT * FROM  NormalMember   WHERE Phone=@K_Phone AND Password=@K_PASSWORD";
             cmd.CommandText = sql;
             cmd.Parameters.Add(new SqlParameter("K_Phone", txtPhone.Text));
             cmd.Parameters.Add(new SqlParameter("K_PASSWORD", txtpassword.Text));
-            bool isAuthenticated = false;
+            //bool isAuthenticated = false;
             SqlDataReader reader = cmd.ExecuteReader();
-            isAuthenticated = reader.Read();
-            reader.Close();
-            con.Close();
+            //isAuthenticated = reader.Read();
 
-            if (isAuthenticated)
+
+            //if (isAuthenticated)
+            if (reader.Read())
             {
-                isClosed = false;
 
+                UserData.Member = new NewFolder1.CMember();
+                UserData.Member.fid = (int)reader["fid"];
+                UserData.Member.MemberName = reader["MemberName"].ToString();
+                UserData.Member.Phone = reader["Phone"].ToString();
+                UserData.Member.Password = reader["Password"].ToString();
+                UserData.Member.Gender = reader["Gender"].ToString();
+                UserData.Member.Address_City = reader["Address_City"].ToString();
+                UserData.Member.Address_Area = reader["Address_Area"].ToString();
+                UserData.Member.Birthday = DateTime.Parse(reader["Birthday"].ToString());
+                UserData.Member.Email = reader["Email"].ToString();
+                UserData.Member.Point = (int)reader["Point"];
+                UserData.Member.RegisterTime = DateTime.Parse(reader["RegisterTime"].ToString());
+                UserData.Member.MemberPhotoFile = reader["MemberPhotoFile"].ToString();
+
+                reader.Close();
+                con.Close();
+
+                isClosed = false;
                 this.Close();
                 return;
-
             }
             MessageBox.Show("帳號與密碼不符");
         }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
         private void Login_FormClosing(object sender, FormClosingEventArgs e)
-        {
+        {  if(UserData.Member==null)           //後來加的 沒會員不能關
             e.Cancel = isClosed;
         }
 
@@ -94,8 +108,36 @@ namespace prjMember
             Application.Exit();
 
         }
-        public string phoneget() {
-            return txtPhone.Text;
+
+        private void txtpassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool correct = Regex.IsMatch(txtpassword.Text, @"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{2,16}$");
+            if(correct)
+            {
+                labpassword.Text = "密碼格式正確";
+                labpassword.BackColor = Color.CornflowerBlue;
+           
+            }
+            else
+            {
+                labpassword.Text = "密碼格式錯誤";
+                labpassword.BackColor = Color.DarkRed;
+            }
+        }
+
+        private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool correct = Regex.IsMatch(txtPhone.Text, @"^09[0-9]{7}$");
+            if (correct)
+            {
+                labphone.Text = "電話格式正確";
+                labphone.BackColor = Color.CornflowerBlue;
+            }
+            else
+            {
+                labphone.Text = "電話格式錯誤";
+                labphone.BackColor = Color.DarkRed;
+            }
         }
     }
 }

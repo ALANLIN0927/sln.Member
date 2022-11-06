@@ -48,8 +48,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.passwordcorrect = new System.Windows.Forms.Label();
+            this.labphone = new System.Windows.Forms.Label();
+            this.labpassword = new System.Windows.Forms.Label();
             this.leavebtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -58,10 +58,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.Location = new System.Drawing.Point(12, 190);
+            this.label1.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.Location = new System.Drawing.Point(12, 195);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 19);
+            this.label1.Size = new System.Drawing.Size(91, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "會員電話:";
             // 
@@ -73,7 +73,8 @@
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(189, 27);
             this.txtPhone.TabIndex = 1;
-            this.txtPhone.Text = "123456789";
+            this.txtPhone.Text = "0936212576";
+            this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone_KeyPress);
             // 
             // txtpassword
             // 
@@ -83,15 +84,16 @@
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.Size = new System.Drawing.Size(189, 27);
             this.txtpassword.TabIndex = 3;
-            this.txtpassword.Text = "123456789";
+            this.txtpassword.Text = "aA12";
+            this.txtpassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtpassword_KeyPress);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label2.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label2.Location = new System.Drawing.Point(12, 252);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 19);
+            this.label2.Size = new System.Drawing.Size(91, 24);
             this.label2.TabIndex = 2;
             this.label2.Text = "會員密碼:";
             // 
@@ -113,7 +115,7 @@
             this.button2.BackColor = System.Drawing.SystemColors.Highlight;
             this.button2.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.Location = new System.Drawing.Point(274, 308);
+            this.button2.Location = new System.Drawing.Point(268, 308);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(112, 39);
             this.button2.TabIndex = 5;
@@ -141,7 +143,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(204, 12);
             this.label4.TabIndex = 7;
-            this.label4.Text = "6-64位英數混和,英文需區分大小寫";
+            this.label4.Text = "4-20位英數混和,英文需區分大小寫";
             // 
             // button3
             // 
@@ -188,18 +190,18 @@
             // 
             // label5
             // 
-            this.label5.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label5.Location = new System.Drawing.Point(59, 33);
+            this.label5.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label5.Location = new System.Drawing.Point(59, 34);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(342, 27);
             this.label5.TabIndex = 12;
-            this.label5.Text = "    歡迎使用MyWay!  線上訂餐系統 \r\n         ";
+            this.label5.Text = "    歡迎使用Nidin!  線上訂餐系統 \r\n         ";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label6.Location = new System.Drawing.Point(110, 89);
+            this.label6.Location = new System.Drawing.Point(110, 80);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(251, 17);
             this.label6.TabIndex = 13;
@@ -209,16 +211,16 @@
             // 
             this.label7.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label7.Location = new System.Drawing.Point(71, 389);
+            this.label7.Location = new System.Drawing.Point(-6, 398);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(330, 2);
+            this.label7.Size = new System.Drawing.Size(500, 2);
             this.label7.TabIndex = 14;
             this.label7.Text = "label7";
             // 
             // label8
             // 
             this.label8.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label8.Location = new System.Drawing.Point(56, 411);
+            this.label8.Location = new System.Drawing.Point(56, 417);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(155, 23);
             this.label8.TabIndex = 15;
@@ -229,7 +231,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(202, 411);
+            this.label9.Location = new System.Drawing.Point(202, 417);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(90, 21);
             this.label9.TabIndex = 16;
@@ -239,7 +241,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label10.Location = new System.Drawing.Point(291, 411);
+            this.label10.Location = new System.Drawing.Point(291, 417);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(26, 21);
             this.label10.TabIndex = 17;
@@ -250,33 +252,37 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(323, 411);
+            this.label11.Location = new System.Drawing.Point(323, 417);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(90, 21);
             this.label11.TabIndex = 18;
             this.label11.Text = "隱私權條款";
             // 
-            // label12
+            // labphone
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(355, 195);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(39, 12);
-            this.label12.TabIndex = 19;
-            this.label12.Text = "label12";
+            this.labphone.AutoSize = true;
+            this.labphone.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labphone.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labphone.Location = new System.Drawing.Point(353, 189);
+            this.labphone.Name = "labphone";
+            this.labphone.Size = new System.Drawing.Size(103, 21);
+            this.labphone.TabIndex = 19;
+            this.labphone.Text = "phonecheck";
             // 
-            // passwordcorrect
+            // labpassword
             // 
-            this.passwordcorrect.AutoSize = true;
-            this.passwordcorrect.Location = new System.Drawing.Point(355, 259);
-            this.passwordcorrect.Name = "passwordcorrect";
-            this.passwordcorrect.Size = new System.Drawing.Size(39, 12);
-            this.passwordcorrect.TabIndex = 20;
-            this.passwordcorrect.Text = "label13";
+            this.labpassword.AutoSize = true;
+            this.labpassword.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labpassword.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labpassword.Location = new System.Drawing.Point(353, 252);
+            this.labpassword.Name = "labpassword";
+            this.labpassword.Size = new System.Drawing.Size(137, 21);
+            this.labpassword.TabIndex = 20;
+            this.labpassword.Text = "passwordcorrect";
             // 
             // leavebtn
             // 
-            this.leavebtn.Location = new System.Drawing.Point(405, 363);
+            this.leavebtn.Location = new System.Drawing.Point(394, 349);
             this.leavebtn.Name = "leavebtn";
             this.leavebtn.Size = new System.Drawing.Size(51, 23);
             this.leavebtn.TabIndex = 21;
@@ -288,10 +294,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(468, 448);
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.ClientSize = new System.Drawing.Size(491, 447);
             this.Controls.Add(this.leavebtn);
-            this.Controls.Add(this.passwordcorrect);
-            this.Controls.Add(this.label12);
+            this.Controls.Add(this.labpassword);
+            this.Controls.Add(this.labphone);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -311,6 +318,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.label1);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
@@ -343,8 +352,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label passwordcorrect;
+        private System.Windows.Forms.Label labphone;
+        private System.Windows.Forms.Label labpassword;
         private System.Windows.Forms.Button leavebtn;
     }
 }
