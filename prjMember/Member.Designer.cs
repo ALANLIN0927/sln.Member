@@ -182,7 +182,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label6.Location = new System.Drawing.Point(118, 9);
+            this.label6.Location = new System.Drawing.Point(156, 9);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(243, 26);
             this.label6.TabIndex = 72;
@@ -221,6 +221,7 @@
             this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label16.Location = new System.Drawing.Point(0, 404);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(501, 2);
@@ -231,7 +232,7 @@
             // 
             this.txtName.AutoSize = true;
             this.txtName.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtName.ForeColor = System.Drawing.Color.Black;
+            this.txtName.ForeColor = System.Drawing.Color.White;
             this.txtName.Location = new System.Drawing.Point(215, 48);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(90, 24);
@@ -242,7 +243,7 @@
             // 
             this.txtPhone.AutoSize = true;
             this.txtPhone.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtPhone.ForeColor = System.Drawing.Color.Black;
+            this.txtPhone.ForeColor = System.Drawing.Color.White;
             this.txtPhone.Location = new System.Drawing.Point(215, 89);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(93, 24);
@@ -253,7 +254,7 @@
             // 
             this.txtGender.AutoSize = true;
             this.txtGender.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtGender.ForeColor = System.Drawing.Color.Black;
+            this.txtGender.ForeColor = System.Drawing.Color.White;
             this.txtGender.Location = new System.Drawing.Point(215, 130);
             this.txtGender.Name = "txtGender";
             this.txtGender.Size = new System.Drawing.Size(102, 24);
@@ -264,7 +265,7 @@
             // 
             this.txtCity.AutoSize = true;
             this.txtCity.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtCity.ForeColor = System.Drawing.Color.Black;
+            this.txtCity.ForeColor = System.Drawing.Color.White;
             this.txtCity.Location = new System.Drawing.Point(215, 171);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(69, 24);
@@ -275,7 +276,7 @@
             // 
             this.txtArea.AutoSize = true;
             this.txtArea.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtArea.ForeColor = System.Drawing.Color.Black;
+            this.txtArea.ForeColor = System.Drawing.Color.White;
             this.txtArea.Location = new System.Drawing.Point(215, 212);
             this.txtArea.Name = "txtArea";
             this.txtArea.Size = new System.Drawing.Size(78, 24);
@@ -286,7 +287,7 @@
             // 
             this.txtBirth.AutoSize = true;
             this.txtBirth.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtBirth.ForeColor = System.Drawing.Color.Black;
+            this.txtBirth.ForeColor = System.Drawing.Color.White;
             this.txtBirth.Location = new System.Drawing.Point(215, 253);
             this.txtBirth.Name = "txtBirth";
             this.txtBirth.Size = new System.Drawing.Size(78, 24);
@@ -297,7 +298,7 @@
             // 
             this.txtEmail.AutoSize = true;
             this.txtEmail.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtEmail.ForeColor = System.Drawing.Color.Black;
+            this.txtEmail.ForeColor = System.Drawing.Color.White;
             this.txtEmail.Location = new System.Drawing.Point(215, 294);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(84, 24);
@@ -308,7 +309,7 @@
             // 
             this.txtPoint.AutoSize = true;
             this.txtPoint.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtPoint.ForeColor = System.Drawing.Color.Black;
+            this.txtPoint.ForeColor = System.Drawing.Color.White;
             this.txtPoint.Location = new System.Drawing.Point(215, 335);
             this.txtPoint.Name = "txtPoint";
             this.txtPoint.Size = new System.Drawing.Size(82, 24);
@@ -332,7 +333,7 @@
             // 
             this.txtrgtime.AutoSize = true;
             this.txtrgtime.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtrgtime.ForeColor = System.Drawing.Color.Black;
+            this.txtrgtime.ForeColor = System.Drawing.Color.White;
             this.txtrgtime.Location = new System.Drawing.Point(215, 376);
             this.txtrgtime.Name = "txtrgtime";
             this.txtrgtime.Size = new System.Drawing.Size(109, 24);
@@ -345,7 +346,7 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(356, 38);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(110, 100);
+            this.pictureBox1.Size = new System.Drawing.Size(121, 116);
             this.pictureBox1.TabIndex = 121;
             this.pictureBox1.TabStop = false;
             // 
@@ -379,6 +380,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "Member";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Member";

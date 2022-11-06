@@ -26,24 +26,7 @@ namespace prjMember
         }
 
         string file ;
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
-
-
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                if (pictureBox1.BackgroundImage != null)                           //目前先這樣
-                {
-                    pictureBox1.BackgroundImage.Dispose();
-                    pictureBox1.BackgroundImage = null;
-                }
-                file = openFileDialog1.FileName;
-                pictureBox1.BackgroundImage = new Bitmap(file);
-
-                //imgmemberPhoto存 c槽檔案
-            }
-        }
+        
 
 
 
@@ -159,7 +142,7 @@ namespace prjMember
                 SqlCommand cmd1 = new SqlCommand();
                 cmd1.Connection = conn1;
                 int memberID = 0; int point = 0;
-                //先亂設的
+                //號碼點數先亂設的
                 string sql1 = "INSERT INTO NormalMember (";
                 sql1 += "MemberID,";
                 sql1 += "MemberName,";
@@ -199,7 +182,7 @@ namespace prjMember
                 cmd1.Parameters.Add(new SqlParameter("K_Birthday", txtBirthday.Value));
                 cmd1.Parameters.Add(new SqlParameter("K_Email", txtEmail.Text));
                 cmd1.Parameters.Add(new SqlParameter("K_Point", point.ToString()));
-                cmd1.Parameters.Add(new SqlParameter("K_RegisterTime", DateTime.Now));   //修改過不用tostring
+                cmd1.Parameters.Add(new SqlParameter("K_RegisterTime", DateTime.Now.ToShortDateString()));   
                 cmd1.Parameters.Add(new SqlParameter("K_MemberPhotoFile", picture));
 
 
@@ -209,6 +192,22 @@ namespace prjMember
 
                 MessageBox.Show("註冊成功");
                 this.Close();
+
+            }
+        }
+
+        private void picheadphoto_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                if (picheadphoto.BackgroundImage != null)
+                {
+                    picheadphoto.BackgroundImage.Dispose();
+                    picheadphoto.BackgroundImage = null;
+                }
+                file = openFileDialog1.FileName;
+                picheadphoto.BackgroundImage = new Bitmap(file);
+
 
             }
         }
