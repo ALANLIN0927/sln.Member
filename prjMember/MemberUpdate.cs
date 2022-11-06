@@ -17,7 +17,7 @@ namespace prjMember
     public partial class MemberUpdate : Form
     {
 
-        DateTime r; //子路教的
+        DateTime r; 
 
 
 
@@ -32,17 +32,17 @@ namespace prjMember
             lableName.Text = UserData.Member.MemberName;
             txtPassword.Text = UserData.Member.Password;
             txtPassword2.Text = UserData.Member.Password;
-            //txtPhone.Text = UserData.Member.Phone;
             txtGender.Text = UserData.Member.Gender;
-
             txtCity.Text = UserData.Member.Address_City;
             txtArea.Text = UserData.Member.Address_Area;
-            birthpicker.Value = UserData.Member.Birthday;              //轉
+            birthpicker.Value = UserData.Member.Birthday;              
             txtEmail.Text = UserData.Member.Email;
             r = UserData.Member.RegisterTime;
 
             Image memberPhoto = Image.FromFile(UserData.Member.MemberPhotoFile);
-            pictureBox1.BackgroundImage = memberPhoto;               //讀取會員照片
+            picheadphoto.BackgroundImage = memberPhoto;
+
+
         }
 
 
@@ -53,14 +53,14 @@ namespace prjMember
 
 
 
-        Random crandom = new Random(Guid.NewGuid().GetHashCode());   //產生亂數
+          
         string file;
         private void button2_Click(object sender, EventArgs e)
         {
-
+            Random crandom = new Random(Guid.NewGuid().GetHashCode()); 
             int Rannum = crandom.Next(1, 1000);
-            string picture = ""; /*"../../img/NormalMember_Img/" + txtPhone.Text + Rannum + "_.bmp"*/ //現在改的;
-            if (file == null) { picture = UserData.Member.MemberPhotoFile; }   //string file不給數就是空值?
+            string picture = "";
+            if (file == null) { picture = UserData.Member.MemberPhotoFile; }   
 
             else
             {
@@ -84,11 +84,7 @@ namespace prjMember
 
 
             }
-            //if (string.IsNullOrEmpty(txtPhone.Text.Trim()))
-            //{
-            //    MessageBox.Show("請輸入電話");
-            //    return;
-            //}
+            
             if (string.IsNullOrEmpty(txtPassword.Text.Trim()))
             {
                 MessageBox.Show("請輸入密碼");
@@ -99,11 +95,7 @@ namespace prjMember
                 MessageBox.Show("請輸入正確密碼格式");
                 return;
             }
-            //if (labPhone.Text == "電話格式錯誤")
-            //{
-            //    MessageBox.Show("請輸入正確電話格式");
-            //    return;
-            //}
+            
 
 
 
@@ -114,7 +106,6 @@ namespace prjMember
 
             string sql = "UPDATE NormalMember SET ";
             sql += "MemberName=@K_NAME,";
-            //sql += "Phone=@K_PHONE,";
             sql += "Password=@K_PASSWORD,";
             sql += "Gender=@K_GENDER,";
             sql += "Address_City=@K_CITY,";
@@ -126,7 +117,6 @@ namespace prjMember
 
 
             cmd.Parameters.Add(new SqlParameter("K_NAME", txtName.Text));
-            //cmd.Parameters.Add(new SqlParameter("K_PHONE", txtPhone.Text));
             cmd.Parameters.Add(new SqlParameter("K_PASSWORD", txtPassword.Text));
             cmd.Parameters.Add(new SqlParameter("K_GENDER", txtGender.Text));
             cmd.Parameters.Add(new SqlParameter("K_CITY", txtCity.Text));
@@ -179,41 +169,26 @@ namespace prjMember
             //personalmatrial.ShowDialog();              //為啥用show會消失
         }
        
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void picheadphoto_Click(object sender, EventArgs e)
         {
             /*int Rannum = crandom.Next(1, 1000);   */      //現在加的
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                if (pictureBox1.BackgroundImage != null)                           //目前先這樣
+                if (picheadphoto.BackgroundImage != null)                           //目前先這樣
                 {
-                    pictureBox1.BackgroundImage.Dispose();
-                    pictureBox1.BackgroundImage = null;
+                    picheadphoto.BackgroundImage.Dispose();
+                    picheadphoto.BackgroundImage = null;
                 }
                 file = openFileDialog1.FileName;
-                pictureBox1.BackgroundImage = new Bitmap(file);
-                //pictureBox1.BackgroundImage = Image.FromFile(file);
-                //pictureBox1.Image.Dispose();
+                picheadphoto.BackgroundImage = new Bitmap(file);
+                
 
                 //Image img = Image.FromFile(file);            //現在改的
                 //img.Save("../../img/NormalMember_Img/" + txtPhone.Text + Rannum + "_.bmp");
             }
         }
 
-        private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //bool correct = Regex.IsMatch(txtPhone.Text, @"^09[0-9]{7}$");
-            //if (correct)
-            //{
-            //    labPhone.Text = "電話格式正確";
-            //    labPhone.BackColor = Color.CornflowerBlue;
-            //}
-            //else
-            //{
-            //    labPhone.Text = "電話格式錯誤";
-            //    labPhone.BackColor = Color.Red;
-
-            //}
-        }
+        
 
         private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
         {

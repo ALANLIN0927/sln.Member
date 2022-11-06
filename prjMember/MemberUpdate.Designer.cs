@@ -48,13 +48,13 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.birthpicker = new System.Windows.Forms.DateTimePicker();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picheadphoto = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.txtPassword2 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.labpassword = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picheadphoto)).BeginInit();
             this.SuspendLayout();
             // 
             // label16
@@ -257,14 +257,14 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(386, 39);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(111, 110);
-            this.pictureBox1.TabIndex = 135;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.picheadphoto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.picheadphoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picheadphoto.Location = new System.Drawing.Point(386, 39);
+            this.picheadphoto.Name = "pictureBox1";
+            this.picheadphoto.Size = new System.Drawing.Size(111, 110);
+            this.picheadphoto.TabIndex = 135;
+            this.picheadphoto.TabStop = false;
+            this.picheadphoto.Click += new System.EventHandler(this.picheadphoto_Click);
             // 
             // openFileDialog1
             // 
@@ -322,7 +322,7 @@
             this.Controls.Add(this.labpassword);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtPassword2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picheadphoto);
             this.Controls.Add(this.birthpicker);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPassword);
@@ -346,7 +346,7 @@
             this.Name = "MemberUpdate";
             this.Text = "MemberUpdate";
             this.Load += new System.EventHandler(this.MemberUpdate_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picheadphoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -373,7 +373,7 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker birthpicker;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picheadphoto;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.TextBox txtPassword2;
         private System.Windows.Forms.Label label5;

@@ -102,10 +102,10 @@ namespace prjMember
                 return;
             }
             string phone = "";
-            string a = txtPhone.Text;
+            string phonenumber = txtPhone.Text;
             SqlConnection con = new SqlConnection(UserData.linkstream);
             con.Open();
-            string sql = "SELECT COUNT(*)AS phonecount FROM NormalMember Where Phone='" + a+"'";
+            string sql = "SELECT COUNT(*)AS phonecount FROM NormalMember Where Phone='" + phonenumber+"'";
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
             cmd.CommandText = sql;

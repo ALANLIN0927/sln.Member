@@ -52,8 +52,8 @@
             this.txtPoint = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtrgtime = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.picheadphoto = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picheadphoto)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -214,7 +214,7 @@
             this.button2.TabIndex = 109;
             this.button2.Text = "修改個人資料";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.update_Click);
             // 
             // label16
             // 
@@ -342,13 +342,13 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(356, 38);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(121, 116);
-            this.pictureBox1.TabIndex = 121;
-            this.pictureBox1.TabStop = false;
+            this.picheadphoto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.picheadphoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picheadphoto.Location = new System.Drawing.Point(356, 38);
+            this.picheadphoto.Name = "pictureBox1";
+            this.picheadphoto.Size = new System.Drawing.Size(121, 116);
+            this.picheadphoto.TabIndex = 121;
+            this.picheadphoto.TabStop = false;
             // 
             // Member
             // 
@@ -356,7 +356,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(499, 476);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picheadphoto);
             this.Controls.Add(this.txtrgtime);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPoint);
@@ -385,7 +385,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Member";
             this.Load += new System.EventHandler(this.Member_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picheadphoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -416,6 +416,6 @@
         private System.Windows.Forms.Label txtPoint;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label txtrgtime;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picheadphoto;
     }
 }
