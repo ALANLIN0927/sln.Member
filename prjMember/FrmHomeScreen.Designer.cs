@@ -79,8 +79,7 @@
             this.comchoice.Items.AddRange(new object[] {
             "會員資料",
             "修改會員資料",
-            "信用卡",
-            "我的卷夾"});
+            ""});
             this.comchoice.Location = new System.Drawing.Point(984, 29);
             this.comchoice.Name = "comchoice";
             this.comchoice.Size = new System.Drawing.Size(121, 32);

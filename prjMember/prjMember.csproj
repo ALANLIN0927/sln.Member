@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AllClass\CBusinessMember.cs" />
     <Compile Include="AllClass\UserData.cs" />
     <Compile Include="FrmHomeScreen.cs">
       <SubType>Form</SubType>
@@ -87,24 +86,6 @@
     <Compile Include="MemberRegister.Designer.cs">
       <DependentUpon>MemberRegister.cs</DependentUpon>
     </Compile>
-    <Compile Include="StoreNews.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="StoreNews.Designer.cs">
-      <DependentUpon>StoreNews.cs</DependentUpon>
-    </Compile>
-    <Compile Include="StoreRegister.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="StoreRegister.Designer.cs">
-      <DependentUpon>StoreRegister.cs</DependentUpon>
-    </Compile>
-    <Compile Include="StoreUpdate.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="StoreUpdate.Designer.cs">
-      <DependentUpon>StoreUpdate.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="FrmHomeScreen.resx">
       <DependentUpon>FrmHomeScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,15 +112,6 @@
     </Compile>
     <EmbeddedResource Include="MemberRegister.resx">
       <DependentUpon>MemberRegister.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="StoreNews.resx">
-      <DependentUpon>StoreNews.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="StoreRegister.resx">
-      <DependentUpon>StoreRegister.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="StoreUpdate.resx">
-      <DependentUpon>StoreUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -59,12 +59,13 @@ namespace prjMember
         private void labregister_MouseLeave(object sender, EventArgs e)
         {
             labregister.ForeColor = Color.CornflowerBlue;
-            /* labregister.Size = new Size(14,14); */              /*  看怎麼改*/
+           
         }
 
         private void Notice_MouseEnter(object sender, EventArgs e)
         {
             labNotice.ForeColor = Color.IndianRed;
+            
         }
 
         private void labNotice_MouseLeave(object sender, EventArgs e)

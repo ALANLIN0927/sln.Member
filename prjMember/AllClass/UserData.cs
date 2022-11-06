@@ -10,7 +10,7 @@ namespace prjMember.AllClass
     public class UserData
     {
         public static CMember Member { get; set; }
-        public static CBusinessMember MemberBusiness { get; set; }
+       
 
         //public static string linkstream = "Data Source=.;Initial Catalog=iSpan_Project;Integrated Security=True";
 
