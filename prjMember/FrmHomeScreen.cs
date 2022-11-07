@@ -34,15 +34,21 @@ namespace prjMember
                 if (result == DialogResult.Yes)
                 {
                     UserData.Member = null;
-                    labregister.Text = "登入";
-                    return;                                     //為了一個登入登出變換想好久
+                    labregister.Text = "登入";                                  
+                    panel2.Controls.Clear();                                        //登出後panel畫面消失
+                    return;                                     
                 }
                 else { return; };
 
             }
             labregister.Text = "登出";
             Login login = new Login();
-            login.ShowDialog();
+            panel2.Controls.Clear();
+            login.TopLevel = false;
+            login.Parent = panel2;
+
+
+            login.Show();
         }
         private void labregister_MouseMove(object sender, MouseEventArgs e)
         {
@@ -88,6 +94,10 @@ namespace prjMember
                     return;
                 }
                 Member material = new Member();
+                
+                panel2.Controls.Clear();
+                material.TopLevel = false;
+                material.Parent = panel2;
                 material.Show();
                 comchoice.Text = "會員中心";
             }
@@ -101,6 +111,9 @@ namespace prjMember
 
                 comchoice.Text = null;
                 MemberUpdate update = new MemberUpdate();
+                update.TopLevel = false;
+                update.Parent = panel2;
+
                 update.Show();
 
             }

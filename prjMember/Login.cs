@@ -27,10 +27,15 @@ namespace prjMember
         
         private void button2_Click(object sender, EventArgs e)
         {
-            
-            MemberRegister reg = new MemberRegister();
-            reg.ShowDialog();
             this.Close();
+            MemberRegister reg = new MemberRegister();
+            //FrmHomeScreen home = new FrmHomeScreen();
+
+          
+            //reg.TopLevel = false;
+           
+            reg.Show();
+           
         }
 
 
@@ -98,8 +103,8 @@ namespace prjMember
         
 
         private void Login_FormClosing(object sender, FormClosingEventArgs e)
-        {  if(UserData.Member==null)           //後來加的 沒會員不能關
-            e.Cancel = isClosed;
+        {  if (UserData.Member == null) ;           //後來加的 沒會員不能關
+            //e.Cancel = isClosed;
         }
 
         private void leavebtn_Click(object sender, EventArgs e)
@@ -138,6 +143,12 @@ namespace prjMember
                 labphone.Text = "電話格式錯誤";
                 labphone.BackColor = Color.DarkRed;
             }
+        }
+
+        private void ForgetPassword_Click(object sender, EventArgs e)
+        {
+            Forgetpassword forget = new Forgetpassword();
+            forget.Show();
         }
     }
 }

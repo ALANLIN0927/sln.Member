@@ -84,8 +84,7 @@
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.Color.Navy;
             this.button1.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button1.ForeColor = System.Drawing.Color.Yellow;
@@ -203,8 +202,7 @@
             // 
             // button2
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.BackColor = System.Drawing.Color.Navy;
             this.button2.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -340,12 +338,12 @@
             this.txtrgtime.TabIndex = 120;
             this.txtrgtime.Text = "txtrgistime";
             // 
-            // pictureBox1
+            // picheadphoto
             // 
-            this.picheadphoto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.picheadphoto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picheadphoto.BackgroundImage")));
             this.picheadphoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picheadphoto.Location = new System.Drawing.Point(356, 38);
-            this.picheadphoto.Name = "pictureBox1";
+            this.picheadphoto.Name = "picheadphoto";
             this.picheadphoto.Size = new System.Drawing.Size(121, 116);
             this.picheadphoto.TabIndex = 121;
             this.picheadphoto.TabStop = false;
@@ -381,9 +379,11 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Member";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Member";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Member_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picheadphoto)).EndInit();
             this.ResumeLayout(false);

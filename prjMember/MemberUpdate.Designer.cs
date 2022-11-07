@@ -59,6 +59,8 @@
             // 
             // label16
             // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label16.Location = new System.Drawing.Point(0, 385);
             this.label16.Name = "label16";
@@ -68,9 +70,10 @@
             // 
             // button2
             // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.BackColor = System.Drawing.Color.Navy;
             this.button2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.button2.Location = new System.Drawing.Point(278, 390);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(93, 55);
@@ -194,9 +197,10 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.Color.Navy;
             this.button1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.button1.Location = new System.Drawing.Point(377, 390);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(96, 55);
@@ -255,12 +259,12 @@
             this.birthpicker.Size = new System.Drawing.Size(200, 22);
             this.birthpicker.TabIndex = 134;
             // 
-            // pictureBox1
+            // picheadphoto
             // 
-            this.picheadphoto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.picheadphoto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picheadphoto.BackgroundImage")));
             this.picheadphoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picheadphoto.Location = new System.Drawing.Point(386, 39);
-            this.picheadphoto.Name = "pictureBox1";
+            this.picheadphoto.Name = "picheadphoto";
             this.picheadphoto.Size = new System.Drawing.Size(111, 110);
             this.picheadphoto.TabIndex = 135;
             this.picheadphoto.TabStop = false;
@@ -343,8 +347,10 @@
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label3);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MemberUpdate";
             this.Text = "MemberUpdate";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MemberUpdate_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picheadphoto)).EndInit();
             this.ResumeLayout(false);

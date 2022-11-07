@@ -117,7 +117,6 @@
             this.IsMdiContainer = true;
             this.Name = "Homescreen";
             this.Text = "Form1";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Homescreen_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AllClass\UserData.cs" />
+    <Compile Include="Forgetpassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forgetpassword.Designer.cs">
+      <DependentUpon>Forgetpassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmHomeScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     <Compile Include="MemberRegister.Designer.cs">
       <DependentUpon>MemberRegister.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forgetpassword.resx">
+      <DependentUpon>Forgetpassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmHomeScreen.resx">
       <DependentUpon>FrmHomeScreen.cs</DependentUpon>
     </EmbeddedResource>
