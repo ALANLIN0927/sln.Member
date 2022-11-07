@@ -104,7 +104,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(172, 10);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(222, 26);
@@ -115,7 +115,7 @@
             // 
             this.lableName.AutoSize = true;
             this.lableName.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lableName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lableName.ForeColor = System.Drawing.Color.Black;
             this.lableName.Location = new System.Drawing.Point(87, 10);
             this.lableName.Name = "lableName";
             this.lableName.Size = new System.Drawing.Size(33, 26);
@@ -299,9 +299,11 @@
             // labpassword
             // 
             this.labpassword.AutoSize = true;
-            this.labpassword.Location = new System.Drawing.Point(368, 278);
+            this.labpassword.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labpassword.ForeColor = System.Drawing.Color.White;
+            this.labpassword.Location = new System.Drawing.Point(368, 273);
             this.labpassword.Name = "labpassword";
-            this.labpassword.Size = new System.Drawing.Size(48, 12);
+            this.labpassword.Size = new System.Drawing.Size(84, 21);
             this.labpassword.TabIndex = 139;
             this.labpassword.Text = "password";
             // 

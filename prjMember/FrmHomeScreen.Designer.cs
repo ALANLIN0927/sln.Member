@@ -42,12 +42,12 @@
             this.labshop = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -114,7 +114,7 @@
             this.labregister.AutoSize = true;
             this.labregister.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.labregister.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.labregister.Location = new System.Drawing.Point(835, 25);
+            this.labregister.Location = new System.Drawing.Point(830, 22);
             this.labregister.Name = "labregister";
             this.labregister.Size = new System.Drawing.Size(62, 31);
             this.labregister.TabIndex = 7;
@@ -122,7 +122,6 @@
             this.labregister.Click += new System.EventHandler(this.register_Click);
             this.labregister.MouseEnter += new System.EventHandler(this.labregister_MouseEnter);
             this.labregister.MouseLeave += new System.EventHandler(this.labregister_MouseLeave);
-            this.labregister.MouseMove += new System.Windows.Forms.MouseEventHandler(this.labregister_MouseMove);
             // 
             // labNotice
             // 
@@ -130,7 +129,7 @@
             this.labNotice.AutoSize = true;
             this.labNotice.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.labNotice.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.labNotice.Location = new System.Drawing.Point(767, 25);
+            this.labNotice.Location = new System.Drawing.Point(762, 22);
             this.labNotice.Name = "labNotice";
             this.labNotice.Size = new System.Drawing.Size(62, 31);
             this.labNotice.TabIndex = 6;
@@ -159,7 +158,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("微軟正黑體", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label4.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label4.Location = new System.Drawing.Point(554, 1);
+            this.label4.Location = new System.Drawing.Point(545, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(123, 61);
             this.label4.TabIndex = 4;
@@ -232,50 +231,16 @@
             this.panel3.Size = new System.Drawing.Size(1175, 93);
             this.panel3.TabIndex = 2;
             // 
-            // label5
+            // label12
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("微軟正黑體", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label5.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label5.Location = new System.Drawing.Point(47, 10);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 40);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "你訂";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label6.Location = new System.Drawing.Point(21, 50);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(167, 24);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "@2022 Nidin台灣";
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label7.Location = new System.Drawing.Point(981, 23);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(105, 24);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "使用者條款";
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label8.Location = new System.Drawing.Point(981, 58);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(105, 24);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "隱私權條款";
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label12.Location = new System.Drawing.Point(876, 58);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(86, 24);
+            this.label12.TabIndex = 7;
+            this.label12.Text = "官方客服";
             // 
             // label11
             // 
@@ -288,16 +253,50 @@
             this.label11.TabIndex = 6;
             this.label11.Text = "意見回饋";
             // 
-            // label12
+            // label8
             // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label12.Location = new System.Drawing.Point(876, 58);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(86, 24);
-            this.label12.TabIndex = 7;
-            this.label12.Text = "官方客服";
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label8.Location = new System.Drawing.Point(981, 58);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(105, 24);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "隱私權條款";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label7.Location = new System.Drawing.Point(981, 23);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(105, 24);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "使用者條款";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label6.Location = new System.Drawing.Point(21, 50);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(167, 24);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "@2022 Nidin台灣";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("微軟正黑體", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label5.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label5.Location = new System.Drawing.Point(47, 10);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(81, 40);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "你訂";
             // 
             // FrmHomeScreen
             // 

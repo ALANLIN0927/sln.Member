@@ -167,7 +167,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.titleName.AutoSize = true;
             this.titleName.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.titleName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.titleName.ForeColor = System.Drawing.Color.Black;
             this.titleName.Location = new System.Drawing.Point(72, 9);
             this.titleName.Name = "titleName";
             this.titleName.Size = new System.Drawing.Size(33, 26);
@@ -180,7 +180,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(156, 9);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(243, 26);

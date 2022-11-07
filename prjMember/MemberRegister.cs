@@ -179,7 +179,7 @@ namespace prjMember
                 cmd1.Parameters.Add(new SqlParameter("K_Gender", comboboxsexy.Text));
                 cmd1.Parameters.Add(new SqlParameter("K_Address_City", txtCity.Text));
                 cmd1.Parameters.Add(new SqlParameter("K_Address_Area", txtArea.Text));
-                cmd1.Parameters.Add(new SqlParameter("K_Birthday", txtBirthday.Value));
+                cmd1.Parameters.Add(new SqlParameter("K_Birthday", txtBirthday.Value.ToShortDateString()));
                 cmd1.Parameters.Add(new SqlParameter("K_Email", txtEmail.Text));
                 cmd1.Parameters.Add(new SqlParameter("K_Point", point.ToString()));
                 cmd1.Parameters.Add(new SqlParameter("K_RegisterTime", DateTime.Now.ToShortDateString()));   
@@ -192,7 +192,8 @@ namespace prjMember
 
                 MessageBox.Show("註冊成功");
                 this.Close();
-
+                Login login = new Login();
+                login.ShowDialog();
             }
         }
 

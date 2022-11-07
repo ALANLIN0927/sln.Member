@@ -50,10 +50,7 @@ namespace prjMember
 
             login.Show();
         }
-        private void labregister_MouseMove(object sender, MouseEventArgs e)
-        {
-            //labregister.ForeColor = Color.IndianRed;
-        }
+       
 
         private void labregister_MouseEnter(object sender, EventArgs e)
         {

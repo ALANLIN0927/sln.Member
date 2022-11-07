@@ -79,7 +79,7 @@ namespace prjMember
 
                 reader.Close();
                 con.Close();
-
+                
                 isClosed = false;
                 this.Close();
                 return;
@@ -126,7 +126,7 @@ namespace prjMember
             else
             {
                 labpassword.Text = "密碼格式錯誤";
-                labpassword.BackColor = Color.DarkRed;
+                labpassword.BackColor = Color.Red;
             }
         }
 
@@ -141,7 +141,7 @@ namespace prjMember
             else
             {
                 labphone.Text = "電話格式錯誤";
-                labphone.BackColor = Color.DarkRed;
+                labphone.BackColor = Color.Red;
             }
         }
 

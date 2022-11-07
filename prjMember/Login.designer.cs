@@ -67,6 +67,8 @@
             // 
             // txtPhone
             // 
+            this.txtPhone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPhone.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtPhone.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.txtPhone.Location = new System.Drawing.Point(158, 188);
@@ -306,7 +308,7 @@
             // leavebtn
             // 
             this.leavebtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.leavebtn.Location = new System.Drawing.Point(379, 323);
+            this.leavebtn.Location = new System.Drawing.Point(428, 318);
             this.leavebtn.Name = "leavebtn";
             this.leavebtn.Size = new System.Drawing.Size(51, 23);
             this.leavebtn.TabIndex = 21;
