@@ -354,7 +354,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MemberUpdate";
             this.Text = "MemberUpdate";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MemberUpdate_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picheadphoto)).EndInit();
             this.ResumeLayout(false);

@@ -67,8 +67,6 @@
             // 
             // txtPhone
             // 
-            this.txtPhone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPhone.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtPhone.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.txtPhone.Location = new System.Drawing.Point(158, 188);
@@ -101,7 +99,6 @@
             // 
             // RegisterBtn
             // 
-            this.RegisterBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.RegisterBtn.BackColor = System.Drawing.SystemColors.Highlight;
             this.RegisterBtn.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.RegisterBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -115,7 +112,6 @@
             // 
             // button2
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.BackColor = System.Drawing.SystemColors.Highlight;
             this.button2.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -155,10 +151,9 @@
             // 
             // button3
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.BackColor = System.Drawing.SystemColors.MenuBar;
             this.button3.Font = new System.Drawing.Font("新細明體", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button3.Location = new System.Drawing.Point(357, 296);
+            this.button3.Location = new System.Drawing.Point(344, 320);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(73, 21);
             this.button3.TabIndex = 8;
@@ -307,7 +302,6 @@
             // 
             // leavebtn
             // 
-            this.leavebtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.leavebtn.Location = new System.Drawing.Point(428, 318);
             this.leavebtn.Name = "leavebtn";
             this.leavebtn.Size = new System.Drawing.Size(51, 23);

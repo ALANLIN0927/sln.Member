@@ -37,7 +37,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtName
@@ -105,7 +104,7 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.button1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button1.Location = new System.Drawing.Point(155, 253);
+            this.button1.Location = new System.Drawing.Point(209, 267);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(88, 37);
             this.button1.TabIndex = 6;
@@ -118,12 +117,13 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.button2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button2.Location = new System.Drawing.Point(271, 253);
+            this.button2.Location = new System.Drawing.Point(316, 267);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(88, 37);
             this.button2.TabIndex = 7;
             this.button2.Text = "回首頁";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.gohome_Click);
             // 
             // label4
             // 
@@ -135,22 +135,12 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "您好!請輸入正確資料!";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(97, 302);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(33, 12);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "label5";
-            // 
             // Forgetpassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(438, 356);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -178,6 +168,5 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
     }
 }
