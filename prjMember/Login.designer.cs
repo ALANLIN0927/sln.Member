@@ -51,6 +51,7 @@
             this.labphone = new System.Windows.Forms.Label();
             this.labpassword = new System.Windows.Forms.Label();
             this.leavebtn = new System.Windows.Forms.Button();
+            this.notmemberBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -122,7 +123,7 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "一般註冊";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.register_Click);
             // 
             // label3
             // 
@@ -311,12 +312,23 @@
             this.leavebtn.UseVisualStyleBackColor = true;
             this.leavebtn.Click += new System.EventHandler(this.leavebtn_Click);
             // 
+            // notmemberBtn
+            // 
+            this.notmemberBtn.Location = new System.Drawing.Point(355, 291);
+            this.notmemberBtn.Name = "notmemberBtn";
+            this.notmemberBtn.Size = new System.Drawing.Size(75, 23);
+            this.notmemberBtn.TabIndex = 22;
+            this.notmemberBtn.Text = "遊客登入";
+            this.notmemberBtn.UseVisualStyleBackColor = true;
+            this.notmemberBtn.Click += new System.EventHandler(this.notmemberBtn_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(491, 447);
+            this.Controls.Add(this.notmemberBtn);
             this.Controls.Add(this.leavebtn);
             this.Controls.Add(this.labpassword);
             this.Controls.Add(this.labphone);
@@ -377,5 +389,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button notmemberBtn;
     }
 }

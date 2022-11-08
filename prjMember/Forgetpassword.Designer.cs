@@ -96,7 +96,7 @@
             this.txtEmail.Location = new System.Drawing.Point(131, 195);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(178, 35);
+            this.txtEmail.Size = new System.Drawing.Size(273, 35);
             this.txtEmail.TabIndex = 5;
             // 
             // button1

@@ -25,7 +25,7 @@ namespace prjMember
         }
 
         
-        private void button2_Click(object sender, EventArgs e)
+        private void register_Click(object sender, EventArgs e)
         {
             this.Close();
             MemberRegister reg = new MemberRegister();
@@ -150,6 +150,15 @@ namespace prjMember
             this.Close();
             Forgetpassword forget = new Forgetpassword();
             forget.Show();
+        }
+
+        private void notmemberBtn_Click(object sender, EventArgs e)
+        {
+            
+            
+            this.Close();            //看要怎麼關掉把那個登出改掉
+
+
         }
     }
 }

@@ -107,6 +107,7 @@ namespace prjMember
                 }
 
                 comchoice.Text = null;
+                panel2.Controls.Clear();
                 MemberUpdate update = new MemberUpdate();
                 update.TopLevel = false;
                 update.Parent = panel2;

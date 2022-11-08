@@ -106,6 +106,7 @@ namespace prjMember
             SqlConnection con = new SqlConnection(UserData.linkstream);
             con.Open();
             string sql = "SELECT COUNT(*)AS phonecount FROM NormalMember Where Phone='" + phonenumber+"'";
+            //判斷資料庫電話號碼有無重複
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
             cmd.CommandText = sql;
@@ -127,7 +128,7 @@ namespace prjMember
                 Random crandom = new Random(Guid.NewGuid().GetHashCode());   //產生亂數
                 int Rannum = crandom.Next(1, 1000);
                 string picture = "";
-                if (file == null) { picture = "../../img/NormalMember_Img/default_member.jpg"; }
+                if (file == null) { picture = "../../img/NormalMember_Img/default_member.jpg"; }  //判斷有沒有換照片
                 else
                 {
                     Image img = Image.FromFile(file);
