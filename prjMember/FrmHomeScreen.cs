@@ -43,12 +43,12 @@ namespace prjMember
             }
             labregister.Text = "登出";
             Login login = new Login();
-            panel2.Controls.Clear();
-            login.TopLevel = false;
-            login.Parent = panel2;
+            //panel2.Controls.Clear();
+            //login.TopLevel = false;
+            //login.Parent = panel2;
+            login.ShowDialog();
+            membername.Text = login.membername;   //顯示會員名子
 
-
-            login.Show();
         }
        
 
@@ -92,9 +92,9 @@ namespace prjMember
                 }
                 Member material = new Member();
                 
-                panel2.Controls.Clear();
-                material.TopLevel = false;
-                material.Parent = panel2;
+                //panel2.Controls.Clear();
+                //material.TopLevel = false;
+                //material.Parent = panel2;
                 material.Show();
                 comchoice.Text = "會員中心";
             }
@@ -107,10 +107,10 @@ namespace prjMember
                 }
 
                 comchoice.Text = null;
-                panel2.Controls.Clear();
+                //panel2.Controls.Clear();
                 MemberUpdate update = new MemberUpdate();
-                update.TopLevel = false;
-                update.Parent = panel2;
+                //update.TopLevel = false;
+                //update.Parent = panel2;
 
                 update.Show();
 

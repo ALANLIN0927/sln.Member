@@ -493,6 +493,7 @@
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MemberRegister";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "register";
             ((System.ComponentModel.ISupportInitialize)(this.picheadphoto)).EndInit();
             this.ResumeLayout(false);

@@ -19,6 +19,8 @@ namespace prjMember
     {
         bool isClosed = true;
 
+        public string membername { get; set; }
+
         public Login()
         {
             InitializeComponent();
@@ -77,6 +79,7 @@ namespace prjMember
                 UserData.Member.RegisterTime = DateTime.Parse(reader["RegisterTime"].ToString());
                 UserData.Member.MemberPhotoFile = reader["MemberPhotoFile"].ToString();
 
+                membername= reader["MemberName"].ToString(); 
                 reader.Close();
                 con.Close();
                 
