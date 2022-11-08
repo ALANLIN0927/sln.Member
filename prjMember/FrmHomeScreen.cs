@@ -36,6 +36,7 @@ namespace prjMember
                     UserData.Member = null;
                     labregister.Text = "登入";                                  
                     panel2.Controls.Clear();                                        //登出後panel畫面消失
+                    membername.Text = null;
                     return;                                     
                 }
                 else { return; };

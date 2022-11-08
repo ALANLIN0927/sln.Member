@@ -29,14 +29,16 @@ namespace prjMember
         
         private void register_Click(object sender, EventArgs e)
         {
-            this.Close();
             MemberRegister reg = new MemberRegister();
+            reg.ShowDialog();
+            this.Close();
+       
             //FrmHomeScreen home = new FrmHomeScreen();
 
-          
+
             //reg.TopLevel = false;
-           
-            reg.Show();
+
+            
            
         }
 
@@ -150,9 +152,11 @@ namespace prjMember
 
         private void ForgetPassword_Click(object sender, EventArgs e)
         {
-            this.Close();
+           
             Forgetpassword forget = new Forgetpassword();
-            forget.Show();
+            this.Close();
+            forget.ShowDialog();
+         
         }
 
         private void notmemberBtn_Click(object sender, EventArgs e)

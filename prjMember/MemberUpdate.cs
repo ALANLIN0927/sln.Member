@@ -71,7 +71,7 @@ namespace prjMember
             }
             if (txtPassword.Text != txtPassword2.Text)
             {
-                MessageBox.Show("請確認兩欄密碼");
+                MessageBox.Show("請確認兩欄密碼一致");
                 return;
 
 

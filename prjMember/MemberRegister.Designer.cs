@@ -65,6 +65,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.picheadphoto = new System.Windows.Forms.PictureBox();
+            this.gohome = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picheadphoto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,7 +107,7 @@
             this.Registerbtn.BackColor = System.Drawing.Color.Navy;
             this.Registerbtn.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Registerbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.Registerbtn.Location = new System.Drawing.Point(180, 576);
+            this.Registerbtn.Location = new System.Drawing.Point(165, 569);
             this.Registerbtn.Name = "Registerbtn";
             this.Registerbtn.Size = new System.Drawing.Size(117, 53);
             this.Registerbtn.TabIndex = 21;
@@ -449,12 +450,26 @@
             this.picheadphoto.TabStop = false;
             this.picheadphoto.Click += new System.EventHandler(this.picheadphoto_Click);
             // 
+            // gohome
+            // 
+            this.gohome.BackColor = System.Drawing.Color.Navy;
+            this.gohome.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.gohome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.gohome.Location = new System.Drawing.Point(421, 589);
+            this.gohome.Name = "gohome";
+            this.gohome.Size = new System.Drawing.Size(65, 33);
+            this.gohome.TabIndex = 61;
+            this.gohome.Text = "回首頁";
+            this.gohome.UseVisualStyleBackColor = false;
+            this.gohome.Click += new System.EventHandler(this.gohome_Click);
+            // 
             // MemberRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(510, 641);
+            this.Controls.Add(this.gohome);
             this.Controls.Add(this.picheadphoto);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label12);
@@ -538,5 +553,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.PictureBox picheadphoto;
+        private System.Windows.Forms.Button gohome;
     }
 }
