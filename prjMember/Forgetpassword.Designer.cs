@@ -41,6 +41,7 @@
             // 
             // txtName
             // 
+            this.txtName.BackColor = System.Drawing.SystemColors.Window;
             this.txtName.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtName.Location = new System.Drawing.Point(131, 104);
             this.txtName.Multiline = true;
@@ -96,7 +97,7 @@
             this.txtEmail.Location = new System.Drawing.Point(131, 195);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(178, 35);
+            this.txtEmail.Size = new System.Drawing.Size(273, 35);
             this.txtEmail.TabIndex = 5;
             // 
             // button1

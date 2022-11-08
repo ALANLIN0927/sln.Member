@@ -397,7 +397,7 @@
             this.label15.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label15.Location = new System.Drawing.Point(105, 233);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(200, 2);
+            this.label15.Size = new System.Drawing.Size(300, 2);
             this.label15.TabIndex = 126;
             this.label15.Text = "label15";
             // 

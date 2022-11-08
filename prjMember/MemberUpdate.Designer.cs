@@ -82,7 +82,7 @@
             this.button2.TabIndex = 130;
             this.button2.Text = "修改完成";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.Update_Click);
             // 
             // txtEmail
             // 
@@ -209,7 +209,7 @@
             this.button1.TabIndex = 115;
             this.button1.Text = "返回首頁";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.gohome_Click);
             // 
             // txtName
             // 

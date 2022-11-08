@@ -85,6 +85,7 @@
             this.txtpassword.Size = new System.Drawing.Size(189, 27);
             this.txtpassword.TabIndex = 3;
             this.txtpassword.Text = "aA123";
+            this.txtpassword.UseSystemPasswordChar = true;
             this.txtpassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtpassword_KeyPress);
             // 
             // label2
@@ -121,7 +122,7 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "一般註冊";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.register_Click);
             // 
             // label3
             // 
@@ -343,7 +344,6 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

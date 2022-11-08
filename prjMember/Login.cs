@@ -19,13 +19,15 @@ namespace prjMember
     {
         bool isClosed = true;
 
+        public string membername { get; set; }
+
         public Login()
         {
             InitializeComponent();
         }
 
         
-        private void button2_Click(object sender, EventArgs e)
+        private void register_Click(object sender, EventArgs e)
         {
             this.Close();
             MemberRegister reg = new MemberRegister();
@@ -77,6 +79,7 @@ namespace prjMember
                 UserData.Member.RegisterTime = DateTime.Parse(reader["RegisterTime"].ToString());
                 UserData.Member.MemberPhotoFile = reader["MemberPhotoFile"].ToString();
 
+                membername= reader["MemberName"].ToString(); 
                 reader.Close();
                 con.Close();
                 
@@ -150,6 +153,15 @@ namespace prjMember
             this.Close();
             Forgetpassword forget = new Forgetpassword();
             forget.Show();
+        }
+
+        private void notmemberBtn_Click(object sender, EventArgs e)
+        {
+            
+            
+            this.Close();            //看要怎麼關掉把那個登出改掉
+
+
         }
     }
 }

@@ -48,6 +48,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.membername = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -56,6 +57,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.membername);
             this.panel1.Controls.Add(this.comchoice);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.labregister);
@@ -89,7 +91,7 @@
             "會員資料",
             "修改會員資料",
             ""});
-            this.comchoice.Location = new System.Drawing.Point(1012, 24);
+            this.comchoice.Location = new System.Drawing.Point(1030, 24);
             this.comchoice.Name = "comchoice";
             this.comchoice.Size = new System.Drawing.Size(121, 32);
             this.comchoice.TabIndex = 9;
@@ -102,7 +104,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Location = new System.Drawing.Point(914, 16);
+            this.pictureBox1.Location = new System.Drawing.Point(940, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(75, 44);
             this.pictureBox1.TabIndex = 8;
@@ -114,7 +116,7 @@
             this.labregister.AutoSize = true;
             this.labregister.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.labregister.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.labregister.Location = new System.Drawing.Point(830, 22);
+            this.labregister.Location = new System.Drawing.Point(770, 22);
             this.labregister.Name = "labregister";
             this.labregister.Size = new System.Drawing.Size(62, 31);
             this.labregister.TabIndex = 7;
@@ -129,7 +131,7 @@
             this.labNotice.AutoSize = true;
             this.labNotice.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.labNotice.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.labNotice.Location = new System.Drawing.Point(762, 22);
+            this.labNotice.Location = new System.Drawing.Point(686, 22);
             this.labNotice.Name = "labNotice";
             this.labNotice.Size = new System.Drawing.Size(62, 31);
             this.labNotice.TabIndex = 6;
@@ -298,6 +300,18 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "你訂";
             // 
+            // membername
+            // 
+            this.membername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.membername.AutoSize = true;
+            this.membername.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.membername.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.membername.Location = new System.Drawing.Point(850, 22);
+            this.membername.Name = "membername";
+            this.membername.Size = new System.Drawing.Size(62, 31);
+            this.membername.TabIndex = 10;
+            this.membername.Text = "會員";
+            // 
             // FrmHomeScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -340,5 +354,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label membername;
     }
 }

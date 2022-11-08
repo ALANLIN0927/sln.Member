@@ -17,7 +17,7 @@ namespace prjMember
     public partial class MemberUpdate : Form
     {
 
-        DateTime r; 
+        DateTime registertime; 
 
 
 
@@ -28,7 +28,7 @@ namespace prjMember
 
         private void MemberUpdate_Load(object sender, EventArgs e)
         {
-            txtName.Text = UserData.Member.MemberName;               //載入點 秀畫面在資料表上
+            txtName.Text = UserData.Member.MemberName;               //載入點 顯示會員資料在資料表上
             lableName.Text = UserData.Member.MemberName;
             txtPassword.Text = UserData.Member.Password;
             txtPassword2.Text = UserData.Member.Password;
@@ -37,7 +37,7 @@ namespace prjMember
             txtArea.Text = UserData.Member.Address_Area;
             birthpicker.Value = UserData.Member.Birthday;              
             txtEmail.Text = UserData.Member.Email;
-            r = UserData.Member.RegisterTime;
+            registertime = UserData.Member.RegisterTime;
 
             Image memberPhoto = Image.FromFile(UserData.Member.MemberPhotoFile);
             picheadphoto.BackgroundImage = memberPhoto;
@@ -55,11 +55,11 @@ namespace prjMember
 
           
         string file;
-        private void button2_Click(object sender, EventArgs e)
+        private void Update_Click(object sender, EventArgs e)
         {
             Random crandom = new Random(Guid.NewGuid().GetHashCode()); 
             int Rannum = crandom.Next(1, 1000);
-            string picture = "";
+            string picture = "";                            //判斷有無換照片
             if (file == null) { picture = UserData.Member.MemberPhotoFile; }   
 
             else
@@ -146,7 +146,7 @@ namespace prjMember
                 Birthday = birthpicker.Value,              //轉型
                 Email = txtEmail.Text,
 
-                RegisterTime = r,
+                RegisterTime = registertime,
                 /* MemberPhotoFile = "../../img/NormalMember_Img/" + txtPhone.Text + Rannum + "_.bmp"*/     //改圖片加回去會員
                 MemberPhotoFile = picture
             };
@@ -162,19 +162,18 @@ namespace prjMember
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void gohome_Click(object sender, EventArgs e)
         {
             this.Close();
-            //Member personalmatrial=new Member();
-            //personalmatrial.ShowDialog();              //為啥用show會消失
+            
         }
        
         private void picheadphoto_Click(object sender, EventArgs e)
         {
-            /*int Rannum = crandom.Next(1, 1000);   */      //現在加的
+           
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                if (picheadphoto.BackgroundImage != null)                           //目前先這樣
+                if (picheadphoto.BackgroundImage != null)                        
                 {
                     picheadphoto.BackgroundImage.Dispose();
                     picheadphoto.BackgroundImage = null;
