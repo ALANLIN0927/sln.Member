@@ -31,6 +31,7 @@ namespace prjMember
         {
             MemberRegister reg = new MemberRegister();
             reg.ShowDialog();
+         
             this.Close();
        
             //FrmHomeScreen home = new FrmHomeScreen();
