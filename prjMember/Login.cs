@@ -147,6 +147,7 @@ namespace prjMember
 
         private void ForgetPassword_Click(object sender, EventArgs e)
         {
+            this.Close();
             Forgetpassword forget = new Forgetpassword();
             forget.Show();
         }
