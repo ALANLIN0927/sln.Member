@@ -49,6 +49,7 @@ namespace prjMember
             //login.Parent = panel2;
             login.ShowDialog();
             membername.Text = login.membername;   //顯示會員名子
+            labregister.Text = login.homeloginstate;
 
         }
        

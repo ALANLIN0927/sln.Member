@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHomeScreen));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.membername = new System.Windows.Forms.Label();
             this.comchoice = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labregister = new System.Windows.Forms.Label();
@@ -48,7 +49,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.membername = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -74,6 +74,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1175, 76);
             this.panel1.TabIndex = 0;
+            // 
+            // membername
+            // 
+            this.membername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.membername.AutoSize = true;
+            this.membername.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.membername.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.membername.Location = new System.Drawing.Point(850, 22);
+            this.membername.Name = "membername";
+            this.membername.Size = new System.Drawing.Size(62, 31);
+            this.membername.TabIndex = 10;
+            this.membername.Text = "會員";
             // 
             // comchoice
             // 
@@ -299,18 +311,6 @@
             this.label5.Size = new System.Drawing.Size(81, 40);
             this.label5.TabIndex = 0;
             this.label5.Text = "你訂";
-            // 
-            // membername
-            // 
-            this.membername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.membername.AutoSize = true;
-            this.membername.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.membername.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.membername.Location = new System.Drawing.Point(850, 22);
-            this.membername.Name = "membername";
-            this.membername.Size = new System.Drawing.Size(62, 31);
-            this.membername.TabIndex = 10;
-            this.membername.Text = "會員";
             // 
             // FrmHomeScreen
             // 
