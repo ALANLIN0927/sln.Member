@@ -32,10 +32,10 @@ namespace prjMember
         {
             /*homeloginstate = "登入";   */               //多加的 失敗
             MemberRegister reg = new MemberRegister();
-          
+            this.Close();
             reg.ShowDialog();
          
-            this.Close();
+            
 
             //FrmHomeScreen home = new FrmHomeScreen();
             
@@ -112,7 +112,7 @@ namespace prjMember
         
 
         private void Login_FormClosing(object sender, FormClosingEventArgs e)
-        {  if (UserData.Member == null);           //後來加的 沒會員不能關
+        {  /*if (UserData.Member == null);   */        //後來加的 沒會員不能關
             //e.Cancel = isClosed;
         }
 
