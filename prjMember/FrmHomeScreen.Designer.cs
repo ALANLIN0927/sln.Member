@@ -38,8 +38,8 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.laborder = new System.Windows.Forms.Label();
+            this.labshopcar = new System.Windows.Forms.Label();
             this.labshop = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -65,8 +65,8 @@
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.laborder);
+            this.panel1.Controls.Add(this.labshopcar);
             this.panel1.Controls.Add(this.labshop);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -188,25 +188,29 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "兌換專區";
             // 
-            // label2
+            // laborder
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label2.Location = new System.Drawing.Point(148, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 26);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "訂單";
+            this.laborder.AutoSize = true;
+            this.laborder.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.laborder.Location = new System.Drawing.Point(148, 27);
+            this.laborder.Name = "laborder";
+            this.laborder.Size = new System.Drawing.Size(54, 26);
+            this.laborder.TabIndex = 2;
+            this.laborder.Text = "訂單";
+            this.laborder.MouseEnter += new System.EventHandler(this.laborder_MouseEnter);
+            this.laborder.MouseLeave += new System.EventHandler(this.laborder_MouseLeave);
             // 
-            // label1
+            // labshopcar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.Location = new System.Drawing.Point(76, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 26);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "購物車";
+            this.labshopcar.AutoSize = true;
+            this.labshopcar.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labshopcar.Location = new System.Drawing.Point(76, 27);
+            this.labshopcar.Name = "labshopcar";
+            this.labshopcar.Size = new System.Drawing.Size(75, 26);
+            this.labshopcar.TabIndex = 1;
+            this.labshopcar.Text = "購物車";
+            this.labshopcar.MouseEnter += new System.EventHandler(this.labshopcar_MouseEnter);
+            this.labshopcar.MouseLeave += new System.EventHandler(this.labshopcar_MouseLeave);
             // 
             // labshop
             // 
@@ -217,6 +221,8 @@
             this.labshop.Size = new System.Drawing.Size(54, 26);
             this.labshop.TabIndex = 0;
             this.labshop.Text = "訂購";
+            this.labshop.MouseEnter += new System.EventHandler(this.labshop_MouseEnter);
+            this.labshop.MouseLeave += new System.EventHandler(this.labshop_MouseLeave);
             // 
             // panel2
             // 
@@ -339,8 +345,8 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label laborder;
+        private System.Windows.Forms.Label labshopcar;
         private System.Windows.Forms.Label labshop;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label labregister;

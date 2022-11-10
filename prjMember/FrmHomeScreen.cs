@@ -19,9 +19,9 @@ namespace prjMember
         public FrmHomeScreen()
         {
             InitializeComponent();
-           
+
         }
-        
+
         private void register_Click(object sender, EventArgs e)
         {
 
@@ -34,10 +34,10 @@ namespace prjMember
                 if (result == DialogResult.Yes)
                 {
                     UserData.Member = null;
-                    labregister.Text = "登入";                                  
+                    labregister.Text = "登入";
                     panel2.Controls.Clear();                                        //登出後panel畫面消失
                     membername.Text = null;
-                    return;                                     
+                    return;
                 }
                 else { return; };
 
@@ -52,7 +52,7 @@ namespace prjMember
             labregister.Text = login.homeloginstate;
 
         }
-       
+
 
         private void labregister_MouseEnter(object sender, EventArgs e)
         {
@@ -64,13 +64,13 @@ namespace prjMember
         private void labregister_MouseLeave(object sender, EventArgs e)
         {
             labregister.ForeColor = Color.CornflowerBlue;
-           
+
         }
 
         private void Notice_MouseEnter(object sender, EventArgs e)
         {
             labNotice.ForeColor = Color.IndianRed;
-            
+
         }
 
         private void labNotice_MouseLeave(object sender, EventArgs e)
@@ -93,7 +93,7 @@ namespace prjMember
                     return;
                 }
                 Member material = new Member();
-                
+
                 //panel2.Controls.Clear();
                 //material.TopLevel = false;
                 //material.Parent = panel2;
@@ -125,11 +125,39 @@ namespace prjMember
             comchoice.Text = null;                                //下拉式選單觸發時字會不見
         }
 
+        private void labshop_MouseEnter(object sender, EventArgs e)
+        {
+            labshop.ForeColor = Color.IndianRed;
+        }
 
+        private void labshop_MouseLeave(object sender, EventArgs e)
+        {
+            labshop.ForeColor = Color.Black;
+        }
+
+        private void labshopcar_MouseEnter(object sender, EventArgs e)
+        {
+            labshopcar.ForeColor = Color.IndianRed;
+
+        }
+
+        private void labshopcar_MouseLeave(object sender, EventArgs e)
+        {
+            labshopcar.ForeColor = Color.Black;
+        }
+
+        private void laborder_MouseEnter(object sender, EventArgs e)
+        {
+            laborder.ForeColor = Color.IndianRed;
+        }
+
+        private void laborder_MouseLeave(object sender, EventArgs e)
+        {
+            laborder.ForeColor=Color.Black;
+        }
     }
+
 }
-
-
 
 
 
