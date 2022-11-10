@@ -112,7 +112,7 @@ namespace prjMember
         
 
         private void Login_FormClosing(object sender, FormClosingEventArgs e)
-        {  if (UserData.Member == null) ;           //後來加的 沒會員不能關
+        {  if (UserData.Member == null);           //後來加的 沒會員不能關
             //e.Cancel = isClosed;
         }
 
