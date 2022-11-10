@@ -5,6 +5,10 @@ VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prjMember", "prjMember\prjMember.csproj", "{C1A454E6-298B-4404-996B-3D29F2B41EB8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderList", "..\..\訂單明細1\OrderList\OrderList\OrderList.csproj", "{A876E463-B9C7-4F23-BD7F-2CA793B1041C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsControlLibrary1", "..\..\訂單明細1\OrderList\WindowsFormsControlLibrary1\WindowsFormsControlLibrary1.csproj", "{F13A32C9-75C2-4578-B295-56C0BEE94D76}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{C1A454E6-298B-4404-996B-3D29F2B41EB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1A454E6-298B-4404-996B-3D29F2B41EB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1A454E6-298B-4404-996B-3D29F2B41EB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A876E463-B9C7-4F23-BD7F-2CA793B1041C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A876E463-B9C7-4F23-BD7F-2CA793B1041C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A876E463-B9C7-4F23-BD7F-2CA793B1041C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A876E463-B9C7-4F23-BD7F-2CA793B1041C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F13A32C9-75C2-4578-B295-56C0BEE94D76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F13A32C9-75C2-4578-B295-56C0BEE94D76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F13A32C9-75C2-4578-B295-56C0BEE94D76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F13A32C9-75C2-4578-B295-56C0BEE94D76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

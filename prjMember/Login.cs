@@ -20,7 +20,7 @@ namespace prjMember
         bool isClosed = true;
 
         public string membername { get; set; }
-        public string homeloginstate { get; set; }    //多加的
+        /*public string homeloginstate { get; set; } */   //多加的 螢幕上的字
 
         public Login()
         {
@@ -30,19 +30,20 @@ namespace prjMember
         
         private void register_Click(object sender, EventArgs e)
         {
-            homeloginstate = "登入";                  //多加的 失敗
+            /*homeloginstate = "登入";   */               //多加的 失敗
             MemberRegister reg = new MemberRegister();
+          
             reg.ShowDialog();
          
             this.Close();
-       
-            //FrmHomeScreen home = new FrmHomeScreen();
 
+            //FrmHomeScreen home = new FrmHomeScreen();
+            
 
             //reg.TopLevel = false;
 
-            
-           
+
+
         }
 
 
@@ -156,7 +157,7 @@ namespace prjMember
         private void ForgetPassword_Click(object sender, EventArgs e)
         {
             this.Close();
-            homeloginstate = "登入";                       //多加的
+           /* homeloginstate = "登入"; */                      //多加的
             Forgetpassword forget = new Forgetpassword();
            
             forget.ShowDialog();

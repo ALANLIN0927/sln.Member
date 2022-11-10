@@ -1,0 +1,1356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="iSpan_ProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BusinessImg">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="B_fid" Type="int" />
+          <Property Name="LOGO_ImgPath" Type="nvarchar" MaxLength="50" />
+          <Property Name="SIgh_ImgPath" Type="nvarchar" MaxLength="50" />
+          <Property Name="Banner_ImgPath_1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Banner_ImgPath_2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Banner_ImgPath_3" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="BusinessMember">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MemberName" Type="nvarchar" MaxLength="50" />
+          <Property Name="MemberID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Brand" Type="nvarchar" MaxLength="50" />
+          <Property Name="ShopType" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="100" />
+          <Property Name="OpenTime" Type="nvarchar" MaxLength="50" />
+          <Property Name="CloseTime" Type="nvarchar" MaxLength="50" />
+          <Property Name="OffDay" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="DeliveryAmount" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="isPlasticBag" Type="tinyint" />
+          <Property Name="ContactPerson" Type="nvarchar" MaxLength="50" />
+          <Property Name="RegisterTime" Type="datetime" />
+          <Property Name="CashPaymentLimit" Type="int" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6013: 資料表/檢視 'iSpan_Project.dbo.MenuDetail' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
+        <EntityType Name="MenuDetail">
+          <Property Name="Menu_fid" Type="int" />
+          <Property Name="Product_fid" Type="int" />
+        </EntityType>-->
+        <EntityType Name="Menus">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MenuName" Type="nvarchar" MaxLength="50" />
+          <Property Name="B_fid" Type="int" />
+          <Property Name="isForSale" Type="nvarchar" MaxLength="1" />
+          <Property Name="Memo" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="NormalMember">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MemberID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MemberName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="10" />
+          <Property Name="Address_City" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address_Area" Type="nvarchar" MaxLength="50" />
+          <Property Name="Birthday" Type="datetime" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Point" Type="int" />
+          <Property Name="RegisterTime" Type="datetime" />
+          <Property Name="MemberPhotoFile" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6013: 資料表/檢視 'iSpan_Project.dbo.OptionsToProducts' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
+        <EntityType Name="OptionsToProducts">
+          <Property Name="Product_fid" Type="int" />
+          <Property Name="OptionGroup_fid" Type="int" />
+        </EntityType>-->
+        <EntityType Name="OrderDetail">
+          <Key>
+            <PropertyRef Name="onlyForUser" />
+          </Key>
+          <Property Name="onlyForUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderItem_id" Type="int" Nullable="false" />
+          <Property Name="Order_fid" Type="int" Nullable="false" />
+          <Property Name="Product_fid" Type="int" />
+          <Property Name="Option_fid" Type="int" />
+          <Property Name="OptionGroup_fid" Type="int" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="50" />
+          <Property Name="UnitPrice" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Qty" Type="int" />
+          <Property Name="OrderDetails_Delete" Type="varchar" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="N_fid" Type="int" />
+          <Property Name="B_fid" Type="int" />
+          <Property Name="B_MemberName" Type="nvarchar" MaxLength="50" />
+          <Property Name="B_MemberPhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="PickUpDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="PickUpTime" Type="nvarchar" MaxLength="50" />
+          <Property Name="PickUpType" Type="nvarchar" MaxLength="20" />
+          <Property Name="PlasticBag" Type="nvarchar" MaxLength="5" />
+          <Property Name="PickUpPerson" Type="nvarchar" MaxLength="50" />
+          <Property Name="PickUpPerson_Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="PaymentTerm" Type="nvarchar" MaxLength="20" />
+          <Property Name="TaxIDNum" Type="nvarchar" MaxLength="10" />
+          <Property Name="OrderState" Type="nvarchar" MaxLength="20" />
+          <Property Name="Memo" Type="nvarchar" MaxLength="100" />
+          <Property Name="OrderTime" Type="datetime" />
+          <Property Name="TotalAmount" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="ProductCount" Type="int" />
+          <Property Name="OrderSN" Type="nchar" MaxLength="10" />
+          <Property Name="OrderPrefix" Type="nchar" MaxLength="3" />
+          <Property Name="Order_Detele" Type="varchar" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6013: 資料表/檢視 'iSpan_Project.dbo.OrderSN' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
+        <EntityType Name="OrderSN">
+          <Property Name="SN" Type="nchar" MaxLength="10" />
+        </EntityType>-->
+        <EntityType Name="Payment_Term">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="B_fid" Type="int" Nullable="false" />
+          <Property Name="Pay_fid" Type="int" Nullable="false" />
+          <Property Name="PayAmount_Limit" Type="numeric" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="PaymentMethod">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Payment" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductCategory">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryName" Type="nvarchar" MaxLength="50" />
+          <Property Name="B_fid" Type="int" />
+        </EntityType>
+        <EntityType Name="ProductImg">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Product_fid" Type="int" />
+          <Property Name="ImgPath" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ProductOptionGroup">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OptionGroupName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Memo" Type="nvarchar" MaxLength="50" />
+          <Property Name="B_fid" Type="int" />
+        </EntityType>
+        <EntityType Name="ProductOptions">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OptionName" Type="nvarchar" MaxLength="50" />
+          <Property Name="OptionGroup_fid" Type="int" />
+          <Property Name="B_fid" Type="int" />
+          <Property Name="UnitPrice" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Qty" Type="int" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="B_fid" Type="int" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UnitPrice" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Qty" Type="int" />
+          <Property Name="Category_fid" Type="int" />
+          <Property Name="Memo" Type="nvarchar" MaxLength="100" />
+          <Property Name="Menu_fid" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsForSale" Type="nvarchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6013: 資料表/檢視 'iSpan_Project.dbo.View_OptionsToGroups' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
+        <EntityType Name="View_OptionsToGroups">
+          <Property Name="fid" Type="int" />
+          <Property Name="OptionName" Type="nvarchar" MaxLength="50" />
+          <Property Name="OptionGroup_fid" Type="int" />
+          <Property Name="OptionGroupName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Memo" Type="nvarchar" MaxLength="50" />
+          <Property Name="UnitPrice" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="B_fid" Type="int" />
+        </EntityType>-->
+        <!--產生期間發現錯誤:
+警告 6013: 資料表/檢視 'iSpan_Project.dbo.View_OrderDetail_NonOptionGroupName' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
+        <EntityType Name="View_OrderDetail_NonOptionGroupName">
+          <Property Name="Order_fID" Type="int" />
+          <Property Name="Product_fID" Type="int" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="50" />
+          <Property Name="UnitPrice" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Qty" Type="int" />
+          <Property Name="Options" Type="nvarchar(max)" />
+        </EntityType>-->
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'iSpan_Project.dbo.View_OrderDetail_with_OptionGroupName' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="View_OrderDetail_with_OptionGroupName">
+          <Key>
+            <PropertyRef Name="OrderItem_id" />
+          </Key>
+          <Property Name="Order_fid" Type="int" />
+          <Property Name="OrderItem_id" Type="int" Nullable="false" />
+          <Property Name="Product_fid" Type="int" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="50" />
+          <Property Name="UnitPrice" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Qty" Type="int" />
+          <Property Name="OptionGroupName" Type="nvarchar" MaxLength="50" />
+          <Property Name="OptionName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6013: 資料表/檢視 'iSpan_Project.dbo.View_ProductHasOpGroups' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
+        <EntityType Name="View_ProductHasOpGroups">
+          <Property Name="Product_fid" Type="int" />
+          <Property Name="B_fid" Type="int" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="50" />
+          <Property Name="p_Memo" Type="nvarchar" MaxLength="100" />
+          <Property Name="OptionGroup_fid" Type="int" />
+          <Property Name="OG_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="OG_Memo" Type="nvarchar" MaxLength="50" />
+        </EntityType>-->
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'iSpan_Project.dbo.View_showProductList' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="View_showProductList">
+          <Key>
+            <PropertyRef Name="fid" />
+            <PropertyRef Name="B_fid" />
+            <PropertyRef Name="ProductName" />
+          </Key>
+          <Property Name="fid" Type="int" Nullable="false" />
+          <Property Name="B_fid" Type="int" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UnitPrice" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Category_fid" Type="int" />
+          <Property Name="CategoryName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Memo" Type="nvarchar" MaxLength="100" />
+          <Property Name="IsForSale" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'iSpan_Project.sys.database_firewall_rules' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="database_firewall_rules">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="start_ip_address" />
+            <PropertyRef Name="end_ip_address" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="modify_date" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="start_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="end_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="create_date" Type="datetime" Nullable="false" />
+          <Property Name="modify_date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+錯誤 6004: 資料表 'iSpan_Project.dbo.OptionsToProducts' 被某個關聯性參考，但是找不到。
+        <Association Name="FK_OptionsToProducts_ProductOptionGroup" />-->
+        <!--產生期間發現錯誤:
+錯誤 6004: 資料表 'iSpan_Project.dbo.OptionsToProducts' 被某個關聯性參考，但是找不到。
+        <Association Name="FK_OptionsToProducts_Products" />-->
+        <Association Name="FK_OrderDetail_Orders">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="fid" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="Order_fid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetail_ProductOptionGroup">
+          <End Role="ProductOptionGroup" Type="Self.ProductOptionGroup" Multiplicity="0..1" />
+          <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductOptionGroup">
+              <PropertyRef Name="fid" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="OptionGroup_fid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetail_ProductOptions">
+          <End Role="ProductOptions" Type="Self.ProductOptions" Multiplicity="0..1" />
+          <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductOptions">
+              <PropertyRef Name="fid" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="Option_fid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetail_Products">
+          <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+          <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="fid" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="Product_fid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_BusinessMember">
+          <End Role="BusinessMember" Type="Self.BusinessMember" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BusinessMember">
+              <PropertyRef Name="fid" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="B_fid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_BusinessMember1">
+          <End Role="BusinessMember" Type="Self.BusinessMember" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BusinessMember">
+              <PropertyRef Name="fid" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="B_fid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_NormalMember">
+          <End Role="NormalMember" Type="Self.NormalMember" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NormalMember">
+              <PropertyRef Name="fid" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="N_fid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_NormalMember1">
+          <End Role="NormalMember" Type="Self.NormalMember" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NormalMember">
+              <PropertyRef Name="fid" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="N_fid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payment_Term_BusinessMember">
+          <End Role="BusinessMember" Type="Self.BusinessMember" Multiplicity="1" />
+          <End Role="Payment_Term" Type="Self.Payment_Term" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BusinessMember">
+              <PropertyRef Name="fid" />
+            </Principal>
+            <Dependent Role="Payment_Term">
+              <PropertyRef Name="B_fid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payment_Term_PaymentMethod">
+          <End Role="PaymentMethod" Type="Self.PaymentMethod" Multiplicity="1" />
+          <End Role="Payment_Term" Type="Self.Payment_Term" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentMethod">
+              <PropertyRef Name="fid" />
+            </Principal>
+            <Dependent Role="Payment_Term">
+              <PropertyRef Name="Pay_fid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductOptionGroup_BusinessMember">
+          <End Role="BusinessMember" Type="Self.BusinessMember" Multiplicity="0..1" />
+          <End Role="ProductOptionGroup" Type="Self.ProductOptionGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BusinessMember">
+              <PropertyRef Name="fid" />
+            </Principal>
+            <Dependent Role="ProductOptionGroup">
+              <PropertyRef Name="B_fid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Products_BusinessMember1">
+          <End Role="BusinessMember" Type="Self.BusinessMember" Multiplicity="1" />
+          <End Role="Products" Type="Self.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BusinessMember">
+              <PropertyRef Name="fid" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="B_fid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="udf_get_serialno" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="char" />
+        <EntityContainer Name="iSpan_ProjectModelStoreContainer">
+          <EntitySet Name="BusinessImg" EntityType="Self.BusinessImg" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BusinessMember" EntityType="Self.BusinessMember" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Menus" EntityType="Self.Menus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NormalMember" EntityType="Self.NormalMember" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Payment_Term" EntityType="Self.Payment_Term" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PaymentMethod" EntityType="Self.PaymentMethod" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductCategory" EntityType="Self.ProductCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductImg" EntityType="Self.ProductImg" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductOptionGroup" EntityType="Self.ProductOptionGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductOptions" EntityType="Self.ProductOptions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="View_OrderDetail_with_OptionGroupName" EntityType="Self.View_OrderDetail_with_OptionGroupName" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_OrderDetail_with_OptionGroupName].[Order_fid] AS [Order_fid], 
+    [View_OrderDetail_with_OptionGroupName].[OrderItem_id] AS [OrderItem_id], 
+    [View_OrderDetail_with_OptionGroupName].[Product_fid] AS [Product_fid], 
+    [View_OrderDetail_with_OptionGroupName].[ProductName] AS [ProductName], 
+    [View_OrderDetail_with_OptionGroupName].[UnitPrice] AS [UnitPrice], 
+    [View_OrderDetail_with_OptionGroupName].[Qty] AS [Qty], 
+    [View_OrderDetail_with_OptionGroupName].[OptionGroupName] AS [OptionGroupName], 
+    [View_OrderDetail_with_OptionGroupName].[OptionName] AS [OptionName]
+    FROM [dbo].[View_OrderDetail_with_OptionGroupName] AS [View_OrderDetail_with_OptionGroupName]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_showProductList" EntityType="Self.View_showProductList" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_showProductList].[fid] AS [fid], 
+    [View_showProductList].[B_fid] AS [B_fid], 
+    [View_showProductList].[ProductName] AS [ProductName], 
+    [View_showProductList].[UnitPrice] AS [UnitPrice], 
+    [View_showProductList].[Category_fid] AS [Category_fid], 
+    [View_showProductList].[CategoryName] AS [CategoryName], 
+    [View_showProductList].[Memo] AS [Memo], 
+    [View_showProductList].[IsForSale] AS [IsForSale]
+    FROM [dbo].[View_showProductList] AS [View_showProductList]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" store:Type="Views" store:Schema="sys">
+            <DefiningQuery>SELECT 
+    [database_firewall_rules].[id] AS [id], 
+    [database_firewall_rules].[name] AS [name], 
+    [database_firewall_rules].[start_ip_address] AS [start_ip_address], 
+    [database_firewall_rules].[end_ip_address] AS [end_ip_address], 
+    [database_firewall_rules].[create_date] AS [create_date], 
+    [database_firewall_rules].[modify_date] AS [modify_date]
+    FROM [sys].[database_firewall_rules] AS [database_firewall_rules]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_OrderDetail_Orders" Association="Self.FK_OrderDetail_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrderDetail" EntitySet="OrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_ProductOptionGroup" Association="Self.FK_OrderDetail_ProductOptionGroup">
+            <End Role="ProductOptionGroup" EntitySet="ProductOptionGroup" />
+            <End Role="OrderDetail" EntitySet="OrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_ProductOptions" Association="Self.FK_OrderDetail_ProductOptions">
+            <End Role="ProductOptions" EntitySet="ProductOptions" />
+            <End Role="OrderDetail" EntitySet="OrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_Products" Association="Self.FK_OrderDetail_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="OrderDetail" EntitySet="OrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_BusinessMember" Association="Self.FK_Orders_BusinessMember">
+            <End Role="BusinessMember" EntitySet="BusinessMember" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_BusinessMember1" Association="Self.FK_Orders_BusinessMember1">
+            <End Role="BusinessMember" EntitySet="BusinessMember" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_NormalMember" Association="Self.FK_Orders_NormalMember">
+            <End Role="NormalMember" EntitySet="NormalMember" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_NormalMember1" Association="Self.FK_Orders_NormalMember1">
+            <End Role="NormalMember" EntitySet="NormalMember" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payment_Term_BusinessMember" Association="Self.FK_Payment_Term_BusinessMember">
+            <End Role="BusinessMember" EntitySet="BusinessMember" />
+            <End Role="Payment_Term" EntitySet="Payment_Term" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payment_Term_PaymentMethod" Association="Self.FK_Payment_Term_PaymentMethod">
+            <End Role="PaymentMethod" EntitySet="PaymentMethod" />
+            <End Role="Payment_Term" EntitySet="Payment_Term" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductOptionGroup_BusinessMember" Association="Self.FK_ProductOptionGroup_BusinessMember">
+            <End Role="BusinessMember" EntitySet="BusinessMember" />
+            <End Role="ProductOptionGroup" EntitySet="ProductOptionGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Products_BusinessMember1" Association="Self.FK_Products_BusinessMember1">
+            <End Role="BusinessMember" EntitySet="BusinessMember" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="iSpan_ProjectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BusinessImg">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="B_fid" Type="Int32" />
+          <Property Name="LOGO_ImgPath" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SIgh_ImgPath" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Banner_ImgPath_1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Banner_ImgPath_2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Banner_ImgPath_3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="BusinessMember">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MemberName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MemberID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ShopType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="OpenTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CloseTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OffDay" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DeliveryAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="isPlasticBag" Type="Byte" />
+          <Property Name="ContactPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RegisterTime" Type="DateTime" Precision="3" />
+          <Property Name="CashPaymentLimit" Type="Int32" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_BusinessMember" FromRole="BusinessMember" ToRole="Orders" />
+          <NavigationProperty Name="Orders1" Relationship="Self.FK_Orders_BusinessMember1" FromRole="BusinessMember" ToRole="Orders" />
+          <NavigationProperty Name="Payment_Term" Relationship="Self.FK_Payment_Term_BusinessMember" FromRole="BusinessMember" ToRole="Payment_Term" />
+          <NavigationProperty Name="ProductOptionGroup" Relationship="Self.FK_ProductOptionGroup_BusinessMember" FromRole="BusinessMember" ToRole="ProductOptionGroup" />
+          <NavigationProperty Name="Products" Relationship="Self.FK_Products_BusinessMember1" FromRole="BusinessMember" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="Menus">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MenuName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="B_fid" Type="Int32" />
+          <Property Name="isForSale" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="Memo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="NormalMember">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MemberID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MemberName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Address_City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address_Area" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Birthday" Type="DateTime" Precision="3" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Point" Type="Int32" />
+          <Property Name="RegisterTime" Type="DateTime" Precision="3" />
+          <Property Name="MemberPhotoFile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_NormalMember" FromRole="NormalMember" ToRole="Orders" />
+          <NavigationProperty Name="Orders1" Relationship="Self.FK_Orders_NormalMember1" FromRole="NormalMember" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="OrderDetail">
+          <Key>
+            <PropertyRef Name="onlyForUser" />
+          </Key>
+          <Property Name="onlyForUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderItem_id" Type="Int32" Nullable="false" />
+          <Property Name="Order_fid" Type="Int32" Nullable="false" />
+          <Property Name="Product_fid" Type="Int32" />
+          <Property Name="Option_fid" Type="Int32" />
+          <Property Name="OptionGroup_fid" Type="Int32" />
+          <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Qty" Type="Int32" />
+          <Property Name="OrderDetails_Delete" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_OrderDetail_Orders" FromRole="OrderDetail" ToRole="Orders" />
+          <NavigationProperty Name="ProductOptionGroup" Relationship="Self.FK_OrderDetail_ProductOptionGroup" FromRole="OrderDetail" ToRole="ProductOptionGroup" />
+          <NavigationProperty Name="ProductOptions" Relationship="Self.FK_OrderDetail_ProductOptions" FromRole="OrderDetail" ToRole="ProductOptions" />
+          <NavigationProperty Name="Products" Relationship="Self.FK_OrderDetail_Products" FromRole="OrderDetail" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="N_fid" Type="Int32" />
+          <Property Name="B_fid" Type="Int32" />
+          <Property Name="B_MemberName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="B_MemberPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PickUpDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PickUpTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PickUpType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PlasticBag" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="PickUpPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PickUpPerson_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PaymentTerm" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TaxIDNum" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="OrderState" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Memo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="OrderTime" Type="DateTime" Precision="3" />
+          <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ProductCount" Type="Int32" />
+          <Property Name="OrderSN" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="OrderPrefix" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="Order_Detele" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="BusinessMember" Relationship="Self.FK_Orders_BusinessMember" FromRole="Orders" ToRole="BusinessMember" />
+          <NavigationProperty Name="BusinessMember1" Relationship="Self.FK_Orders_BusinessMember1" FromRole="Orders" ToRole="BusinessMember" />
+          <NavigationProperty Name="NormalMember" Relationship="Self.FK_Orders_NormalMember" FromRole="Orders" ToRole="NormalMember" />
+          <NavigationProperty Name="NormalMember1" Relationship="Self.FK_Orders_NormalMember1" FromRole="Orders" ToRole="NormalMember" />
+          <NavigationProperty Name="OrderDetail" Relationship="Self.FK_OrderDetail_Orders" FromRole="Orders" ToRole="OrderDetail" />
+        </EntityType>
+        <EntityType Name="Payment_Term">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="B_fid" Type="Int32" Nullable="false" />
+          <Property Name="Pay_fid" Type="Int32" Nullable="false" />
+          <Property Name="PayAmount_Limit" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="BusinessMember" Relationship="Self.FK_Payment_Term_BusinessMember" FromRole="Payment_Term" ToRole="BusinessMember" />
+          <NavigationProperty Name="PaymentMethod" Relationship="Self.FK_Payment_Term_PaymentMethod" FromRole="Payment_Term" ToRole="PaymentMethod" />
+        </EntityType>
+        <EntityType Name="PaymentMethod">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Payment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Payment_Term" Relationship="Self.FK_Payment_Term_PaymentMethod" FromRole="PaymentMethod" ToRole="Payment_Term" />
+        </EntityType>
+        <EntityType Name="ProductCategory">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="B_fid" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ProductImg">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Product_fid" Type="Int32" />
+          <Property Name="ImgPath" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ProductOptionGroup">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OptionGroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Memo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="B_fid" Type="Int32" />
+          <NavigationProperty Name="BusinessMember" Relationship="Self.FK_ProductOptionGroup_BusinessMember" FromRole="ProductOptionGroup" ToRole="BusinessMember" />
+          <NavigationProperty Name="OrderDetail" Relationship="Self.FK_OrderDetail_ProductOptionGroup" FromRole="ProductOptionGroup" ToRole="OrderDetail" />
+        </EntityType>
+        <EntityType Name="ProductOptions">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OptionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OptionGroup_fid" Type="Int32" />
+          <Property Name="B_fid" Type="Int32" />
+          <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Qty" Type="Int32" />
+          <NavigationProperty Name="OrderDetail" Relationship="Self.FK_OrderDetail_ProductOptions" FromRole="ProductOptions" ToRole="OrderDetail" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="B_fid" Type="Int32" Nullable="false" />
+          <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Qty" Type="Int32" />
+          <Property Name="Category_fid" Type="Int32" />
+          <Property Name="Memo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Menu_fid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsForSale" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="BusinessMember" Relationship="Self.FK_Products_BusinessMember1" FromRole="Products" ToRole="BusinessMember" />
+          <NavigationProperty Name="OrderDetail" Relationship="Self.FK_OrderDetail_Products" FromRole="Products" ToRole="OrderDetail" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="View_OrderDetail_with_OptionGroupName">
+          <Key>
+            <PropertyRef Name="OrderItem_id" />
+          </Key>
+          <Property Name="Order_fid" Type="Int32" />
+          <Property Name="OrderItem_id" Type="Int32" Nullable="false" />
+          <Property Name="Product_fid" Type="Int32" />
+          <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Qty" Type="Int32" />
+          <Property Name="OptionGroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OptionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="View_showProductList">
+          <Key>
+            <PropertyRef Name="fid" />
+            <PropertyRef Name="B_fid" />
+            <PropertyRef Name="ProductName" />
+          </Key>
+          <Property Name="fid" Type="Int32" Nullable="false" />
+          <Property Name="B_fid" Type="Int32" Nullable="false" />
+          <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Category_fid" Type="Int32" />
+          <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Memo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IsForSale" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="database_firewall_rules">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="start_ip_address" />
+            <PropertyRef Name="end_ip_address" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="modify_date" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="start_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="end_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <Association Name="FK_Orders_BusinessMember">
+          <End Role="BusinessMember" Type="Self.BusinessMember" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BusinessMember">
+              <PropertyRef Name="fid" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="B_fid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_BusinessMember1">
+          <End Role="BusinessMember" Type="Self.BusinessMember" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BusinessMember">
+              <PropertyRef Name="fid" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="B_fid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payment_Term_BusinessMember">
+          <End Role="BusinessMember" Type="Self.BusinessMember" Multiplicity="1" />
+          <End Role="Payment_Term" Type="Self.Payment_Term" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BusinessMember">
+              <PropertyRef Name="fid" />
+            </Principal>
+            <Dependent Role="Payment_Term">
+              <PropertyRef Name="B_fid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductOptionGroup_BusinessMember">
+          <End Role="BusinessMember" Type="Self.BusinessMember" Multiplicity="0..1" />
+          <End Role="ProductOptionGroup" Type="Self.ProductOptionGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BusinessMember">
+              <PropertyRef Name="fid" />
+            </Principal>
+            <Dependent Role="ProductOptionGroup">
+              <PropertyRef Name="B_fid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Products_BusinessMember1">
+          <End Role="BusinessMember" Type="Self.BusinessMember" Multiplicity="1" />
+          <End Role="Products" Type="Self.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BusinessMember">
+              <PropertyRef Name="fid" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="B_fid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_NormalMember">
+          <End Role="NormalMember" Type="Self.NormalMember" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NormalMember">
+              <PropertyRef Name="fid" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="N_fid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_NormalMember1">
+          <End Role="NormalMember" Type="Self.NormalMember" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NormalMember">
+              <PropertyRef Name="fid" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="N_fid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetail_Orders">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="fid" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="Order_fid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetail_ProductOptionGroup">
+          <End Role="ProductOptionGroup" Type="Self.ProductOptionGroup" Multiplicity="0..1" />
+          <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductOptionGroup">
+              <PropertyRef Name="fid" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="OptionGroup_fid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetail_ProductOptions">
+          <End Role="ProductOptions" Type="Self.ProductOptions" Multiplicity="0..1" />
+          <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductOptions">
+              <PropertyRef Name="fid" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="Option_fid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetail_Products">
+          <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+          <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="fid" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="Product_fid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payment_Term_PaymentMethod">
+          <End Role="PaymentMethod" Type="Self.PaymentMethod" Multiplicity="1" />
+          <End Role="Payment_Term" Type="Self.Payment_Term" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentMethod">
+              <PropertyRef Name="fid" />
+            </Principal>
+            <Dependent Role="Payment_Term">
+              <PropertyRef Name="Pay_fid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="iSpan_ProjectEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BusinessImg" EntityType="Self.BusinessImg" />
+          <EntitySet Name="BusinessMember" EntityType="Self.BusinessMember" />
+          <EntitySet Name="Menus" EntityType="Self.Menus" />
+          <EntitySet Name="NormalMember" EntityType="Self.NormalMember" />
+          <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" />
+          <EntitySet Name="Payment_Term" EntityType="Self.Payment_Term" />
+          <EntitySet Name="PaymentMethod" EntityType="Self.PaymentMethod" />
+          <EntitySet Name="ProductCategory" EntityType="Self.ProductCategory" />
+          <EntitySet Name="ProductImg" EntityType="Self.ProductImg" />
+          <EntitySet Name="ProductOptionGroup" EntityType="Self.ProductOptionGroup" />
+          <EntitySet Name="ProductOptions" EntityType="Self.ProductOptions" />
+          <EntitySet Name="Products" EntityType="Self.Products" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="View_OrderDetail_with_OptionGroupName" EntityType="Self.View_OrderDetail_with_OptionGroupName" />
+          <EntitySet Name="View_showProductList" EntityType="Self.View_showProductList" />
+          <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" />
+          <AssociationSet Name="FK_Orders_BusinessMember" Association="Self.FK_Orders_BusinessMember">
+            <End Role="BusinessMember" EntitySet="BusinessMember" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_BusinessMember1" Association="Self.FK_Orders_BusinessMember1">
+            <End Role="BusinessMember" EntitySet="BusinessMember" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payment_Term_BusinessMember" Association="Self.FK_Payment_Term_BusinessMember">
+            <End Role="BusinessMember" EntitySet="BusinessMember" />
+            <End Role="Payment_Term" EntitySet="Payment_Term" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductOptionGroup_BusinessMember" Association="Self.FK_ProductOptionGroup_BusinessMember">
+            <End Role="BusinessMember" EntitySet="BusinessMember" />
+            <End Role="ProductOptionGroup" EntitySet="ProductOptionGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Products_BusinessMember1" Association="Self.FK_Products_BusinessMember1">
+            <End Role="BusinessMember" EntitySet="BusinessMember" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_NormalMember" Association="Self.FK_Orders_NormalMember">
+            <End Role="NormalMember" EntitySet="NormalMember" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_NormalMember1" Association="Self.FK_Orders_NormalMember1">
+            <End Role="NormalMember" EntitySet="NormalMember" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_Orders" Association="Self.FK_OrderDetail_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrderDetail" EntitySet="OrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_ProductOptionGroup" Association="Self.FK_OrderDetail_ProductOptionGroup">
+            <End Role="ProductOptionGroup" EntitySet="ProductOptionGroup" />
+            <End Role="OrderDetail" EntitySet="OrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_ProductOptions" Association="Self.FK_OrderDetail_ProductOptions">
+            <End Role="ProductOptions" EntitySet="ProductOptions" />
+            <End Role="OrderDetail" EntitySet="OrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_Products" Association="Self.FK_OrderDetail_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="OrderDetail" EntitySet="OrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payment_Term_PaymentMethod" Association="Self.FK_Payment_Term_PaymentMethod">
+            <End Role="PaymentMethod" EntitySet="PaymentMethod" />
+            <End Role="Payment_Term" EntitySet="Payment_Term" />
+          </AssociationSet>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(iSpan_ProjectModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(iSpan_ProjectModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+        </EntityContainer>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="iSpan_ProjectModelStoreContainer" CdmEntityContainer="iSpan_ProjectEntities">
+          <EntitySetMapping Name="BusinessImg">
+            <EntityTypeMapping TypeName="iSpan_ProjectModel.BusinessImg">
+              <MappingFragment StoreEntitySet="BusinessImg">
+                <ScalarProperty Name="fid" ColumnName="fid" />
+                <ScalarProperty Name="B_fid" ColumnName="B_fid" />
+                <ScalarProperty Name="LOGO_ImgPath" ColumnName="LOGO_ImgPath" />
+                <ScalarProperty Name="SIgh_ImgPath" ColumnName="SIgh_ImgPath" />
+                <ScalarProperty Name="Banner_ImgPath_1" ColumnName="Banner_ImgPath_1" />
+                <ScalarProperty Name="Banner_ImgPath_2" ColumnName="Banner_ImgPath_2" />
+                <ScalarProperty Name="Banner_ImgPath_3" ColumnName="Banner_ImgPath_3" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BusinessMember">
+            <EntityTypeMapping TypeName="iSpan_ProjectModel.BusinessMember">
+              <MappingFragment StoreEntitySet="BusinessMember">
+                <ScalarProperty Name="fid" ColumnName="fid" />
+                <ScalarProperty Name="MemberName" ColumnName="MemberName" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="ShopType" ColumnName="ShopType" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="OpenTime" ColumnName="OpenTime" />
+                <ScalarProperty Name="CloseTime" ColumnName="CloseTime" />
+                <ScalarProperty Name="OffDay" ColumnName="OffDay" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="DeliveryAmount" ColumnName="DeliveryAmount" />
+                <ScalarProperty Name="isPlasticBag" ColumnName="isPlasticBag" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="RegisterTime" ColumnName="RegisterTime" />
+                <ScalarProperty Name="CashPaymentLimit" ColumnName="CashPaymentLimit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Menus">
+            <EntityTypeMapping TypeName="iSpan_ProjectModel.Menus">
+              <MappingFragment StoreEntitySet="Menus">
+                <ScalarProperty Name="fid" ColumnName="fid" />
+                <ScalarProperty Name="MenuName" ColumnName="MenuName" />
+                <ScalarProperty Name="B_fid" ColumnName="B_fid" />
+                <ScalarProperty Name="isForSale" ColumnName="isForSale" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NormalMember">
+            <EntityTypeMapping TypeName="iSpan_ProjectModel.NormalMember">
+              <MappingFragment StoreEntitySet="NormalMember">
+                <ScalarProperty Name="fid" ColumnName="fid" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="MemberName" ColumnName="MemberName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Address_City" ColumnName="Address_City" />
+                <ScalarProperty Name="Address_Area" ColumnName="Address_Area" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Point" ColumnName="Point" />
+                <ScalarProperty Name="RegisterTime" ColumnName="RegisterTime" />
+                <ScalarProperty Name="MemberPhotoFile" ColumnName="MemberPhotoFile" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderDetail">
+            <EntityTypeMapping TypeName="iSpan_ProjectModel.OrderDetail">
+              <MappingFragment StoreEntitySet="OrderDetail">
+                <ScalarProperty Name="onlyForUser" ColumnName="onlyForUser" />
+                <ScalarProperty Name="OrderItem_id" ColumnName="OrderItem_id" />
+                <ScalarProperty Name="Order_fid" ColumnName="Order_fid" />
+                <ScalarProperty Name="Product_fid" ColumnName="Product_fid" />
+                <ScalarProperty Name="Option_fid" ColumnName="Option_fid" />
+                <ScalarProperty Name="OptionGroup_fid" ColumnName="OptionGroup_fid" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="OrderDetails_Delete" ColumnName="OrderDetails_Delete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="iSpan_ProjectModel.Orders">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="fid" ColumnName="fid" />
+                <ScalarProperty Name="N_fid" ColumnName="N_fid" />
+                <ScalarProperty Name="B_fid" ColumnName="B_fid" />
+                <ScalarProperty Name="B_MemberName" ColumnName="B_MemberName" />
+                <ScalarProperty Name="B_MemberPhone" ColumnName="B_MemberPhone" />
+                <ScalarProperty Name="PickUpDate" ColumnName="PickUpDate" />
+                <ScalarProperty Name="PickUpTime" ColumnName="PickUpTime" />
+                <ScalarProperty Name="PickUpType" ColumnName="PickUpType" />
+                <ScalarProperty Name="PlasticBag" ColumnName="PlasticBag" />
+                <ScalarProperty Name="PickUpPerson" ColumnName="PickUpPerson" />
+                <ScalarProperty Name="PickUpPerson_Phone" ColumnName="PickUpPerson_Phone" />
+                <ScalarProperty Name="PaymentTerm" ColumnName="PaymentTerm" />
+                <ScalarProperty Name="TaxIDNum" ColumnName="TaxIDNum" />
+                <ScalarProperty Name="OrderState" ColumnName="OrderState" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="OrderTime" ColumnName="OrderTime" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="ProductCount" ColumnName="ProductCount" />
+                <ScalarProperty Name="OrderSN" ColumnName="OrderSN" />
+                <ScalarProperty Name="OrderPrefix" ColumnName="OrderPrefix" />
+                <ScalarProperty Name="Order_Detele" ColumnName="Order_Detele" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Payment_Term">
+            <EntityTypeMapping TypeName="iSpan_ProjectModel.Payment_Term">
+              <MappingFragment StoreEntitySet="Payment_Term">
+                <ScalarProperty Name="fid" ColumnName="fid" />
+                <ScalarProperty Name="B_fid" ColumnName="B_fid" />
+                <ScalarProperty Name="Pay_fid" ColumnName="Pay_fid" />
+                <ScalarProperty Name="PayAmount_Limit" ColumnName="PayAmount_Limit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaymentMethod">
+            <EntityTypeMapping TypeName="iSpan_ProjectModel.PaymentMethod">
+              <MappingFragment StoreEntitySet="PaymentMethod">
+                <ScalarProperty Name="fid" ColumnName="fid" />
+                <ScalarProperty Name="Payment" ColumnName="Payment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductCategory">
+            <EntityTypeMapping TypeName="iSpan_ProjectModel.ProductCategory">
+              <MappingFragment StoreEntitySet="ProductCategory">
+                <ScalarProperty Name="fid" ColumnName="fid" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="B_fid" ColumnName="B_fid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductImg">
+            <EntityTypeMapping TypeName="iSpan_ProjectModel.ProductImg">
+              <MappingFragment StoreEntitySet="ProductImg">
+                <ScalarProperty Name="fid" ColumnName="fid" />
+                <ScalarProperty Name="Product_fid" ColumnName="Product_fid" />
+                <ScalarProperty Name="ImgPath" ColumnName="ImgPath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductOptionGroup">
+            <EntityTypeMapping TypeName="iSpan_ProjectModel.ProductOptionGroup">
+              <MappingFragment StoreEntitySet="ProductOptionGroup">
+                <ScalarProperty Name="fid" ColumnName="fid" />
+                <ScalarProperty Name="OptionGroupName" ColumnName="OptionGroupName" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="B_fid" ColumnName="B_fid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductOptions">
+            <EntityTypeMapping TypeName="iSpan_ProjectModel.ProductOptions">
+              <MappingFragment StoreEntitySet="ProductOptions">
+                <ScalarProperty Name="fid" ColumnName="fid" />
+                <ScalarProperty Name="OptionName" ColumnName="OptionName" />
+                <ScalarProperty Name="OptionGroup_fid" ColumnName="OptionGroup_fid" />
+                <ScalarProperty Name="B_fid" ColumnName="B_fid" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="iSpan_ProjectModel.Products">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="fid" ColumnName="fid" />
+                <ScalarProperty Name="B_fid" ColumnName="B_fid" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="Category_fid" ColumnName="Category_fid" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="Menu_fid" ColumnName="Menu_fid" />
+                <ScalarProperty Name="IsForSale" ColumnName="IsForSale" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="iSpan_ProjectModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_OrderDetail_with_OptionGroupName">
+            <EntityTypeMapping TypeName="iSpan_ProjectModel.View_OrderDetail_with_OptionGroupName">
+              <MappingFragment StoreEntitySet="View_OrderDetail_with_OptionGroupName">
+                <ScalarProperty Name="Order_fid" ColumnName="Order_fid" />
+                <ScalarProperty Name="OrderItem_id" ColumnName="OrderItem_id" />
+                <ScalarProperty Name="Product_fid" ColumnName="Product_fid" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="OptionGroupName" ColumnName="OptionGroupName" />
+                <ScalarProperty Name="OptionName" ColumnName="OptionName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_showProductList">
+            <EntityTypeMapping TypeName="iSpan_ProjectModel.View_showProductList">
+              <MappingFragment StoreEntitySet="View_showProductList">
+                <ScalarProperty Name="fid" ColumnName="fid" />
+                <ScalarProperty Name="B_fid" ColumnName="B_fid" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="Category_fid" ColumnName="Category_fid" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="IsForSale" ColumnName="IsForSale" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="database_firewall_rules">
+            <EntityTypeMapping TypeName="iSpan_ProjectModel.database_firewall_rules">
+              <MappingFragment StoreEntitySet="database_firewall_rules">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="start_ip_address" ColumnName="start_ip_address" />
+                <ScalarProperty Name="end_ip_address" ColumnName="end_ip_address" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="modify_date" ColumnName="modify_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="iSpan_ProjectModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="iSpan_ProjectModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="iSpan_ProjectModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="iSpan_ProjectModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="iSpan_ProjectModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="iSpan_ProjectModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="iSpan_ProjectModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="iSpan_ProjectModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="iSpan_ProjectModel.Store.sp_upgraddiagrams" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

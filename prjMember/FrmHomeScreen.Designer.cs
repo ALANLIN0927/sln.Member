@@ -41,7 +41,6 @@
             this.laborder = new System.Windows.Forms.Label();
             this.labshopcar = new System.Windows.Forms.Label();
             this.labshop = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -49,6 +48,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -161,6 +161,12 @@
             "新手教學"});
             this.comboBox1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "品牌專區",
+            "相關條款",
+            "意見回饋",
+            "官方客服",
+            "新手教學"});
             this.comboBox1.Location = new System.Drawing.Point(306, 24);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 29);
@@ -197,6 +203,7 @@
             this.laborder.Size = new System.Drawing.Size(54, 26);
             this.laborder.TabIndex = 2;
             this.laborder.Text = "訂單";
+            this.laborder.Click += new System.EventHandler(this.laborder_Click);
             this.laborder.MouseEnter += new System.EventHandler(this.laborder_MouseEnter);
             this.laborder.MouseLeave += new System.EventHandler(this.laborder_MouseLeave);
             // 
@@ -223,18 +230,6 @@
             this.labshop.Text = "訂購";
             this.labshop.MouseEnter += new System.EventHandler(this.labshop_MouseEnter);
             this.labshop.MouseLeave += new System.EventHandler(this.labshop_MouseLeave);
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.AutoScroll = true;
-            this.panel2.AutoSize = true;
-            this.panel2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel2.Location = new System.Drawing.Point(0, 76);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1175, 730);
-            this.panel2.TabIndex = 1;
             // 
             // panel3
             // 
@@ -318,13 +313,21 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "你訂";
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 76);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1175, 637);
+            this.flowLayoutPanel1.TabIndex = 3;
+            // 
             // FrmHomeScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1175, 806);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "FrmHomeScreen";
             this.Text = "FrmHomeScreen";
@@ -352,7 +355,6 @@
         private System.Windows.Forms.Label labregister;
         private System.Windows.Forms.Label labNotice;
         private System.Windows.Forms.ComboBox comchoice;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -361,5 +363,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label membername;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
