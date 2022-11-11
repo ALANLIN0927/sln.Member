@@ -53,7 +53,7 @@ namespace prjMember
             //login.Parent = panel2;
             login.ShowDialog();
             membername.Text = login.membername;   //顯示會員名子
-            //labregister.Text = login.homeloginstate;
+            labregister.Text = login.homeloginstate;                                                      //為啥不行
 
         }
 
@@ -98,10 +98,10 @@ namespace prjMember
                 }
                 Member material = new Member();
 
-                flowLayoutPanel1.Controls.Clear();
-                material.TopLevel = false;
-                material.Parent = flowLayoutPanel1;
-                material.Show();
+                //flowLayoutPanel1.Controls.Clear();
+                //material.TopLevel = false;
+                //material.Parent = flowLayoutPanel1;
+                material.ShowDialog();
                 comchoice.Text = "會員中心";
             }
             if (comchoice.Text == "修改會員資料")                   //判斷有沒有登入會員資料     
@@ -113,12 +113,12 @@ namespace prjMember
                 }
 
                 comchoice.Text = null;
-                //panel2.Controls.Clear();
+               //flowLayoutPanel1.Controls.Clear();
                 MemberUpdate update = new MemberUpdate();
                 //update.TopLevel = false;
-                //update.Parent = panel2;
+                //update.Parent = flowLayoutPanel1;
 
-                update.Show();
+                update.ShowDialog();
 
             }
 
@@ -171,122 +171,7 @@ namespace prjMember
             page.TopLevel = false;
             page.Parent = flowLayoutPanel1;
             page.Show();
-            //iSpan_ProjectEntities db = new iSpan_ProjectEntities();
-            //int Screenblockside = this.ClientSize.Width / 8;
-            //flowLayoutPanel1.Width = 6 * Screenblockside;
-            //flowLayoutPanel1.Location = new Point(Screenblockside, 50);
-
-            //UserElement();
-
-
-
-
-            //Label scroll = new Label();
-            //scroll.Text = "";
-            //scroll.BackColor = Color.Transparent;
-            //scroll.Location = new Point(0, 30);
-            //scroll.AutoSize = false;
-            //scroll.Size = new Size(1, flowLayoutPanel1.Size.Height);
-            //this.Controls.Add(scroll);
-
-            //void UserElement()
-            //{
-            //    List<FUserList> ULS = new List<FUserList>();
-
-            //    var q = from emp in db.Orders
-            //            join g in db.BusinessMember
-            //            on emp.B_fid equals g.fid
-            //            where emp.N_fid == 1
-            //            select new
-            //            {
-            //                emp.OrderState,
-            //                emp.OrderTime,
-            //                emp.TotalAmount,
-            //                g.MemberName,
-
-            //            };
-
-            //    foreach (var item in q)
-            //    {
-
-            //        ULS.Add(new FUserList
-            //        {
-            //            FMemberName = item.MemberName,
-            //            FOrderState = item.OrderState,
-            //            FOrderTime = item.OrderTime.ToString(),
-            //            FTotalAmount = item.TotalAmount.ToString(),
-
-            //        });
-
-            //    }
-
-            //    Utility use = new Utility();
-            //    use.ULS = ULS;
-
-            //    int EmtCount = use.ULS.Count;
-
-            //    Element[] Emt = new Element[EmtCount];
-
-            //    for (int i = 0; i < Emt.Length; i++)
-            //    {
-
-            //        int num = i;
-
-            //        Emt[i] = new Element
-            //        {
-            //            theTextlabName = use.ULS[i].FMemberName,
-            //            theTextlabState = use.ULS[i].FOrderState,
-            //            theTextlabProduct = use.ULS[i].FQty + $"項商品",
-            //            theTextlabCount = $"共" + use.ULS[i].FTotalAmount + $"元",
-            //            theTextlabTime = use.ULS[i].FOrderTime,
-
-            //        };
-
-            //        if (Emt[i].theTextlabState == "未接單")
-            //        {
-            //            Emt[i].theBackColor = Color.Red;
-
-            //        }
-            //        else if (Emt[i].theTextlabState == "商品準備中")
-            //        {
-            //            Emt[i].theBackColor = Color.Yellow;
-            //        }
-            //        else if (Emt[i].theTextlabState == "放在購物車")
-            //        {
-            //            Emt[i].theBackColor = Color.Orange;
-            //        }
-            //        else
-            //        {
-            //            Emt[i].theBackColor = Color.Lime;
-
-            //        }
-
-            //        Emt[i].theClick += (Element source) =>
-            //        {
-            //            Utility.User = num;
-
-            //            (new FrmMain()).Show();
-            //        };
-
-            //        flowLayoutPanel1.Controls.Add(Emt[i]);
-            //    };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+           
 
 
 

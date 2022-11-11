@@ -20,7 +20,7 @@ namespace prjMember
         bool isClosed = true;
 
         public string membername { get; set; }
-        /*public string homeloginstate { get; set; } */   //多加的 螢幕上的字
+        public string homeloginstate { get; set; }                                //多加的 螢幕上的字
 
         public Login()
         {
@@ -30,7 +30,7 @@ namespace prjMember
         
         private void register_Click(object sender, EventArgs e)
         {
-            /*homeloginstate = "登入";   */               //多加的 失敗
+            homeloginstate = "登入";                                               //多加的 失敗
             MemberRegister reg = new MemberRegister();
             this.Close();
             reg.ShowDialog();
