@@ -57,7 +57,7 @@ namespace prjMember
                                           //msg.Priority = MailPriority.High;//郵件優先級 
 
                     SmtpClient client = new SmtpClient();
-                    client.Credentials = new System.Net.NetworkCredential("a29816668@gmail.com", "ytfv xcva tmkp zuzo"); //這裡要填正確的帳號跟密碼
+                   /* client.Credentials = new System.Net.NetworkCredential("a29816668@gmail.com", ""); *///這裡要填正確的帳號跟密碼
                     client.Host = "smtp.gmail.com"; //設定smtp Server
                     client.Port = 25; //設定Port
                     client.EnableSsl = true; //gmail預設開啟驗證

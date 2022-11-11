@@ -193,8 +193,7 @@ namespace prjMember
 
                 MessageBox.Show("註冊成功");
                 this.Close();
-                Login login = new Login();
-                login.ShowDialog();
+               
             }
         }
 
