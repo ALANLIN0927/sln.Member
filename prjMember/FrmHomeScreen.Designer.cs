@@ -216,6 +216,7 @@
             this.labshopcar.Size = new System.Drawing.Size(75, 26);
             this.labshopcar.TabIndex = 1;
             this.labshopcar.Text = "購物車";
+            this.labshopcar.Click += new System.EventHandler(this.labshopcar_Click);
             this.labshopcar.MouseEnter += new System.EventHandler(this.labshopcar_MouseEnter);
             this.labshopcar.MouseLeave += new System.EventHandler(this.labshopcar_MouseLeave);
             // 
@@ -228,6 +229,7 @@
             this.labshop.Size = new System.Drawing.Size(54, 26);
             this.labshop.TabIndex = 0;
             this.labshop.Text = "訂購";
+            this.labshop.Click += new System.EventHandler(this.labshop_Click);
             this.labshop.MouseEnter += new System.EventHandler(this.labshop_MouseEnter);
             this.labshop.MouseLeave += new System.EventHandler(this.labshop_MouseLeave);
             // 
@@ -332,6 +334,7 @@
             this.Name = "FrmHomeScreen";
             this.Text = "FrmHomeScreen";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmHomeScreen_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

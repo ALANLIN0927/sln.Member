@@ -13,6 +13,8 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 using OrderList;
 using WindowsFormsControlLibrary1;
+using FM_Cart;
+using 訂餐平台;
 
 namespace prjMember
 {
@@ -21,7 +23,7 @@ namespace prjMember
         public FrmHomeScreen()
         {
             InitializeComponent();
-
+           
         }
 
         private void register_Click(object sender, EventArgs e)
@@ -37,7 +39,7 @@ namespace prjMember
                 {
                     UserData.Member = null;
                     labregister.Text = "登入";
-                    /* panel2.Controls.Clear();*/                                        //登出後panel畫面消失
+                     flowLayoutPanel1.Controls.Clear();                                        //登出後panel畫面消失
                     membername.Text = null;
                     return;
                 }
@@ -294,6 +296,40 @@ namespace prjMember
 
 
 
+        }
+
+        private void labshopcar_Click(object sender, EventArgs e)
+        {
+            if (UserData.Member == null)
+            {
+                MessageBox.Show("請先登入會員");
+                return;
+            }
+            FM_CartPage shopcar = new FM_CartPage(UserData.Member.fid);
+            flowLayoutPanel1.Controls.Clear();
+            
+            shopcar.TopLevel = false;
+            shopcar.Parent = flowLayoutPanel1;
+
+            shopcar.Show();
+        }
+
+        private void labshop_Click(object sender, EventArgs e)
+        {
+             FrmShopList shop = new FrmShopList(UserData.Member.fid);
+            flowLayoutPanel1.Controls.Clear();
+            shop.TopLevel = false;
+            shop.Parent = flowLayoutPanel1;
+            shop.Show();
+
+        }
+
+        private void FrmHomeScreen_Load(object sender, EventArgs e)
+        {
+            FrmShopList a = new FrmShopList(0);
+            a.TopLevel = false;
+            a.Parent = flowLayoutPanel1;
+            a.Show();
         }
     }
 }

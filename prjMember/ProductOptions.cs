@@ -26,6 +26,7 @@ namespace prjMember
         public Nullable<int> B_fid { get; set; }
         public Nullable<decimal> UnitPrice { get; set; }
         public Nullable<int> Qty { get; set; }
+        public string isForSale { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderDetail> OrderDetail { get; set; }

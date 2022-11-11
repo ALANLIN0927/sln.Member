@@ -17,6 +17,7 @@ namespace prjMember
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Products()
         {
+            this.OptionsToProducts = new HashSet<OptionsToProducts>();
             this.OrderDetail = new HashSet<OrderDetail>();
         }
     
@@ -31,6 +32,8 @@ namespace prjMember
         public string IsForSale { get; set; }
     
         public virtual BusinessMember BusinessMember { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OptionsToProducts> OptionsToProducts { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderDetail> OrderDetail { get; set; }
     }

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="iSpan_ProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="iSpan_ProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="BusinessImg">
           <Key>
             <PropertyRef Name="fid" />
@@ -39,12 +39,6 @@
           <Property Name="RegisterTime" Type="datetime" />
           <Property Name="CashPaymentLimit" Type="int" />
         </EntityType>
-        <!--產生期間發現錯誤:
-警告 6013: 資料表/檢視 'iSpan_Project.dbo.MenuDetail' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
-        <EntityType Name="MenuDetail">
-          <Property Name="Menu_fid" Type="int" />
-          <Property Name="Product_fid" Type="int" />
-        </EntityType>-->
         <EntityType Name="Menus">
           <Key>
             <PropertyRef Name="fid" />
@@ -73,12 +67,14 @@
           <Property Name="RegisterTime" Type="datetime" />
           <Property Name="MemberPhotoFile" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <!--產生期間發現錯誤:
-警告 6013: 資料表/檢視 'iSpan_Project.dbo.OptionsToProducts' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
         <EntityType Name="OptionsToProducts">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Product_fid" Type="int" />
           <Property Name="OptionGroup_fid" Type="int" />
-        </EntityType>-->
+        </EntityType>
         <EntityType Name="OrderDetail">
           <Key>
             <PropertyRef Name="onlyForUser" />
@@ -120,11 +116,6 @@
           <Property Name="OrderPrefix" Type="nchar" MaxLength="3" />
           <Property Name="Order_Detele" Type="varchar" MaxLength="1" Nullable="false" />
         </EntityType>
-        <!--產生期間發現錯誤:
-警告 6013: 資料表/檢視 'iSpan_Project.dbo.OrderSN' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
-        <EntityType Name="OrderSN">
-          <Property Name="SN" Type="nchar" MaxLength="10" />
-        </EntityType>-->
         <EntityType Name="Payment_Term">
           <Key>
             <PropertyRef Name="fid" />
@@ -163,6 +154,7 @@
           </Key>
           <Property Name="fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="OptionGroupName" Type="nvarchar" MaxLength="50" />
+          <Property Name="isOnlyone" Type="int" />
           <Property Name="Memo" Type="nvarchar" MaxLength="50" />
           <Property Name="B_fid" Type="int" />
         </EntityType>
@@ -176,6 +168,7 @@
           <Property Name="B_fid" Type="int" />
           <Property Name="UnitPrice" Type="numeric" Precision="18" Scale="2" />
           <Property Name="Qty" Type="int" />
+          <Property Name="isForSale" Type="nvarchar" MaxLength="1" />
         </EntityType>
         <EntityType Name="Products">
           <Key>
@@ -202,27 +195,6 @@
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <!--產生期間發現錯誤:
-警告 6013: 資料表/檢視 'iSpan_Project.dbo.View_OptionsToGroups' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
-        <EntityType Name="View_OptionsToGroups">
-          <Property Name="fid" Type="int" />
-          <Property Name="OptionName" Type="nvarchar" MaxLength="50" />
-          <Property Name="OptionGroup_fid" Type="int" />
-          <Property Name="OptionGroupName" Type="nvarchar" MaxLength="50" />
-          <Property Name="Memo" Type="nvarchar" MaxLength="50" />
-          <Property Name="UnitPrice" Type="numeric" Precision="18" Scale="2" />
-          <Property Name="B_fid" Type="int" />
-        </EntityType>-->
-        <!--產生期間發現錯誤:
-警告 6013: 資料表/檢視 'iSpan_Project.dbo.View_OrderDetail_NonOptionGroupName' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
-        <EntityType Name="View_OrderDetail_NonOptionGroupName">
-          <Property Name="Order_fID" Type="int" />
-          <Property Name="Product_fID" Type="int" />
-          <Property Name="ProductName" Type="nvarchar" MaxLength="50" />
-          <Property Name="UnitPrice" Type="numeric" Precision="18" Scale="0" />
-          <Property Name="Qty" Type="int" />
-          <Property Name="Options" Type="nvarchar(max)" />
-        </EntityType>-->
-        <!--產生期間發現錯誤:
 警告 6002: 資料表/檢視 'iSpan_Project.dbo.View_OrderDetail_with_OptionGroupName' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
         <EntityType Name="View_OrderDetail_with_OptionGroupName">
           <Key>
@@ -237,17 +209,6 @@
           <Property Name="OptionGroupName" Type="nvarchar" MaxLength="50" />
           <Property Name="OptionName" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <!--產生期間發現錯誤:
-警告 6013: 資料表/檢視 'iSpan_Project.dbo.View_ProductHasOpGroups' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
-        <EntityType Name="View_ProductHasOpGroups">
-          <Property Name="Product_fid" Type="int" />
-          <Property Name="B_fid" Type="int" />
-          <Property Name="ProductName" Type="nvarchar" MaxLength="50" />
-          <Property Name="p_Memo" Type="nvarchar" MaxLength="100" />
-          <Property Name="OptionGroup_fid" Type="int" />
-          <Property Name="OG_name" Type="nvarchar" MaxLength="50" />
-          <Property Name="OG_Memo" Type="nvarchar" MaxLength="50" />
-        </EntityType>-->
         <!--產生期間發現錯誤:
 警告 6002: 資料表/檢視 'iSpan_Project.dbo.View_showProductList' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
         <EntityType Name="View_showProductList">
@@ -283,12 +244,30 @@
           <Property Name="create_date" Type="datetime" Nullable="false" />
           <Property Name="modify_date" Type="datetime" Nullable="false" />
         </EntityType>
-        <!--產生期間發現錯誤:
-錯誤 6004: 資料表 'iSpan_Project.dbo.OptionsToProducts' 被某個關聯性參考，但是找不到。
-        <Association Name="FK_OptionsToProducts_ProductOptionGroup" />-->
-        <!--產生期間發現錯誤:
-錯誤 6004: 資料表 'iSpan_Project.dbo.OptionsToProducts' 被某個關聯性參考，但是找不到。
-        <Association Name="FK_OptionsToProducts_Products" />-->
+        <Association Name="FK_OptionsToProducts_ProductOptionGroup">
+          <End Role="ProductOptionGroup" Type="Self.ProductOptionGroup" Multiplicity="0..1" />
+          <End Role="OptionsToProducts" Type="Self.OptionsToProducts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductOptionGroup">
+              <PropertyRef Name="fid" />
+            </Principal>
+            <Dependent Role="OptionsToProducts">
+              <PropertyRef Name="OptionGroup_fid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OptionsToProducts_Products">
+          <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+          <End Role="OptionsToProducts" Type="Self.OptionsToProducts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="fid" />
+            </Principal>
+            <Dependent Role="OptionsToProducts">
+              <PropertyRef Name="Product_fid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_OrderDetail_Orders">
           <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
           <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
@@ -433,43 +412,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="udf_get_serialno" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="char" />
         <EntityContainer Name="iSpan_ProjectModelStoreContainer">
           <EntitySet Name="BusinessImg" EntityType="Self.BusinessImg" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BusinessMember" EntityType="Self.BusinessMember" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Menus" EntityType="Self.Menus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NormalMember" EntityType="Self.NormalMember" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OptionsToProducts" EntityType="Self.OptionsToProducts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Payment_Term" EntityType="Self.Payment_Term" Schema="dbo" store:Type="Tables" />
@@ -514,6 +462,14 @@
     [database_firewall_rules].[modify_date] AS [modify_date]
     FROM [sys].[database_firewall_rules] AS [database_firewall_rules]</DefiningQuery>
           </EntitySet>
+          <AssociationSet Name="FK_OptionsToProducts_ProductOptionGroup" Association="Self.FK_OptionsToProducts_ProductOptionGroup">
+            <End Role="ProductOptionGroup" EntitySet="ProductOptionGroup" />
+            <End Role="OptionsToProducts" EntitySet="OptionsToProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OptionsToProducts_Products" Association="Self.FK_OptionsToProducts_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="OptionsToProducts" EntitySet="OptionsToProducts" />
+          </AssociationSet>
           <AssociationSet Name="FK_OrderDetail_Orders" Association="Self.FK_OrderDetail_Orders">
             <End Role="Orders" EntitySet="Orders" />
             <End Role="OrderDetail" EntitySet="OrderDetail" />
@@ -563,8 +519,7 @@
             <End Role="Products" EntitySet="Products" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="iSpan_ProjectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -636,6 +591,16 @@
           <Property Name="MemberPhotoFile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_NormalMember" FromRole="NormalMember" ToRole="Orders" />
           <NavigationProperty Name="Orders1" Relationship="Self.FK_Orders_NormalMember1" FromRole="NormalMember" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="OptionsToProducts">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Product_fid" Type="Int32" />
+          <Property Name="OptionGroup_fid" Type="Int32" />
+          <NavigationProperty Name="ProductOptionGroup" Relationship="Self.FK_OptionsToProducts_ProductOptionGroup" FromRole="OptionsToProducts" ToRole="ProductOptionGroup" />
+          <NavigationProperty Name="Products" Relationship="Self.FK_OptionsToProducts_Products" FromRole="OptionsToProducts" ToRole="Products" />
         </EntityType>
         <EntityType Name="OrderDetail">
           <Key>
@@ -728,9 +693,11 @@
           </Key>
           <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="OptionGroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="isOnlyone" Type="Int32" />
           <Property Name="Memo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="B_fid" Type="Int32" />
           <NavigationProperty Name="BusinessMember" Relationship="Self.FK_ProductOptionGroup_BusinessMember" FromRole="ProductOptionGroup" ToRole="BusinessMember" />
+          <NavigationProperty Name="OptionsToProducts" Relationship="Self.FK_OptionsToProducts_ProductOptionGroup" FromRole="ProductOptionGroup" ToRole="OptionsToProducts" />
           <NavigationProperty Name="OrderDetail" Relationship="Self.FK_OrderDetail_ProductOptionGroup" FromRole="ProductOptionGroup" ToRole="OrderDetail" />
         </EntityType>
         <EntityType Name="ProductOptions">
@@ -743,6 +710,7 @@
           <Property Name="B_fid" Type="Int32" />
           <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="Qty" Type="Int32" />
+          <Property Name="isForSale" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="OrderDetail" Relationship="Self.FK_OrderDetail_ProductOptions" FromRole="ProductOptions" ToRole="OrderDetail" />
         </EntityType>
         <EntityType Name="Products">
@@ -759,6 +727,7 @@
           <Property Name="Menu_fid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="IsForSale" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="BusinessMember" Relationship="Self.FK_Products_BusinessMember1" FromRole="Products" ToRole="BusinessMember" />
+          <NavigationProperty Name="OptionsToProducts" Relationship="Self.FK_OptionsToProducts_Products" FromRole="Products" ToRole="OptionsToProducts" />
           <NavigationProperty Name="OrderDetail" Relationship="Self.FK_OrderDetail_Products" FromRole="Products" ToRole="OrderDetail" />
         </EntityType>
         <EntityType Name="sysdiagrams">
@@ -899,6 +868,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_OptionsToProducts_ProductOptionGroup">
+          <End Role="ProductOptionGroup" Type="Self.ProductOptionGroup" Multiplicity="0..1" />
+          <End Role="OptionsToProducts" Type="Self.OptionsToProducts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductOptionGroup">
+              <PropertyRef Name="fid" />
+            </Principal>
+            <Dependent Role="OptionsToProducts">
+              <PropertyRef Name="OptionGroup_fid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OptionsToProducts_Products">
+          <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+          <End Role="OptionsToProducts" Type="Self.OptionsToProducts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="fid" />
+            </Principal>
+            <Dependent Role="OptionsToProducts">
+              <PropertyRef Name="Product_fid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_OrderDetail_Orders">
           <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
           <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
@@ -959,11 +952,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="iSpan_ProjectEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="iSpan_ProjectEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="BusinessImg" EntityType="Self.BusinessImg" />
           <EntitySet Name="BusinessMember" EntityType="Self.BusinessMember" />
           <EntitySet Name="Menus" EntityType="Self.Menus" />
           <EntitySet Name="NormalMember" EntityType="Self.NormalMember" />
+          <EntitySet Name="OptionsToProducts" EntityType="Self.OptionsToProducts" />
           <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" />
           <EntitySet Name="Orders" EntityType="Self.Orders" />
           <EntitySet Name="Payment_Term" EntityType="Self.Payment_Term" />
@@ -1005,6 +999,14 @@
             <End Role="NormalMember" EntitySet="NormalMember" />
             <End Role="Orders" EntitySet="Orders" />
           </AssociationSet>
+          <AssociationSet Name="FK_OptionsToProducts_ProductOptionGroup" Association="Self.FK_OptionsToProducts_ProductOptionGroup">
+            <End Role="ProductOptionGroup" EntitySet="ProductOptionGroup" />
+            <End Role="OptionsToProducts" EntitySet="OptionsToProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OptionsToProducts_Products" Association="Self.FK_OptionsToProducts_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="OptionsToProducts" EntitySet="OptionsToProducts" />
+          </AssociationSet>
           <AssociationSet Name="FK_OrderDetail_Orders" Association="Self.FK_OrderDetail_Orders">
             <End Role="Orders" EntitySet="Orders" />
             <End Role="OrderDetail" EntitySet="OrderDetail" />
@@ -1025,54 +1027,13 @@
             <End Role="PaymentMethod" EntitySet="PaymentMethod" />
             <End Role="Payment_Term" EntitySet="Payment_Term" />
           </AssociationSet>
-          <FunctionImport Name="sp_alterdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_creatediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_dropdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(iSpan_ProjectModel.sp_helpdiagramdefinition_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(iSpan_ProjectModel.sp_helpdiagrams_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_renamediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="new_diagramname" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_upgraddiagrams" />
         </EntityContainer>
-        <ComplexType Name="sp_helpdiagramdefinition_Result">
-          <Property Type="Int32" Name="version" Nullable="true" />
-          <Property Type="Binary" Name="definition" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="sp_helpdiagrams_Result">
-          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-          <Property Type="Int32" Name="OwnerID" Nullable="false" />
-        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="iSpan_ProjectModelStoreContainer" CdmEntityContainer="iSpan_ProjectEntities">
+        <EntityContainerMapping StorageEntityContainer="iSpan_ProjectModelStoreContainer" CdmEntityContainer="iSpan_ProjectEntities1">
           <EntitySetMapping Name="BusinessImg">
             <EntityTypeMapping TypeName="iSpan_ProjectModel.BusinessImg">
               <MappingFragment StoreEntitySet="BusinessImg">
@@ -1136,6 +1097,15 @@
                 <ScalarProperty Name="Point" ColumnName="Point" />
                 <ScalarProperty Name="RegisterTime" ColumnName="RegisterTime" />
                 <ScalarProperty Name="MemberPhotoFile" ColumnName="MemberPhotoFile" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OptionsToProducts">
+            <EntityTypeMapping TypeName="iSpan_ProjectModel.OptionsToProducts">
+              <MappingFragment StoreEntitySet="OptionsToProducts">
+                <ScalarProperty Name="fid" ColumnName="fid" />
+                <ScalarProperty Name="Product_fid" ColumnName="Product_fid" />
+                <ScalarProperty Name="OptionGroup_fid" ColumnName="OptionGroup_fid" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1223,6 +1193,7 @@
               <MappingFragment StoreEntitySet="ProductOptionGroup">
                 <ScalarProperty Name="fid" ColumnName="fid" />
                 <ScalarProperty Name="OptionGroupName" ColumnName="OptionGroupName" />
+                <ScalarProperty Name="isOnlyone" ColumnName="isOnlyone" />
                 <ScalarProperty Name="Memo" ColumnName="Memo" />
                 <ScalarProperty Name="B_fid" ColumnName="B_fid" />
               </MappingFragment>
@@ -1237,6 +1208,7 @@
                 <ScalarProperty Name="B_fid" ColumnName="B_fid" />
                 <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
                 <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="isForSale" ColumnName="isForSale" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1306,30 +1278,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="iSpan_ProjectModel.Store.sp_alterdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="iSpan_ProjectModel.Store.sp_creatediagram" />
-          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="iSpan_ProjectModel.Store.sp_dropdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="iSpan_ProjectModel.Store.sp_helpdiagramdefinition">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="iSpan_ProjectModel.sp_helpdiagramdefinition_Result">
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="iSpan_ProjectModel.Store.sp_helpdiagrams">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="iSpan_ProjectModel.sp_helpdiagrams_Result">
-                <ScalarProperty Name="Database" ColumnName="Database" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Owner" ColumnName="Owner" />
-                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="iSpan_ProjectModel.Store.sp_renamediagram" />
-          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="iSpan_ProjectModel.Store.sp_upgraddiagrams" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
